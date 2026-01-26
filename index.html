@@ -1,42 +1,79 @@
-/* ===============================
-   INDEX PAGE STYLING
-================================ */
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Ladder Records</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
 
-/* Hero / Welcome Section */
-#hero {
-  text-align: center;
-  padding: 6rem 2rem;
-}
+<header>
+  <h1>Ladder Records</h1>
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="music.html">Music</a></li>
+      <li><a href="studio.html">Studio</a></li>
+      <li><a href="events.html">Events</a></li>
+      <li><a href="bookings.html">Bookings</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+</header>
 
-#hero h1 {
-  font-size: 3rem;
-  margin-bottom: 1rem;
-}
+<!-- Hero / Welcome Section -->
+<section id="hero">
+  <h1>Ladder Records</h1>
+  <p>Community-led creative studio, label, and artist collective.</p>
+  <a href="music.html">Explore Music →</a>
+</section>
 
-#hero p {
-  font-size: 1.25rem;
-  margin-bottom: 2rem;
-  max-width: 600px;
-  margin-left: auto;
-  margin-right: auto;
-}
+<main id="index-content">
 
-#hero a {
-  display: inline-block;
-  background-color: #1f2a44; /* navy button */
-  color: #e9dfcf; /* beige text */
-  padding: 0.75rem 1.5rem;
-  border-radius: 8px;
-  font-weight: 500;
-  text-decoration: none;
-  transition: background 0.3s;
-}
+  <!-- Music Preview -->
+  <section id="music-preview">
+    <h2>Latest Music</h2>
+    <ul>
+      <li><strong>Album / Track Name</strong> — Artist</li>
+      <li><strong>Album / Track Name</strong> — Artist</li>
+      <li><strong>Album / Track Name</strong> — Artist</li>
+    </ul>
+    <a href="music.html">View All Releases →</a>
+  </section>
 
-#hero a:hover {
-  background-color: #323f66;
-}
+  <!-- Studio Preview -->
+  <section id="studio-preview">
+    <h2>Our Studio</h2>
+    <p>Recording studio and podcast space, welcoming artists of all levels.</p>
+    <a href="studio.html">Learn More →</a>
+  </section>
 
-/* Preview Sections (Music, Studio, Events, About) */
-#index-content section {
-  background: rgba(255, 255, 255, 0.05); /* subtle overlay for contrast */
-  padding: 3rem 2rem;
+  <!-- Events Preview -->
+  <section id="events-preview">
+    <h2>Upcoming Events</h2>
+    <ul>
+      <li>Event Name — Date</li>
+      <li>Event Name — Date</li>
+      <li>Event Name — Date</li>
+    </ul>
+    <a href="events.html">See All Events →</a>
+  </section>
+
+  <!-- About Preview -->
+  <section id="about-preview">
+    <h2>About Us</h2>
+    <p>We are a community of artists, producers, and collaborators led by composer Louis Anthony Bowers.</p>
+    <a href="about.html">Learn More →</a>
+  </section>
+
+</main>
+
+<footer>
+  <p>© Ladder Records</p>
+</footer>
+
+</body>
+</html>
