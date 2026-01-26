@@ -1,5 +1,5 @@
 /* ===============================
-   Reset & base
+   RESET & BASE
 ================================ */
 * {
   margin: 0;
@@ -12,5 +12,140 @@ body {
                "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   line-height: 1.6;
   min-height: 100vh;
-  color: #f4f1ea; /* soft off-white body text */
-  background: linear-gradient(135deg, #5b1f2e, #7a2e2a, #9c4a2f); /* maroon →*
+  color: #f4f1ea; /* soft off-white text */
+  background: linear-gradient(135deg, #5b1f2e, #7a2e2a, #9c4a2f); /* maroon → burnt orange */
+  padding: 0;
+}
+
+/* ===============================
+   HEADERS
+================================ */
+h1, h2, h3, h4 {
+  color: #e9dfcf; /* beige headers */
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+
+/* ===============================
+   LINKS
+================================ */
+a {
+  color: #e9dfcf; /* beige links */
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* ===============================
+   HEADER & NAV
+================================ */
+header {
+  background-color: #1f2a44; /* navy */
+  padding: 1rem 2rem;
+}
+
+header h1 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+nav a {
+  font-weight: 500;
+}
+
+/* ===============================
+   HERO SECTION
+================================ */
+#hero {
+  text-align: center;
+  padding: 6rem 2rem;
+}
+
+#hero h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+#hero p {
+  font-size: 1.25rem;
+  margin-bottom: 2rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#hero a {
+  display: inline-block;
+  background-color: #1f2a44; /* navy button */
+  color: #e9dfcf;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: background 0.3s;
+}
+
+#hero a:hover {
+  background-color: #323f66;
+}
+
+/* ===============================
+   PREVIEW SECTIONS
+================================ */
+#index-content section {
+  background: rgba(255, 255, 255, 0.05); /* subtle overlay */
+  padding: 3rem 2rem;
+  margin-bottom: 2rem;
+  border-radius: 12px;
+}
+
+#index-content h2 {
+  font-size: 2rem;
+}
+
+#index-content ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+#index-content ul li {
+  margin-bottom: 0.5rem;
+}
+
+#index-content a {
+  font-weight: 500;
+}
+
+#index-content a:hover {
+  text-decoration: underline;
+}
+
+/* ===============================
+   FOOTER
+================================ */
+footer {
+  border-top: 1px solid rgba(31, 42, 68, 0.4);
+  padding: 1rem 2rem;
+  font-size: 0.85rem;
+  text-align: center;
+  color: #d2c8b8;
+}
+
+/* ===============================
+   RESPONSIVE
+================================ */
+@media (max-width: 768px) {
+  #hero h1 { font-size: 2.25rem; }
+  #hero p { font-size: 1rem; }
+  #hero a { padding: 0.5rem 1rem; }
+  nav ul { flex-direction: column; gap: 0.5rem; }
+}
