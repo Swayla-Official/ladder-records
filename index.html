@@ -7,23 +7,16 @@
 
   <style>
     /* ===== GLOBAL RESET ===== */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
 
     body {
       font-family: Georgia, "Times New Roman", serif;
-      background: linear-gradient(180deg, #000000 0%, #0e0e0e 100%);
+      background: linear-gradient(135deg, #0d0d0d, #1a1a1a, #0f0f0f, #1e1e1e);
       color: #f5f5f5;
       line-height: 1.6;
     }
 
-    a {
-      color: #eaeaea;
-      text-decoration: none;
-    }
+    a { color: #f5f5f5; text-decoration: none; }
 
     /* ===== HEADER / LOGO CLOUD ===== */
     header {
@@ -69,55 +62,28 @@
       letter-spacing: 0.05em;
     }
 
-    /* ===== MAIN CONTENT ===== */
     main {
       max-width: 1000px;
       margin: 0 auto;
       padding: 4rem 1.5rem;
     }
 
-    section {
-      margin-bottom: 5rem;
-    }
+    section { margin-bottom: 5rem; }
 
-    h2 {
-      font-size: 1.8rem;
-      margin-bottom: 1rem;
-      font-weight: normal;
-    }
+    h2 { font-size: 1.8rem; margin-bottom: 1rem; font-weight: normal; }
 
-    p {
-      max-width: 640px;
-      opacity: 0.85;
-    }
+    p { max-width: 640px; opacity: 0.85; }
 
-    /* ===== MUSIC SECTION ===== */
-    .music-block {
-      margin-top: 2rem;
-      padding-left: 1rem;
-      border-left: 2px solid rgba(255,255,255,0.2);
-    }
+    .music-block { margin-top: 2rem; padding-left: 1rem; border-left: 2px solid rgba(255,255,255,0.2); }
 
-    .music-block h3 {
-      font-size: 1.3rem;
-      margin-bottom: 0.5rem;
-    }
+    .music-block h3 { font-size: 1.3rem; margin-bottom: 0.5rem; }
 
-    .music-block span {
-      font-size: 0.9rem;
-      opacity: 0.7;
-    }
+    .music-block span { font-size: 0.9rem; opacity: 0.7; }
 
     /* ===== GALLERY CAROUSEL ===== */
-    .carousel {
-      position: relative;
-      max-width: 800px;
-      margin-top: 2rem;
-    }
+    .carousel { position: relative; max-width: 800px; margin-top: 2rem; }
 
-    .carousel input {
-      display: none;
-    }
+    .carousel input { display: none; }
 
     .carousel-images {
       display: flex;
@@ -131,46 +97,17 @@
       transition: transform 0.6s ease;
     }
 
-    #slide1:checked ~ .carousel-images {
-      transform: translateX(0%);
-    }
+    #slide1:checked ~ .carousel-images { transform: translateX(0%); }
+    #slide2:checked ~ .carousel-images { transform: translateX(-100%); }
+    #slide3:checked ~ .carousel-images { transform: translateX(-200%); }
+    #slide4:checked ~ .carousel-images { transform: translateX(-300%); }
+    #slide5:checked ~ .carousel-images { transform: translateX(-400%); }
 
-    #slide2:checked ~ .carousel-images {
-      transform: translateX(-100%);
-    }
+    .carousel-controls { display: flex; justify-content: space-between; margin-top: 0.8rem; font-size: 0.9rem; }
 
-    #slide3:checked ~ .carousel-images {
-      transform: translateX(-200%);
-    }
+    .carousel-controls label { cursor: pointer; opacity: 0.7; }
 
-    #slide4:checked ~ .carousel-images {
-      transform: translateX(-300%);
-    }
-
-    #slide5:checked ~ .carousel-images {
-      transform: translateX(-400%);
-    }
-
-    .carousel-controls {
-      display: flex;
-      justify-content: space-between;
-      margin-top: 0.8rem;
-      font-size: 0.9rem;
-    }
-
-    .carousel-controls label {
-      cursor: pointer;
-      opacity: 0.7;
-    }
-
-    /* ===== FOOTER ===== */
-    footer {
-      padding: 3rem 1rem;
-      text-align: center;
-      font-size: 0.85rem;
-      opacity: 0.6;
-    }
-
+    footer { padding: 3rem 1rem; text-align: center; font-size: 0.85rem; opacity: 0.6; }
   </style>
 </head>
 
@@ -179,78 +116,4 @@
 <header>
   <div class="cloud"></div>
 
-  <!-- Logo (directly in repo root) -->
-  <img src="ladder-logo.png" alt="Ladder Records logo">
-
-  <nav>
-    <a href="music.html">Music</a>
-    <a href="studio.html">Studio</a>
-    <a href="events.html">Events</a>
-    <a href="gallery.html">Gallery</a>
-    <a href="about.html">About</a>
-    <a href="contact.html">Contact</a>
-  </nav>
-</header>
-
-<main>
-
-  <section>
-    <h2>A creative studio, label & collective</h2>
-    <p>
-      Ladder Records is a community-led platform for music, sound and development.
-      We work collaboratively to help artists move forward — one rung at a time.
-    </p>
-  </section>
-
-  <section>
-    <h2>Music</h2>
-
-    <div class="music-block">
-      <h3>Dishy Tangent</h3>
-      <span>Fronted by Reason (Louis Anthony Bowers)</span>
-      <p>
-        Experimental songwriting, production and collaborative releases
-        rooted in lived experience and collective growth.
-      </p>
-    </div>
-  </section>
-
-  <section>
-    <h2>Gallery</h2>
-    <p>Moments from sessions, performances, and community projects.</p>
-
-    <div class="carousel">
-
-      <!-- Controls -->
-      <input type="radio" name="slides" id="slide1" checked>
-      <input type="radio" name="slides" id="slide2">
-      <input type="radio" name="slides" id="slide3">
-      <input type="radio" name="slides" id="slide4">
-      <input type="radio" name="slides" id="slide5">
-
-      <!-- Images -->
-      <div class="carousel-images">
-        <img src="wellingbeerfest2.jpg" alt="Welling Beer Fest 2">
-        <img src="dishytangent3.jpg" alt="Dishy Tangent Live">
-        <img src="wellingbeerfest.jpg" alt="Welling Beer Fest Main Stage">
-        <img src="woha2023.jpg" alt="WOHA 2023 Event">
-        <img src="dishytangentbassment.jpg" alt="Dishy Tangent Bassment Session">
-      </div>
-
-      <!-- Arrows -->
-      <div class="carousel-controls">
-        <label for="slide1">←</label>
-        <label for="slide2">→</label>
-      </div>
-
-    </div>
-  </section>
-
-</main>
-
-<footer>
-  © Ladder Records
-</footer>
-
-</body>
-</html>
+  <!-- Logo in root -
