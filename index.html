@@ -21,35 +21,37 @@
     /* ===== HEADER / LOGO CLOUD ===== */
     header {
       position: relative;
-      padding: 6rem 1rem 4rem;
+      padding: 8rem 1rem 6rem;
       text-align: center;
       overflow: hidden;
     }
 
     .cloud {
       position: absolute;
-      top: 30%;
+      top: 25%;
       left: 50%;
-      width: 400px;
-      height: 120px;
-      background: rgba(255, 255, 255, 0.06);
+      width: 500px;
+      height: 150px;
+      background: rgba(255, 255, 255, 0.12);
       border-radius: 100px;
-      filter: blur(20px);
-      transform: translateX(-50%);
-      animation: float 8s ease-in-out infinite;
+      filter: blur(30px);
+      transform: translateX(-50%) rotate(0deg);
+      animation: floatSwivel 8s ease-in-out infinite;
       z-index: 1;
     }
 
-    @keyframes float {
-      0% { transform: translate(-50%, 0); }
-      50% { transform: translate(-50%, -12px); }
-      100% { transform: translate(-50%, 0); }
+    @keyframes floatSwivel {
+      0% { transform: translateX(-50%) translateY(0) rotate(0deg); }
+      25% { transform: translateX(-50%) translateY(-8px) rotate(2deg); }
+      50% { transform: translateX(-50%) translateY(0) rotate(0deg); }
+      75% { transform: translateX(-50%) translateY(-8px) rotate(-2deg); }
+      100% { transform: translateX(-50%) translateY(0) rotate(0deg); }
     }
 
     header img {
       position: relative;
       z-index: 2;
-      max-width: 220px;
+      max-width: 280px;
       opacity: 0.95;
     }
 
@@ -81,31 +83,31 @@
     .music-block span { font-size: 0.9rem; opacity: 0.7; }
 
     /* ===== GALLERY CAROUSEL ===== */
-    .carousel { position: relative; max-width: 800px; margin-top: 2rem; }
+    .carousel { position: relative; max-width: 800px; margin-top: 2rem; overflow: hidden; }
 
     .carousel input { display: none; }
 
     .carousel-images {
       display: flex;
-      overflow: hidden;
-      border-radius: 6px;
+      transition: transform 0.6s ease;
+      width: 500%; /* 5 images */
     }
 
     .carousel-images img {
-      width: 100%;
+      width: 20%; /* 100 / 5 images */
       flex-shrink: 0;
-      transition: transform 0.6s ease;
     }
 
     #slide1:checked ~ .carousel-images { transform: translateX(0%); }
-    #slide2:checked ~ .carousel-images { transform: translateX(-100%); }
-    #slide3:checked ~ .carousel-images { transform: translateX(-200%); }
-    #slide4:checked ~ .carousel-images { transform: translateX(-300%); }
-    #slide5:checked ~ .carousel-images { transform: translateX(-400%); }
+    #slide2:checked ~ .carousel-images { transform: translateX(-20%); }
+    #slide3:checked ~ .carousel-images { transform: translateX(-40%); }
+    #slide4:checked ~ .carousel-images { transform: translateX(-60%); }
+    #slide5:checked ~ .carousel-images { transform: translateX(-80%); }
 
-    .carousel-controls { display: flex; justify-content: space-between; margin-top: 0.8rem; font-size: 0.9rem; }
+    .carousel-controls { display: flex; justify-content: center; margin-top: 0.8rem; font-size: 1.2rem; gap: 1.5rem; }
 
-    .carousel-controls label { cursor: pointer; opacity: 0.7; }
+    .carousel-controls label { cursor: pointer; opacity: 0.7; transition: opacity 0.3s; }
+    .carousel-controls label:hover { opacity: 1; }
 
     footer { padding: 3rem 1rem; text-align: center; font-size: 0.85rem; opacity: 0.6; }
   </style>
@@ -164,17 +166,20 @@
 
       <!-- Images -->
       <div class="carousel-images">
-        <img src="wellingbeerfest2.jpg" alt="Welling Beer Fest">
+        <img src="wellingbeerfest2.jpg" alt="Welling Beer Fest 2">
         <img src="dishytangent3.jpg" alt="Dishy Tangent Live">
         <img src="wellingbeerfest.jpg" alt="Welling Beer Fest Main Stage">
-        <img src="woha2023.jpg" alt="WOHA 2023">
-        <img src="dishytangentbassment.jpg" alt="Dishy Tangent Bassment Gig">
+        <img src="woha2023.jpg" alt="WOHA 2023 Event">
+        <img src="dishytangentbassment.jpg" alt="Dishy Tangent Bassment Session">
       </div>
 
-      <!-- Arrows -->
+      <!-- Radio Buttons as Labels for Carousel -->
       <div class="carousel-controls">
-        <label for="slide1">←</label>
-        <label for="slide2">→</label>
+        <label for="slide1">●</label>
+        <label for="slide2">●</label>
+        <label for="slide3">●</label>
+        <label for="slide4">●</label>
+        <label for="slide5">●</label>
       </div>
     </div>
   </section>
