@@ -1,125 +1,149 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Ladder Records</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ladder Records</title>
 
-  <style>
-    /* ===== GLOBAL RESET ===== */
-    * { margin: 0; padding: 0; box-sizing: border-box; }
+<style>
+/* ===== GLOBAL ===== */
+* { margin: 0; padding: 0; box-sizing: border-box; }
 
-    body {
-      font-family: Georgia, "Times New Roman", serif;
-      background: linear-gradient(135deg, #0d0d0d, #1a1a1a, #0f0f0f, #1e1e1e);
-      color: #f5f5f5;
-      line-height: 1.6;
-    }
+body {
+  font-family: Georgia, "Times New Roman", serif;
+  background: linear-gradient(135deg, #0d0d0d, #1a1a1a, #0f0f0f, #1e1e1e);
+  color: #f5f5f5;
+  overflow-x: hidden;
+}
 
-    a { color: #f5f5f5; text-decoration: none; }
+a { color: #f5f5f5; text-decoration: none; }
 
-    /* ===== HEADER / LOGO CLOUD ===== */
-    header {
-      position: relative;
-      padding: 8rem 1rem 6rem;
-      text-align: center;
-      overflow: hidden;
-    }
+header {
+  position: relative;
+  text-align: center;
+  padding: 6rem 1rem 4rem;
+  overflow: visible;
+}
 
-    .cloud {
-      position: absolute;
-      top: 25%;
-      left: 50%;
-      width: 500px;
-      height: 150px;
-      background: rgba(255, 255, 255, 0.12);
-      border-radius: 100px;
-      filter: blur(30px);
-      transform: translateX(-50%) rotate(0deg);
-      animation: floatSwivel 8s ease-in-out infinite;
-      z-index: 1;
-    }
+header img {
+  max-width: 320px;
+  z-index: 2;
+  position: relative;
+}
 
-    @keyframes floatSwivel {
-      0% { transform: translateX(-50%) translateY(0) rotate(0deg); }
-      25% { transform: translateX(-50%) translateY(-8px) rotate(2deg); }
-      50% { transform: translateX(-50%) translateY(0) rotate(0deg); }
-      75% { transform: translateX(-50%) translateY(-8px) rotate(-2deg); }
-      100% { transform: translateX(-50%) translateY(0) rotate(0deg); }
-    }
+/* ===== CLOUDS ===== */
+.cloud {
+  position: absolute;
+  top: 0;
+  width: 200px;
+  height: 80px;
+  background: rgba(255,255,255,0.12);
+  border-radius: 50%;
+  filter: blur(25px);
+  animation: floatCloud linear infinite;
+}
 
-    header img {
-      position: relative;
-      z-index: 2;
-      max-width: 280px;
-      opacity: 0.95;
-    }
+@keyframes floatCloud {
+  0% { transform: translateX(-250px) translateY(0) scale(1) rotate(0deg); opacity: 0.15;}
+  50% { transform: translateX(100vw) translateY(20px) scale(1.1) rotate(2deg); opacity: 0.2;}
+  100% { transform: translateX(-250px) translateY(0) scale(1) rotate(0deg); opacity: 0.15;}
+}
 
-    nav {
-      margin-top: 2.5rem;
-      display: flex;
-      justify-content: center;
-      gap: 1.5rem;
-      font-size: 0.95rem;
-      letter-spacing: 0.05em;
-    }
+/* ===== NAVIGATION ===== */
+nav {
+  margin-top: 2.5rem;
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  font-size: 0.95rem;
+  letter-spacing: 0.05em;
+}
 
-    main {
-      max-width: 1000px;
-      margin: 0 auto;
-      padding: 4rem 1.5rem;
-    }
+/* ===== MAIN CONTENT ===== */
+main {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 4rem 1.5rem;
+}
 
-    section { margin-bottom: 5rem; }
+section { margin-bottom: 5rem; }
 
-    h2 { font-size: 1.8rem; margin-bottom: 1rem; font-weight: normal; }
+h2 { font-size: 1.8rem; margin-bottom: 1rem; font-weight: normal; }
 
-    p { max-width: 640px; opacity: 0.85; }
+p { max-width: 640px; opacity: 0.85; }
 
-    .music-block { margin-top: 2rem; padding-left: 1rem; border-left: 2px solid rgba(255,255,255,0.2); }
+.music-block { margin-top: 2rem; padding-left: 1rem; border-left: 2px solid rgba(255,255,255,0.2); }
 
-    .music-block h3 { font-size: 1.3rem; margin-bottom: 0.5rem; }
+.music-block h3 { font-size: 1.3rem; margin-bottom: 0.5rem; }
 
-    .music-block span { font-size: 0.9rem; opacity: 0.7; }
+.music-block span { font-size: 0.9rem; opacity: 0.7; }
 
-    /* ===== GALLERY CAROUSEL ===== */
-    .carousel { position: relative; max-width: 800px; margin-top: 2rem; overflow: hidden; }
+/* ===== GALLERY CAROUSEL ===== */
+.carousel {
+  position: relative;
+  max-width: 800px;
+  margin: 2rem auto;
+  perspective: 1000px;
+}
 
-    .carousel input { display: none; }
+.carousel-track {
+  display: flex;
+  transition: transform 0.8s ease-in-out;
+  transform-style: preserve-3d;
+}
 
-    .carousel-images {
-      display: flex;
-      transition: transform 0.6s ease;
-      width: 500%; /* 5 images */
-    }
+.carousel-track img {
+  width: 180px;
+  height: 120px;
+  object-fit: cover;
+  margin: 0 10px;
+  border-radius: 6px;
+  transition: transform 0.8s ease, opacity 0.8s ease;
+  opacity: 0.5;
+  cursor: pointer;
+}
 
-    .carousel-images img {
-      width: 20%; /* 100 / 5 images */
-      flex-shrink: 0;
-    }
+.carousel-track img.active {
+  transform: scale(1.2);
+  opacity: 1;
+}
 
-    #slide1:checked ~ .carousel-images { transform: translateX(0%); }
-    #slide2:checked ~ .carousel-images { transform: translateX(-20%); }
-    #slide3:checked ~ .carousel-images { transform: translateX(-40%); }
-    #slide4:checked ~ .carousel-images { transform: translateX(-60%); }
-    #slide5:checked ~ .carousel-images { transform: translateX(-80%); }
+/* ===== BUTTONS ===== */
+.carousel-buttons {
+  text-align: center;
+  margin-top: 0.8rem;
+}
 
-    .carousel-controls { display: flex; justify-content: center; margin-top: 0.8rem; font-size: 1.2rem; gap: 1.5rem; }
+.carousel-buttons button {
+  background: none;
+  border: none;
+  color: #f5f5f5;
+  font-size: 1.2rem;
+  margin: 0 5px;
+  cursor: pointer;
+  opacity: 0.6;
+}
 
-    .carousel-controls label { cursor: pointer; opacity: 0.7; transition: opacity 0.3s; }
-    .carousel-controls label:hover { opacity: 1; }
+.carousel-buttons button.active {
+  opacity: 1;
+}
 
-    footer { padding: 3rem 1rem; text-align: center; font-size: 0.85rem; opacity: 0.6; }
-  </style>
+/* ===== FOOTER ===== */
+footer { padding: 3rem 1rem; text-align: center; font-size: 0.85rem; opacity: 0.6; }
+
+</style>
 </head>
 
 <body>
 
 <header>
-  <div class="cloud"></div>
+  <!-- Clouds -->
+  <div class="cloud" style="animation-duration: 30s; top: 10px; left: -200px;"></div>
+  <div class="cloud" style="animation-duration: 40s; top: 40px; left: -300px;"></div>
+  <div class="cloud" style="animation-duration: 50s; top: 70px; left: -250px;"></div>
 
-  <!-- Logo in root -->
-  <img src="ladder-logo.png" alt="Ladder Records logo">
+  <!-- Logo -->
+  <img src="ladder-logo.png" alt="Ladder Records Logo">
 
   <nav>
     <a href="music.html">Music</a>
@@ -154,41 +178,59 @@
 
   <section>
     <h2>Gallery</h2>
-    <p>Moments from sessions, performances, and community projects.</p>
-
     <div class="carousel">
-      <!-- Controls -->
-      <input type="radio" name="slides" id="slide1" checked>
-      <input type="radio" name="slides" id="slide2">
-      <input type="radio" name="slides" id="slide3">
-      <input type="radio" name="slides" id="slide4">
-      <input type="radio" name="slides" id="slide5">
-
-      <!-- Images -->
-      <div class="carousel-images">
-        <img src="wellingbeerfest2.jpg" alt="Welling Beer Fest 2">
+      <div class="carousel-track">
+        <img src="wellingbeerfest2.jpg" alt="Welling Beer Fest 2" class="active">
         <img src="dishytangent3.jpg" alt="Dishy Tangent Live">
         <img src="wellingbeerfest.jpg" alt="Welling Beer Fest Main Stage">
         <img src="woha2023.jpg" alt="WOHA 2023 Event">
         <img src="dishytangentbassment.jpg" alt="Dishy Tangent Bassment Session">
       </div>
-
-      <!-- Radio Buttons as Labels for Carousel -->
-      <div class="carousel-controls">
-        <label for="slide1">●</label>
-        <label for="slide2">●</label>
-        <label for="slide3">●</label>
-        <label for="slide4">●</label>
-        <label for="slide5">●</label>
+      <div class="carousel-buttons">
+        <button class="active" data-index="0">●</button>
+        <button data-index="1">●</button>
+        <button data-index="2">●</button>
+        <button data-index="3">●</button>
+        <button data-index="4">●</button>
       </div>
     </div>
   </section>
-
 </main>
 
 <footer>
   © Ladder Records
 </footer>
+
+<script>
+// ===== CAROUSEL JS =====
+const track = document.querySelector('.carousel-track');
+const images = Array.from(track.children);
+const buttons = document.querySelectorAll('.carousel-buttons button');
+let currentIndex = 0;
+
+function updateCarousel(index) {
+  images.forEach((img, i) => img.classList.remove('active'));
+  buttons.forEach((btn) => btn.classList.remove('active'));
+  images[index].classList.add('active');
+  buttons[index].classList.add('active');
+
+  const offset = (track.clientWidth / images.length) * index;
+  track.style.transform = `translateX(-${offset}px)`;
+}
+
+buttons.forEach(btn => {
+  btn.addEventListener('click', () => {
+    currentIndex = parseInt(btn.dataset.index);
+    updateCarousel(currentIndex);
+  });
+});
+
+// Auto rotation every 8 seconds
+setInterval(() => {
+  currentIndex = (currentIndex + 1) % images.length;
+  updateCarousel(currentIndex);
+}, 8000);
+</script>
 
 </body>
 </html>
