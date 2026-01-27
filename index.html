@@ -1,228 +1,196 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Ladder Records</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<title>Ladder Records</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <style>
-    /* ===== RESET ===== */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: "Helvetica Neue", Arial, sans-serif;
-    }
+<style>
+/* ===== RESET ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Helvetica, Arial, sans-serif;
+}
 
-    body {
-      background: linear-gradient(
-        180deg,
-        #000000 0%,
-        #0b0b0b 35%,
-        #050505 65%,
-        #000000 100%
-      );
-      color: #f2f2f2;
-      overflow-x: hidden;
-    }
+body {
+  background: linear-gradient(180deg, #000000, #0b0b0b, #000000);
+  color: #f2f2f2;
+  overflow-x: hidden;
+}
 
-    a {
-      text-decoration: none;
-    }
+/* ===== HEADER / HERO ===== */
+header {
+  position: relative;
+  height: 80vh;
+  text-align: center;
+  overflow: hidden;
+  z-index: 10;
+}
 
-    /* ===== HEADER ===== */
-    header {
-      position: relative;
-      height: 75vh;
-      text-align: center;
-      overflow: hidden;
-    }
+.logo {
+  max-width: 560px;
+  margin-top: 6rem;
+  position: relative;
+  z-index: 6;
+}
 
-    /* LOGO */
-    .logo {
-      position: relative;
-      z-index: 6;
-      max-width: 520px;
-      margin-top: 6.5rem;
-    }
+/* SOLID CLOUD BEHIND LOGO */
+.hero-cloud {
+  position: absolute;
+  top: 48%;
+  left: 50%;
+  width: 640px;
+  height: 240px;
+  background: white;
+  border-radius: 50%;
+  filter: blur(45px);
+  transform: translate(-50%, -50%);
+  z-index: 2;
+}
 
-    /* TAGLINE */
-    .tagline {
-      position: relative;
-      z-index: 6;
-      margin-top: 1.5rem;
-      font-size: 0.95rem;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      opacity: 0.85;
-      line-height: 1.6;
-    }
+/* FLOATING CLOUDS */
+.cloud {
+  position: absolute;
+  width: 480px;
+  height: 180px;
+  background: rgba(255, 255, 255, 0.35);
+  border-radius: 50%;
+  filter: blur(60px);
+  animation: drift linear infinite;
+  z-index: 1;
+}
 
-    .tagline span {
-      display: block;
-      margin-top: 0.4rem;
-      font-size: 0.9rem;
-      letter-spacing: 0.12em;
-      opacity: 0.9;
-    }
+.cloud.a { top: 8%; animation-duration: 120s; }
+.cloud.b { top: 22%; animation-duration: 90s; }
+.cloud.c { top: 36%; animation-duration: 70s; }
 
-    /* HERO CLOUD */
-    .hero-cloud {
-      position: absolute;
-      top: 46%;
-      left: 50%;
-      width: 600px;
-      height: 220px;
-      background: white;
-      border-radius: 50%;
-      filter: blur(45px);
-      transform: translate(-50%, -50%);
-      z-index: 3;
-      opacity: 0.95;
-    }
+@keyframes drift {
+  from { transform: translateX(-600px); }
+  to { transform: translateX(120vw); }
+}
 
-    /* FLOATING CLOUDS */
-    .cloud {
-      position: absolute;
-      width: 420px;
-      height: 180px;
-      background: rgba(255,255,255,0.25);
-      border-radius: 50%;
-      filter: blur(55px);
-      animation: drift linear infinite;
-    }
+/* TAGLINE */
+.tagline {
+  margin-top: 1.6rem;
+  font-size: 0.95rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  opacity: 0.85;
+  position: relative;
+  z-index: 6;
+}
 
-    .cloud.back { top: 8%; opacity: 0.18; animation-duration: 120s; }
-    .cloud.mid  { top: 22%; opacity: 0.28; animation-duration: 90s; }
-    .cloud.front{ top: 35%; opacity: 0.35; animation-duration: 70s; }
+/* NAVIGATION */
+nav {
+  margin-top: 3rem;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  position: relative;
+  z-index: 6;
+}
 
-    @keyframes drift {
-      from { transform: translateX(-500px); }
-      to   { transform: translateX(120vw); }
-    }
+nav a {
+  background: linear-gradient(
+    180deg,
+    rgba(255,255,255,0.95),
+    rgba(255,255,255,0.75)
+  );
+  color: #000;
+  padding: 0.8rem 1.5rem;
+  border-radius: 8px;
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+}
 
-    /* ===== NAVIGATION ===== */
-    nav {
-      margin-top: 2.8rem;
-      position: relative;
-      z-index: 6;
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 1rem;
-    }
+/* ===== MAIN CONTENT ===== */
+main {
+  position: relative;
+  z-index: 1;
+  padding-top: 6rem; /* PUSHES CONTENT DOWN */
+}
 
-    nav a {
-      background: linear-gradient(
-        180deg,
-        rgba(255,255,255,0.95),
-        rgba(255,255,255,0.75)
-      );
-      color: #000;
-      padding: 0.75rem 1.3rem;
-      border-radius: 8px;
-      font-size: 0.8rem;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      box-shadow:
-        0 8px 20px rgba(0,0,0,0.35),
-        inset 0 1px 0 rgba(255,255,255,0.8);
-      transition: all 0.25s ease;
-    }
+/* INTRO */
+.intro {
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto 5rem;
+  padding: 0 2rem;
+}
 
-    nav a:hover {
-      transform: translateY(-2px);
-      box-shadow:
-        0 12px 30px rgba(0,0,0,0.45),
-        inset 0 1px 0 rgba(255,255,255,0.9);
-    }
+.intro h2 {
+  font-weight: normal;
+  letter-spacing: 0.12em;
+  margin-bottom: 1.5rem;
+}
 
-    /* ===== GALLERY ===== */
-    .gallery-wrapper {
-      position: relative;
-      width: 100%;
-      margin: 4rem auto;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 1.5rem;
-    }
+.intro p {
+  opacity: 0.8;
+  line-height: 1.7;
+}
 
-    .arrow {
-      font-size: 2.4rem;
-      cursor: pointer;
-      opacity: 0.7;
-      user-select: none;
-    }
+/* ===== GALLERY ===== */
+.gallery {
+  margin-top: 6rem; /* IMPORTANT: moves gallery lower */
+  padding-bottom: 4rem;
+}
 
-    .arrow:hover {
-      opacity: 1;
-    }
+.gallery-track {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  align-items: center;
+}
 
-    .gallery {
-      display: flex;
-      gap: 2rem;
-      overflow: hidden;
-      max-width: 90vw;
-      align-items: center;
-      justify-content: center;
-    }
+.gallery img {
+  width: 260px;
+  height: auto;
+  opacity: 0.5;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
 
-    .gallery img {
-      height: 220px;
-      object-fit: contain;
-      opacity: 0.35;
-      transform: scale(0.85);
-      transition: all 0.5s ease;
-      cursor: pointer;
-    }
+.gallery img.active {
+  width: 360px;
+  opacity: 1;
+}
 
-    .gallery img.active {
-      height: 280px;
-      opacity: 1;
-      transform: scale(1);
-    }
+.gallery-controls {
+  text-align: center;
+  margin-top: 2rem;
+}
 
-    /* LIGHTBOX */
-    .lightbox {
-      position: fixed;
-      inset: 0;
-      background: rgba(0,0,0,0.9);
-      display: none;
-      align-items: center;
-      justify-content: center;
-      z-index: 20;
-    }
-
-    .lightbox img {
-      max-width: 90%;
-      max-height: 90%;
-    }
-  </style>
+.gallery-controls button {
+  background: none;
+  border: 1px solid rgba(255,255,255,0.4);
+  color: white;
+  padding: 0.5rem 1rem;
+  margin: 0 0.5rem;
+  cursor: pointer;
+}
+</style>
 </head>
 
 <body>
 
 <header>
-
-  <!-- CLOUD LAYERS -->
-  <div class="cloud back"></div>
-  <div class="cloud mid"></div>
-  <div class="cloud front"></div>
-
-  <!-- HERO CLOUD -->
+  <div class="cloud a"></div>
+  <div class="cloud b"></div>
+  <div class="cloud c"></div>
   <div class="hero-cloud"></div>
 
-  <!-- LOGO -->
   <img src="ladder-logo.png" alt="Ladder Records" class="logo">
 
-  <!-- TAGLINE -->
   <p class="tagline">
-    A creative studio, label and artist collective
-    <span>Led by composer & producer Louis Anthony Bowers</span>
+    A creative studio, label & artist collective<br>
+    We can get you to the next rung of the ladder
   </p>
 
-  <!-- NAV -->
   <nav>
     <a href="index.html">Home</a>
     <a href="music.html">Music</a>
@@ -233,63 +201,18 @@
     <a href="gallery.html">Gallery</a>
     <a href="contact.html">Contact</a>
   </nav>
-
 </header>
 
-<!-- ===== GALLERY ===== -->
-<section class="gallery-wrapper">
-  <div class="arrow" onclick="prevImage()">‹</div>
+<main>
 
-  <div class="gallery" id="gallery">
-    <img src="wellingbeerfest2.jpg" class="active">
-    <img src="dishytangent3.jpg">
-    <img src="wellingbeerfest.jpg">
-    <img src="woha2023.jpg">
-    <img src="dishytangentbassment.jpg">
-  </div>
+  <section class="intro">
+    <h2>Welcome to Ladder Records</h2>
+    <p>
+      Ladder Records is a multidisciplinary music collective supporting artists
+      through writing, recording, rehearsal, production, performance and release.
+    </p>
+  </section>
 
-  <div class="arrow" onclick="nextImage()">›</div>
-</section>
-
-<!-- LIGHTBOX -->
-<div class="lightbox" id="lightbox">
-  <img src="" alt="">
-</div>
-
-<script>
-  const images = document.querySelectorAll(".gallery img");
-  let current = 0;
-
-  function updateGallery() {
-    images.forEach((img, i) => {
-      img.classList.toggle("active", i === current);
-    });
-  }
-
-  function nextImage() {
-    current = (current + 1) % images.length;
-    updateGallery();
-  }
-
-  function prevImage() {
-    current = (current - 1 + images.length) % images.length;
-    updateGallery();
-  }
-
-  const lightbox = document.getElementById("lightbox");
-  const lightboxImg = lightbox.querySelector("img");
-
-  images.forEach(img => {
-    img.addEventListener("click", () => {
-      lightboxImg.src = img.src;
-      lightbox.style.display = "flex";
-    });
-  });
-
-  lightbox.addEventListener("click", () => {
-    lightbox.style.display = "none";
-  });
-</script>
-
-</body>
-</html>
+  <section class="gallery">
+    <div class="gallery-track">
+      <img
