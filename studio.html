@@ -5,127 +5,296 @@
   <title>Studio — Ladder Records</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <!-- =========================
+       EMBEDDED PAGE STYLES
+       ========================= -->
   <style>
-    * { margin:0; padding:0; box-sizing:border-box; font-family: Arial, Helvetica, sans-serif; }
+    /* Reset browser defaults */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, Helvetica, sans-serif;
+    }
 
     body {
       background: linear-gradient(180deg, #000000 0%, #0a0a0a 40%, #050505 70%, #000000 100%);
       color: #f2f2f2;
-      line-height:1.6;
+      line-height: 1.6;
     }
 
-    a { color:#fff; text-decoration:none; }
+    a {
+      color: #ffffff;
+      text-decoration: none;
+    }
 
-    main { padding: 4rem 8vw; }
-    section { margin-bottom:6rem; }
-
-    h1,h2,h3 { font-weight:500; margin-bottom:1rem; }
-    h1 { font-size:2.6rem; }
-    h2 { font-size:2rem; }
-    h3 { font-size:1.2rem; }
-
-    p { max-width:720px; color:#ccc; margin-bottom:1.2rem; font-size:0.95rem; }
-
+    /* Header / navigation */
     header {
-      position: sticky; top:0; z-index:999;
-      background: rgba(0,0,0,0.95); padding:1rem 8vw;
-      display:flex; justify-content:flex-start; gap:2rem;
-      border-bottom:1px solid #333;
+      background: #111;
+      padding: 1rem 8vw;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
     }
-    header a { font-weight:500; }
-    header a:hover { text-decoration: underline; color:#f0f0f0; }
 
-    .timeline { border-left:2px solid #333; padding-left:2rem; }
-    .timeline-item { margin-bottom:2.5rem; }
-    .timeline-item span { display:block; color:#999; font-size:0.85rem; margin-bottom:0.4rem; }
+    header h1 {
+      font-size: 2rem;
+    }
 
+    nav a {
+      margin-left: 2rem;
+      color: #fff;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    main {
+      padding: 4rem 8vw;
+    }
+
+    section {
+      margin-bottom: 6rem;
+    }
+
+    h1, h2, h3 {
+      font-weight: 500;
+      margin-bottom: 1rem;
+    }
+
+    h1 { font-size: 2.4rem; }
+    h2 { font-size: 1.8rem; }
+    h3 { font-size: 1.2rem; }
+
+    p {
+      max-width: 720px;
+      color: #cccccc;
+      margin-bottom: 1.2rem;
+      font-size: 0.95rem;
+    }
+
+    /* Timeline */
+    .timeline {
+      border-left: 2px solid #333;
+      padding-left: 2rem;
+    }
+
+    .timeline-item {
+      margin-bottom: 2.5rem;
+    }
+
+    .timeline-item span {
+      display: block;
+      color: #999;
+      font-size: 0.85rem;
+      margin-bottom: 0.4rem;
+    }
+
+    /* Works grid */
     .works-grid {
-      display:grid;
+      display: grid;
       grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-      gap:2rem;
-      margin-top:3rem;
+      gap: 1.5rem;
+      margin-top: 3rem;
     }
 
-    .work-item { position:relative; overflow:hidden; border-radius:6px; }
-    .work-item img { width:100%; display:block; transition: transform 0.35s ease; cursor:pointer; }
-    .work-item:hover img { transform: scale(1.06); }
-    .work-caption {
-      position:absolute; bottom:0; width:100%; padding:0.6rem;
-      background: rgba(0,0,0,0.65); font-size:0.85rem; opacity:0; transition: opacity 0.3s ease;
+    .work-item {
+      position: relative;
+      overflow: hidden;
+      border-radius: 6px;
     }
-    .work-item:hover .work-caption { opacity:1; }
+
+    .work-item img {
+      width: 100%;
+      display: block;
+      transition: transform 0.35s ease;
+    }
+
+    .work-item:hover img {
+      transform: scale(1.06);
+    }
+
+    .work-caption {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      padding: 0.6rem;
+      background: rgba(0, 0, 0, 0.65);
+      font-size: 0.85rem;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .work-item:hover .work-caption {
+      opacity: 1;
+    }
+
   </style>
 </head>
 
 <body>
 
-<header>
-  <a href="index.html">Home</a>
-  <a href="gallery.html">Gallery</a>
-  <a href="booking.html">Booking</a>
-  <a href="contact.html">Contact</a>
-  <a href="studio.html">Studio</a>
-</header>
+  <!-- =========================
+       HEADER / NAVIGATION
+       ========================= -->
+  <header>
+    <h1><a href="index.html">Ladder Records</a></h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="music.html">Music</a>
+      <a href="studio.html">Studio</a>
+      <a href="events.html">Events</a>
+      <a href="bookings.html">Bookings</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
 
-<main>
+  <main>
 
-<section>
-  <h1><a href="index.html" style="color:inherit; text-decoration:none;">Muscle Memory Musik Studio</a></h1>
-  <p>Founded in 2005, Muscle Memory Musik Studio has grown from a hands-on creative space to a thriving artist development hub. From live recording to producing full albums, we support artists at all stages of their journey.</p>
-</section>
+    <!-- =========================
+         STUDIO INTRO
+         ========================= -->
+    <section>
+      <h1>Muscle Memory Musik Studio</h1>
+      <p>
+        Muscle Memory Musik is an independent recording studio founded in 2005.
+        Built and rebuilt over time, the studio has evolved through movement,
+        collaboration, and hands-on creative work.
+      </p>
+      <p>
+        More than a recording space, the studio functions as a development hub —
+        supporting artists, producers, and collectives at different stages of
+        their journey.
+      </p>
+    </section>
 
-<section>
-  <h2>Studio History</h2>
-  <div class="timeline">
-    <div class="timeline-item"><span>2005</span><p>Muscle Memory Musik Studio is founded and built from the ground up.</p></div>
-    <div class="timeline-item"><span>Early Foundations</span><p>Producer <strong>Young Max</strong> becomes a pivotal early collaborator.</p></div>
-    <div class="timeline-item"><span>2012</span><p><strong>Dishy Tangent</strong> is formed by Reason and Matt Shilk.</p></div>
-    <div class="timeline-item"><span>2014</span><p><strong>Sing Out Loud Sundays</strong> founded by RM Moses. Studio becomes HQ.</p></div>
-    <div class="timeline-item"><span>2019</span><p>Collaborations with <strong>Swayla</strong> and others begin.</p></div>
-    <div class="timeline-item"><span>Present</span><p><strong>Ladder Records</strong> collective emerges.</p></div>
-  </div>
-</section>
+    <!-- =========================
+         STUDIO TIMELINE
+         ========================= -->
+    <section>
+      <h2>Studio History</h2>
 
-<section>
-  <h2>Dishy Tangent</h2>
-  <p>Dishy Tangent blends live instrumentation with modern production. Recent releases include <em>Clear</em> (2021) and <em>W.I.L.D.</em> (2022).</p>
-</section>
+      <div class="timeline">
 
-<section>
-  <h2>Selected Works</h2>
-  <div class="works-grid">
+        <div class="timeline-item">
+          <span>2005</span>
+          <p>Muscle Memory Musik Studio is founded. Built from the ground up with creative freedom at the core.</p>
+        </div>
 
-    <!-- DISHY TANGENT -->
-    <div class="work-item"><a href="https://open.spotify.com/artist/4wHktrLkXSN81dnmaKbhSz" target="_blank"><img src="better-than-me-dishy-tangent.jpg"><div class="work-caption">Better Than Me · Dishy Tangent</div></a></div>
-    <div class="work-item"><a href="https://open.spotify.com/artist/4wHktrLkXSN81dnmaKbhSz" target="_blank"><img src="clear-dishy-tangent.jpg"><div class="work-caption">Clear · Dishy Tangent</div></a></div>
-    <div class="work-item"><a href="https://open.spotify.com/artist/4wHktrLkXSN81dnmaKbhSz" target="_blank"><img src="getting-by-dishy-tangent.jpg"><div class="work-caption">Getting By · Dishy Tangent</div></a></div>
-    <div class="work-item"><a href="https://open.spotify.com/artist/4wHktrLkXSN81dnmaKbhSz" target="_blank"><img src="here-we-go-dishy-tangent.jpg"><div class="work-caption">Here We Go Again · Dishy Tangent</div></a></div>
-    <div class="work-item"><a href="https://open.spotify.com/artist/4wHktrLkXSN81dnmaKbhSz" target="_blank"><img src="i-got-u-dishy-tangent.png"><div class="work-caption">I Got U · Dishy Tangent</div></a></div>
-    <div class="work-item"><a href="https://open.spotify.com/artist/4wHktrLkXSN81dnmaKbhSz" target="_blank"><img src="thefi5th-dishy-tangent.jpg"><div class="work-caption">The Fi5th · Dishy Tangent</div></a></div>
-    <div class="work-item"><a href="https://open.spotify.com/artist/4wHktrLkXSN81dnmaKbhSz" target="_blank"><img src="timeless-music-dishy-tangent.jpg"><div class="work-caption">Timeless Music · Dishy Tangent</div></a></div>
-    <div class="work-item"><a href="https://open.spotify.com/artist/4wHktrLkXSN81dnmaKbhSz" target="_blank"><img src="wild-dishy-tangent.jpg"><div class="work-caption">W.I.L.D. · Dishy Tangent</div></a></div>
-    <div class="work-item"><img src="Dishy Tangent - Timeless Music.pdf"><div class="work-caption">Timeless Music PDF</div></div>
-    <div class="work-item"><img src="dishy-logo.pdf"><div class="work-caption">Dishy Tangent Logo PDF</div></div>
-    <div class="work-item"><img src="contigo.jpg"><div class="work-caption">Contigo</div></div>
-    <div class="work-item"><img src="jotbw-dishy-tangent.jpg"><div class="work-caption">JOTBW</div></div>
-    <div class="work-item"><img src="hartman-reason.jpg"><div class="work-caption">Hartman Reason</div></div>
+        <div class="timeline-item">
+          <span>Early Foundations</span>
+          <p>Producers & Engineers <strong>Young Max, <strong>Del aka Sonic</strong> were pivotal in early collaborations and formed the initial trio of producers and engineers of Muscle Memory Studio alongside <strong>Louis aka Reason</strong>..</p>
+        </div>
 
-    <!-- OTHER ARTISTS -->
-    <div class="work-item"><img src="mostwanted2.jpg"><div class="work-caption">Mostwanted2 · 2021</div></div>
-    <div class="work-item"><img src="mostwanted2-rentfree.jpg"><div class="work-caption">Rent Free · Mostwanted2</div></div>
-    <div class="work-item"><img src="mostwanted2-wideawake.jpg"><div class="work-caption">Wide Awake · Mostwanted2</div></div>
-    <div class="work-item"><img src="tia-neverland.jpg"><div class="work-caption">Tia Pearman · 2022</div></div>
-    <div class="work-item"><img src="tia-memories.jpg"><div class="work-caption">Tia Pearman Memories</div></div>
-    <div class="work-item"><img src="tiapearman.jpg"><div class="work-caption">Tia Pearman</div></div>
-    <div class="work-item"><img src="tiapearmanxmas.png"><div class="work-caption">Tia Pearman Xmas</div></div>
-    <div class="work-item"><img src="serena2.jpg"><div class="work-caption">Serena Dench</div></div>
-    <div class="work-item"><img src="serenadench.jpg"><div class="work-caption">Serena Dench</div></div>
-    <div class="work-item"><img src="look-away-serena-dench.jpeg"><div class="work-caption">Look Away · Serena Dench</div></div>
-    <div class="work-item"><img src="smoothvee.jpg"><div class="work-caption">Smoothvee</div></div>
+        <div class="timeline-item">
+          <span>2012</span>
+          <p><strong>Dishy Tangent</strong> is formed by Reason and Matt Shilk.</p>
+        </div>
 
-  </div>
-</section>
+        <div class="timeline-item">
+          <span>2014</span>
+          <p><strong>Sing Out Loud Sundays</strong> is founded by RM Moses. The studio becomes HQ for rehearsals and filmed sessions.</p>
+        </div>
 
-</main>
+        <div class="timeline-item">
+          <span>2019</span>
+          <p>Collaboration with <strong>Swayla</strong> begins, marking a new wave of UKG and electronic productions.</p>
+        </div>
+
+        <div class="timeline-item">
+          <span>Present</span>
+          <p>Ladder Records emerges as a collective from this ecosystem of artists and studio projects.</p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- =========================
+         SELECTED WORKS
+         ========================= -->
+    <section>
+      <h2>Selected Works</h2>
+      <p>A curated selection of releases shaped by the Muscle Memory Musik studio environment.</p>
+
+      <div class="works-grid">
+
+        <!-- Dishy Tangent -->
+        <div class="work-item">
+          <a href="https://open.spotify.com/artist/4wHktrLkXSN81dnmaKbhSz" target="_blank">
+            <img src="better-than-me-dishy-tangent.jpg" alt="Better Than Me - Dishy Tangent">
+            <div class="work-caption">Better Than Me · Dishy Tangent</div>
+          </a>
+        </div>
+
+        <div class="work-item">
+          <a href="https://open.spotify.com/artist/4wHktrLkXSN81dnmaKbhSz" target="_blank">
+            <img src="clear-dishy-tangent.jpg" alt="Clear - Dishy Tangent">
+            <div class="work-caption">Clear · Dishy Tangent</div>
+          </a>
+        </div>
+
+        <div class="work-item">
+          <a href="https://open.spotify.com/artist/4wHktrLkXSN81dnmaKbhSz" target="_blank">
+            <img src="timeless-music-dishy-tangent.jpg" alt="Timeless Music - Dishy Tangent">
+            <div class="work-caption">Timeless Music · Dishy Tangent</div>
+          </a>
+        </div>
+
+        <div class="work-item">
+          <a href="https://open.spotify.com/artist/4wHktrLkXSN81dnmaKbhSz" target="_blank">
+            <img src="wild-dishy-tangent.jpg" alt="Wild - Dishy Tangent">
+            <div class="work-caption">W.I.L.D. · Dishy Tangent</div>
+          </a>
+        </div>
+
+        <div class="work-item">
+          <img src="mostwanted2.jpg" alt="Mostwanted2">
+          <div class="work-caption">Mostwanted2 · 2021</div>
+        </div>
+
+        <div class="work-item">
+          <img src="mostwanted2-rentfree.jpg" alt="Mostwanted2 Rent Free">
+          <div class="work-caption">Mostwanted2 · Rent Free</div>
+        </div>
+
+        <div class="work-item">
+          <img src="mostwanted2-wideawake.jpg" alt="Mostwanted2 Wide Awake">
+          <div class="work-caption">Mostwanted2 · Wide Awake</div>
+        </div>
+
+        <div class="work-item">
+          <img src="tia-neverland.jpg" alt="Tia Pearman - Neverland">
+          <div class="work-caption">Tia Pearman · Neverland · 2022</div>
+        </div>
+
+        <div class="work-item">
+          <img src="tiapearmanxmas.png" alt="Tia Pearman - This Christmas">
+          <div class="work-caption">Tia Pearman · This Christmas · 2022</div>
+        </div>
+
+        <div class="work-item">
+          <img src="serena2.jpg" alt="Serena Dench">
+          <div class="work-caption">Serena Dench · 2017</div>
+        </div>
+
+        <div class="work-item">
+          <img src="thefi5th-dishy-tangent.jpg" alt="The Fi5th - Dishy Tangent">
+          <div class="work-caption">The Fi5th · Dishy Tangent</div>
+        </div>
+
+        <div class="work-item">
+          <img src="hartman-reason.jpg" alt="Darren Hartman">
+          <div class="work-caption">Darren Hartman</div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
 </body>
 </html>
