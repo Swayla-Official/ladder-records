@@ -7,185 +7,173 @@
 
   <style>
     /* Reset */
-    * { margin: 0; padding: 0; box-sizing: border-box; font-family: Arial, Helvetica, sans-serif; }
+    * { margin:0; padding:0; box-sizing:border-box; font-family: Arial, Helvetica, sans-serif; }
 
     body {
       background: linear-gradient(180deg, #000000 0%, #0a0a0a 40%, #050505 70%, #000000 100%);
       color: #f2f2f2;
-      line-height: 1.6;
+      line-height:1.6;
     }
+
+    a { color:#fff; text-decoration:none; }
 
     main { padding: 4rem 8vw; }
 
-    section { margin-bottom: 6rem; }
+    section { margin-bottom:6rem; }
 
-    h1 { font-size: 2.6rem; font-weight: 500; margin-bottom: 1rem; }
-    h2 { font-size: 2rem; font-weight: 500; margin-bottom: 1rem; }
-    h3 { font-size: 1.2rem; font-weight: 500; margin-bottom: 1rem; }
+    h1,h2,h3 { font-weight:500; margin-bottom:1rem; }
+    h1 { font-size:2.6rem; }
+    h2 { font-size:2rem; }
+    h3 { font-size:1.2rem; }
 
-    p { max-width: 720px; color: #cccccc; margin-bottom: 1.2rem; font-size: 0.95rem; }
+    p { max-width:720px; color:#ccc; margin-bottom:1.2rem; font-size:0.95rem; }
 
-    /* Timeline */
-    .timeline { border-left: 2px solid #333; padding-left: 2rem; }
-    .timeline-item { margin-bottom: 2.5rem; }
-    .timeline-item span { display: block; color: #999; font-size: 0.85rem; margin-bottom: 0.4rem; }
-
-    /* Works Grid */
-    .works-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-      gap: 2rem;
-      margin-top: 3rem;
-    }
-    .work-item {
-      position: relative;
-      overflow: hidden;
-      border-radius: 6px;
-      cursor: pointer;
-    }
-    .work-item img {
-      width: 100%;
-      display: block;
-      transition: transform 0.35s ease;
-      object-fit: cover;
-    }
-    .work-item:hover img { transform: scale(1.08); }
-    .work-caption {
-      position: absolute;
-      bottom: 0;
-      width: 100%;
-      padding: 0.6rem;
-      background: rgba(0, 0, 0, 0.65);
-      font-size: 0.85rem;
-      opacity: 0;
-      transition: opacity 0.3s ease;
-    }
-    .work-item:hover .work-caption { opacity: 1; }
-
-    /* Modal / Lightbox */
-    .modal {
-      display: none;
-      position: fixed;
-      z-index: 9999;
-      left: 0;
-      top: 0;
-      width: 100%;
-      height: 100%;
+    /* NAVIGATION HEADER */
+    header {
+      position: sticky;
+      top:0;
+      z-index:999;
       background: rgba(0,0,0,0.95);
-      justify-content: center;
-      align-items: center;
+      padding: 1rem 8vw;
+      display:flex;
+      justify-content:flex-start;
+      gap:2rem;
+      border-bottom:1px solid #333;
     }
-    .modal-content {
-      max-width: 90%;
-      max-height: 90%;
+
+    header a { font-weight:500; }
+    header a:hover { text-decoration: underline; color:#f0f0f0; }
+
+    /* TIMELINE */
+    .timeline { border-left:2px solid #333; padding-left:2rem; }
+    .timeline-item { margin-bottom:2.5rem; }
+    .timeline-item span { display:block; color:#999; font-size:0.85rem; margin-bottom:0.4rem; }
+
+    /* WORKS GRID */
+    .works-grid {
+      display:grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap:2rem;
+      margin-top:3rem;
     }
-    .modal-content img {
-      width: 100%;
-      height: auto;
-      border-radius: 6px;
+
+    .work-item { position:relative; overflow:hidden; border-radius:6px; }
+    .work-item img { width:100%; display:block; transition: transform 0.35s ease; cursor:pointer; }
+    .work-item:hover img { transform: scale(1.06); }
+    .work-caption {
+      position:absolute; bottom:0; width:100%; padding:0.6rem;
+      background: rgba(0,0,0,0.65); font-size:0.85rem; opacity:0; transition: opacity 0.3s ease;
     }
-    .modal-close {
-      position: absolute;
-      top: 2rem;
-      right: 2rem;
-      font-size: 2rem;
-      color: #fff;
-      cursor: pointer;
-    }
+    .work-item:hover .work-caption { opacity:1; }
+
   </style>
 </head>
 
 <body>
 
-<main>
+  <!-- NAVIGATION -->
+  <header>
+    <a href="index.html">Home</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="booking.html">Booking</a>
+    <a href="contact.html">Contact</a>
+    <a href="studio.html">Studio</a>
+  </header>
 
-  <!-- STUDIO INTRO -->
-  <section>
-    <h1>Muscle Memory Musik Studio</h1>
-    <p>Founded in 2005, Muscle Memory Musik has been a hub for artists, producers, and collectives — supporting growth, development, and collaborative work.</p>
-  </section>
+  <main>
 
-  <!-- STUDIO TIMELINE -->
-  <section>
-    <h2>Studio History</h2>
-    <div class="timeline">
-      <div class="timeline-item"><span>2005</span><p>Studio founded and built from the ground up.</p></div>
-      <div class="timeline-item"><span>Early Foundations</span><p>Producer's & Engineer's <strong>Young Max, Del / Sonic </strong> become pivotal collaborators.</p></div>
-      <div class="timeline-item"><span>2012</span><p><strong>Dishy Tangent</strong> formed by Reason and Matt Shilk.</p></div>
-      <div class="timeline-item"><span>2014</span><p><strong>Sing Out Loud Sundays</strong> founded by RM Moses; studio serves as HQ.</p></div>
-      <div class="timeline-item"><span>2019</span><p>New collaborations with <strong>Swayla</strong> and others; contemporary sounds evolve.</p></div>
-      <div class="timeline-item"><span>Present</span><p><strong>Ladder Records</strong> emerges as a creative collective.</p></div>
-    </div>
-  </section>
+    <!-- STUDIO INTRO -->
+    <section>
+      <h1>Muscle Memory Musik Studio</h1>
+      <p>Founded in 2005, Muscle Memory Musik Studio has grown from a hands-on creative space to a thriving artist development hub. From live recording to producing full albums, we support artists at all stages of their journey.</p>
+    </section>
 
-  <!-- DISHY TANGENT FEATURE -->
-  <section>
-    <h2>Dishy Tangent</h2>
-    <p>Founded in 2012 by Reason and Matt Shilk, Dishy Tangent explored genre-fluid songwriting and live-led production.</p>
-    <p>After Matt left, Reason collaborated with Sustainard (2014), Sonic & Dr Dish (2015), and Yung Blud (2018).</p>
-    <p>Recent releases include <em>Clear</em> (2021) and <em>W.I.L.D.</em> (2022).</p>
-  </section>
+    <!-- TIMELINE -->
+    <section>
+      <h2>Studio History</h2>
+      <div class="timeline">
+        <div class="timeline-item">
+          <span>2005</span>
+          <p>Muscle Memory Musik Studio is founded and built from the ground up.</p>
+        </div>
+        <div class="timeline-item">
+          <span>Early Foundations</span>
+          <p>Producer <strong>Young Max</strong> becomes a pivotal collaborator shaping the studio’s early sound.</p>
+        </div>
+        <div class="timeline-item">
+          <span>2012</span>
+          <p><strong>Dishy Tangent</strong> is formed by Reason and Matt Shilk, exploring live-led, genre-busting music.</p>
+        </div>
+        <div class="timeline-item">
+          <span>2014</span>
+          <p><strong>Sing Out Loud Sundays</strong> is founded by RM Moses. The studio becomes the HQ, hosting rehearsals and filmed sessions.</p>
+        </div>
+        <div class="timeline-item">
+          <span>2019</span>
+          <p>New collaborations with <strong>Swayla</strong> and other artists mark a modern phase in UKG and electronic music.</p>
+        </div>
+        <div class="timeline-item">
+          <span>Present</span>
+          <p>The <strong>Ladder Records</strong> collective emerges from the studio, formalizing years of collaboration and mentorship.</p>
+        </div>
+      </div>
+    </section>
 
-  <!-- SELECTED WORKS -->
-  <section>
-    <h2>Selected Works</h2>
-    <p>A curated selection of releases from Muscle Memory Musik.</p>
+    <!-- DISHY TANGENT FEATURE -->
+    <section>
+      <h2>Dishy Tangent</h2>
+      <p>Dishy Tangent, formed in 2012 by Reason and Matt Shilk, blends live instrumentation with modern production. Recent releases include <em>Clear</em> (2021) and <em>W.I.L.D.</em> (2022).</p>
+    </section>
 
-    <div class="works-grid">
-      <div class="work-item"><img src="better-than-me-dishy-tangent.jpg" alt="Better Than Me"><div class="work-caption">Better Than Me — Dishy Tangent</div></div>
-      <div class="work-item"><img src="clear-dishy-tangent.jpg" alt="Clear"><div class="work-caption">Clear — Dishy Tangent</div></div>
-      <div class="work-item"><img src="contigo.jpg" alt="Contigo"><div class="work-caption">Contigo</div></div>
-      <div class="work-item"><img src="getting-by-dishy-tangent.jpg" alt="Getting By"><div class="work-caption">Getting By — Dishy Tangent</div></div>
-      <div class="work-item"><img src="hartman-reason.jpg" alt="Hartman Reason"><div class="work-caption">Hartman — Reason</div></div>
-      <div class="work-item"><img src="here-we-go-dishy-tangent.jpg" alt="Here We Go"><div class="work-caption">Here We Go — Dishy Tangent</div></div>
-      <div class="work-item"><img src="i-got-u-dishy-tangent.png" alt="I Got U"><div class="work-caption">I Got U — Dishy Tangent</div></div>
-      <div class="work-item"><img src="jotbw-dishy-tangent.jpg" alt="JOTBW"><div class="work-caption">JOTBW — Dishy Tangent</div></div>
-      <div class="work-item"><img src="mostwanted2.jpg" alt="Mostwanted2"><div class="work-caption">Mostwanted2</div></div>
-      <div class="work-item"><img src="mostwanted2-rentfree.jpg" alt="Rent Free"><div class="work-caption">Rent Free — Mostwanted2</div></div>
-      <div class="work-item"><img src="mostwanted2-wideawake.jpg" alt="Wide Awake"><div class="work-caption">Wide Awake — Mostwanted2</div></div>
-      <div class="work-item"><img src="no-one-knows-dishy-tangent.jpg" alt="No One Knows"><div class="work-caption">No One Knows — Dishy Tangent</div></div>
-      <div class="work-item"><img src="serena2.jpg" alt="Serena 2"><div class="work-caption">Serena Dench</div></div>
-      <div class="work-item"><img src="serenadench.jpg" alt="Serena Dench"><div class="work-caption">Serena Dench</div></div>
-      <div class="work-item"><img src="smoothvee.jpg" alt="Smoothvee"><div class="work-caption">Smoothvee</div></div>
-      <div class="work-item"><img src="thefi5th-dishy-tangent.jpg" alt="The Fi5th"><div class="work-caption">The Fi5th — Dishy Tangent</div></div>
-      <div class="work-item"><img src="tia-memories.jpg" alt="Tia Memories"><div class="work-caption">Tia Pearman — Memories</div></div>
-      <div class="work-item"><img src="tia-neverland.jpg" alt="Tia Neverland"><div class="work-caption">Tia Pearman — Neverland</div></div>
-      <div class="work-item"><img src="tiapearman.jpg" alt="Tia Pearman"><div class="work-caption">Tia Pearman</div></div>
-      <div class="work-item"><img src="tiapearmanxmas.png" alt="Tia Pearman Xmas"><div class="work-caption">Tia Pearman — Xmas</div></div>
-      <div class="work-item"><img src="timeless-music-dishy-tangent.jpg" alt="Timeless Music"><div class="work-caption">Timeless Music — Dishy Tangent</div></div>
-      <div class="work-item"><img src="wild-dishy-tangent.jpg" alt="W.I.L.D."><div class="work-caption">W.I.L.D. — Dishy Tangent</div></div>
-    </div>
-  </section>
+    <!-- SELECTED WORKS -->
+    <section>
+      <h2>Selected Works</h2>
+      <div class="works-grid">
 
-</main>
+        <div class="work-item">
+          <a href="https://open.spotify.com/artist/4wHktrLkXSN81dnmaKbhSz" target="_blank">
+            <img src="better-than-me-dishy-tangent.jpg" alt="Better Than Me - Dishy Tangent">
+            <div class="work-caption">Better Than Me · Dishy Tangent</div>
+          </a>
+        </div>
 
-<!-- MODAL -->
-<div class="modal" id="lightboxModal">
-  <span class="modal-close" id="modalClose">&times;</span>
-  <div class="modal-content" id="modalContent">
-    <img src="" alt="Enlarged image" id="modalImg">
-  </div>
-</div>
+        <div class="work-item">
+          <a href="https://open.spotify.com/artist/4wHktrLkXSN81dnmaKbhSz" target="_blank">
+            <img src="clear-dishy-tangent.jpg" alt="Clear - Dishy Tangent">
+            <div class="work-caption">Clear · Dishy Tangent</div>
+          </a>
+        </div>
 
-<script>
-  // Lightbox modal
-  const modal = document.getElementById('lightboxModal');
-  const modalImg = document.getElementById('modalImg');
-  const modalClose = document.getElementById('modalClose');
-  const workItems = document.querySelectorAll('.work-item img');
+        <div class="work-item">
+          <a href="https://open.spotify.com/artist/4wHktrLkXSN81dnmaKbhSz" target="_blank">
+            <img src="getting-by-dishy-tangent.jpg" alt="Getting By - Dishy Tangent">
+            <div class="work-caption">Getting By · Dishy Tangent</div>
+          </a>
+        </div>
 
-  workItems.forEach(img => {
-    img.addEventListener('click', () => {
-      modal.style.display = 'flex';
-      modalImg.src = img.src;
-    });
-  });
+        <div class="work-item">
+          <img src="mostwanted2.jpg" alt="Mostwanted2">
+          <div class="work-caption">Mostwanted2 · 2021</div>
+        </div>
 
-  modalClose.addEventListener('click', () => { modal.style.display = 'none'; });
-  modal.addEventListener('click', (e) => {
-    if(e.target === modal) modal.style.display = 'none';
-  });
-</script>
+        <div class="work-item">
+          <img src="tia-neverland.jpg" alt="Tia Pearman">
+          <div class="work-caption">Tia Pearman · 2022</div>
+        </div>
 
+        <div class="work-item">
+          <img src="serena2.jpg" alt="Serena Dench">
+          <div class="work-caption">Serena Dench · 2017</div>
+        </div>
+
+        <div class="work-item">
+          <img src="thefi5th-dishy-tangent.jpg" alt="The Fi5th - Dishy Tangent">
+          <div class="work-caption">The Fi5th · Dishy Tangent</div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
 </body>
 </html>
