@@ -1,31 +1,176 @@
 <!DOCTYPE html>
-<html>
-  <!-- Back to Home -->
-<a href="index.html" class="back-home">← Back to Home</a>
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Studio | Ladder Records</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
-</head>
 <meta charset="UTF-8">
-<title>Gallery – Ladder Records</title>
+<title>Gallery — Ladder Records</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style.css">
 <style>
-body { background:#000; color:#f2f2f2; font-family:Helvetica; }
-section { padding:4rem 2rem; text-align:center; }
-img { max-width:90%; margin:1rem 0; }
+/* ===== GALLERY GRID ===== */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 12px;
+  margin-top: 3rem;
+}
+
+.gallery-item {
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: transform 0.3s ease;
+}
+
+.gallery-item img {
+  width: 100%;
+  display: block;
+  border-radius: 6px;
+  transition: transform 0.35s ease;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.05);
+}
+
+.gallery-caption {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 0.5rem;
+  background: rgba(0,0,0,0.6);
+  color: #fff;
+  font-size: 0.85rem;
+  text-align: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.gallery-item:hover .gallery-caption {
+  opacity: 1;
+}
+
+/* ===== LIGHTBOX ===== */
+#lightbox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width:100%;
+  height:100%;
+  background: rgba(0,0,0,0.9);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+}
+
+#lightbox img {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 6px;
+}
+
+#lightbox:target {
+  display: flex;
+}
+
+/* BACK BUTTON */
+.back-home {
+  display: inline-block;
+  margin-bottom: 1.5rem;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.back-home:hover {
+  opacity: 0.7;
+}
 </style>
 </head>
 <body>
 
-<section>
-<h1>Gallery</h1>
-<img src="wellingbeerfest2.jpg">
-<img src="dishytangent3.jpg">
-<img src="wellingbeerfest.jpg">
-<img src="woha2023.jpg">
-<img src="dishytangentbassment.jpg">
-</section>
+<header>
+  <a href="index.html"><img src="Ladder Records logo 2a.jpg" alt="Ladder Records Logo" class="logo"></a>
+  <div class="hero-cloud"></div>
+  <div class="cloud a"></div>
+  <div class="cloud b"></div>
+  <div class="cloud c"></div>
+  <div class="hero-text">A CREATIVE STUDIO, LABEL & ARTIST COLLECTIVE<br>WE CAN GET YOU TO THE NEXT RUNG OF THE LADDER</div>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="studio.html">Studio</a>
+    <a href="booking.html">Booking</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</header>
+
+<main class="section">
+  <a href="index.html" class="back-home">← Back to Home</a>
+  <h1>Gallery</h1>
+  <p>A collection of images from sessions, performances, and artist collaborations at Ladder Records.</p>
+
+  <div class="gallery-grid">
+
+    <div class="gallery-item">
+      <a href="#img1">
+        <img src="wellingbeerfest2.jpg" alt="Welling Beer Fest">
+        <div class="gallery-caption">Welling Beer Fest</div>
+      </a>
+    </div>
+
+    <div class="gallery-item">
+      <a href="#img2">
+        <img src="dishytangent3.jpg" alt="Dishy Tangent Live">
+        <div class="gallery-caption">Dishy Tangent Live</div>
+      </a>
+    </div>
+
+    <div class="gallery-item">
+      <a href="#img3">
+        <img src="wellingbeerfest.jpg" alt="Welling Beer Fest">
+        <div class="gallery-caption">Welling Beer Fest</div>
+      </a>
+    </div>
+
+    <div class="gallery-item">
+      <a href="#img4">
+        <img src="woha2023.jpg" alt="WOHA 2023">
+        <div class="gallery-caption">WOHA 2023</div>
+      </a>
+    </div>
+
+    <div class="gallery-item">
+      <a href="#img5">
+        <img src="dishytangentbassment.jpg" alt="Dishy Tangent Bassment">
+        <div class="gallery-caption">Dishy Tangent Bassment</div>
+      </a>
+    </div>
+
+  </div>
+</main>
+
+<!-- ===== LIGHTBOX IMAGES ===== -->
+<div id="img1" class="lightbox" style="display:none;"><a href="#_" onclick="document.getElementById('img1').style.display='none'"><img src="wellingbeerfest2.jpg" alt=""></a></div>
+<div id="img2" class="lightbox" style="display:none;"><a href="#_" onclick="document.getElementById('img2').style.display='none'"><img src="dishytangent3.jpg" alt=""></a></div>
+<div id="img3" class="lightbox" style="display:none;"><a href="#_" onclick="document.getElementById('img3').style.display='none'"><img src="wellingbeerfest.jpg" alt=""></a></div>
+<div id="img4" class="lightbox" style="display:none;"><a href="#_" onclick="document.getElementById('img4').style.display='none'"><img src="woha2023.jpg" alt=""></a></div>
+<div id="img5" class="lightbox" style="display:none;"><a href="#_" onclick="document.getElementById('img5').style.display='none'"><img src="dishytangentbassment.jpg" alt=""></a></div>
+
+<script>
+// Simple lightbox
+const galleryItems = document.querySelectorAll('.gallery-item a');
+galleryItems.forEach(link => {
+  link.addEventListener('click', function(e){
+    e.preventDefault();
+    const imgSrc = this.querySelector('img').src;
+    const lightboxDiv = document.createElement('div');
+    lightboxDiv.id = 'lightbox';
+    lightboxDiv.innerHTML = `<img src="${imgSrc}" /><span onclick="this.parentElement.remove()" style="position:absolute;top:20px;right:30px;color:white;font-size:2rem;cursor:pointer;">&times;</span>`;
+    document.body.appendChild(lightboxDiv);
+  });
+});
+</script>
 
 </body>
 </html>
