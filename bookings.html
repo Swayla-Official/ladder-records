@@ -1,30 +1,125 @@
 <!DOCTYPE html>
-<html>
-  <!-- Back to Home -->
-<a href="index.html" class="back-home">← Back to Home</a>
+<html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Bookings – Ladder Records</title>
-<style>
-body { background:#000; color:#f2f2f2; font-family:Helvetica; }
-section { padding:4rem 2rem; max-width:900px; margin:auto; }
-</style>
+<title>Studio — Ladder Records</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<section>
-<h1>Bookings</h1>
+<header>
+  <a href="index.html"><img src="Ladder Records logo 2a.jpg" alt="Ladder Records Logo" class="logo"></a>
+  <div class="hero-cloud"></div>
+  <div class="cloud a"></div>
+  <div class="cloud b"></div>
+  <div class="cloud c"></div>
+  <div class="hero-text">A CREATIVE STUDIO, LABEL & ARTIST COLLECTIVE<br>WE CAN GET YOU TO THE NEXT RUNG OF THE LADDER</div>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="booking.html">Booking</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</header>
 
-<h3>Studio Time</h3>
-<p>Email: <a href="mailto:musclememorymusik@gmail.com">musclememorymusik@gmail.com</a></p>
+<main class="section">
+  <a href="index.html" class="back-home">← Back to Home</a>
 
-<h3>Book Dishy Tangent</h3>
-<p>Email: <a href="mailto:dishytangent@gmail.com">dishytangent@gmail.com</a></p>
+  <h1>Muscle Memory Musik Studio</h1>
+  <p>Founded in 2005, Muscle Memory Musik Studio is a creative hub for artists, producers, and youth programs. The studio has hosted collaborations, recordings, and artist development projects that have led to Ladder Records and its collective of artists.</p>
 
-<h3>Other Artists</h3>
-<p>Email: <a href="mailto:ladderrecordsuk@gmail.com">ladderrecordsuk@gmail.com</a></p>
+  <!-- ===== STUDIO SECTION ===== -->
+  <section>
+    <h2 class="collapsible">Studio</h2>
+    <div class="content">
+      <h3>History</h3>
+      <p>The studio was built from the ground up, with producers and engineers <strong>Young Max</strong> and <strong>Del aka Sonic</strong> forming the initial core alongside <strong>Louis aka Reason</strong>.</p>
 
-</section>
+      <h3>Equipment Overview</h3>
+      <ul class="equipment-list">
+        <li>Electric, acoustic, rare, handmade, vintage, and modern guitars</li>
+        <li>Fender and Rowland keys</li>
+        <li>Marshall amps</li>
+        <li>State-of-the-art audio interface and recording equipment</li>
+      </ul>
+
+      <h3>Pricing</h3>
+      <div class="pricing-cards">
+        <div class="price-card">
+          <div class="price">£30<span>/hour</span></div>
+          Dry hire (with audio equipment/interface)
+        </div>
+        <div class="price-card">
+          <div class="price">£60<span>/hour</span></div>
+          Hourly Rate with Engineer
+        </div>
+        <div class="price-card">
+          <div class="booking-note">50% deposit required upon booking</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PODCAST ROOM ===== -->
+  <section>
+    <h2 class="collapsible">Podcast Room</h2>
+    <div class="content">
+      <h3>Pricing</h3>
+      <div class="pricing-cards">
+        <div class="price-card">
+          <div class="price">£30<span>/hour</span></div>
+          Room hire (with audio equipment/interface)
+        </div>
+        <div class="price-card">
+          <div class="price">£60<span>/hour</span></div>
+          Room hire with Engineer
+        </div>
+        <div class="price-card">
+          <div class="booking-note">50% deposit required upon booking</div>
+        </div>
+      </div>
+
+      <h3>Projects</h3>
+      <p>Hosted programs include <strong>Tea Talk and Tottenham</strong> and <strong>Spanglish</strong>.</p>
+
+      <h3>Media</h3>
+      <p>Video and photo documentation of sessions can be included here.</p>
+    </div>
+  </section>
+
+  <!-- ===== ARTIST DEVELOPMENT ===== -->
+  <section>
+    <h2 class="collapsible">Artist Development</h2>
+    <div class="content">
+      <p>Supporting young artists through music, DJing, instrument workshops, confidence building, social skills, and networking.</p>
+      <p>Key programs include <strong>Project Accountability</strong> under <strong>What’s The Point</strong>, offering youth engagement musical programs.</p>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  &copy; 2026 Ladder Records
+</footer>
+
+<script>
+// ===== COLLAPSIBLE SECTIONS =====
+const coll = document.querySelectorAll(".collapsible");
+coll.forEach(btn => {
+  btn.style.cursor = 'pointer';
+  const content = btn.nextElementSibling;
+  content.style.display = 'none';
+
+  btn.addEventListener("click", () => {
+    if (content.style.display === "block") {
+      content.style.display = "none";
+    } else {
+      content.style.display = "block";
+    }
+  });
+});
+</script>
 
 </body>
 </html>
