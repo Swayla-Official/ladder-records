@@ -5,118 +5,170 @@
 <title>Studio — Ladder Records</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="style.css">
+<style>
+/* ===== HEADER / LOGO ===== */
+header {
+  text-align: center;
+  padding: 2rem 0 1rem 0;
+  background: linear-gradient(180deg, #000000, #0b0b0b, #000000);
+  position: relative;
+}
+
+.logo {
+  max-width: 220px;
+  display: block;
+  margin: 0 auto;
+}
+
+.back-home {
+  display: inline-block;
+  margin-top: 0.5rem;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+/* ===== COLLAPSIBLE SECTIONS ===== */
+.collapsible {
+  background-color: #111;
+  color: #fff;
+  cursor: pointer;
+  padding: 1rem 1.5rem;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 1.2rem;
+  border-radius: 6px;
+  margin-bottom: 0.5rem;
+  transition: background 0.3s ease;
+}
+
+.collapsible:hover {
+  background-color: #222;
+}
+
+.content {
+  padding: 0 1.5rem 1.5rem 1.5rem;
+  display: none;
+  overflow: hidden;
+  background-color: #141414;
+  border-radius: 0 0 6px 6px;
+  margin-bottom: 1.5rem;
+}
+
+/* ===== TEXT / PARAGRAPH ===== */
+p {
+  color: #ccc;
+  line-height: 1.5;
+  margin-bottom: 1rem;
+}
+
+/* ===== IMAGE GRID ===== */
+.image-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.image-grid img {
+  width: 100%;
+  border-radius: 6px;
+  transition: transform 0.3s ease;
+}
+
+.image-grid img:hover {
+  transform: scale(1.05);
+}
+
+/* ===== BUTTON ===== */
+.cta-button {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.8rem 2rem;
+  background: #fff;
+  color: #000;
+  font-weight: 600;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.cta-button:hover {
+  background: #e5e5e5;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 900px) {
+  .collapsible {
+    font-size: 1rem;
+    padding: 0.8rem 1rem;
+  }
+  .content {
+    padding: 0 1rem 1rem 1rem;
+  }
+}
+</style>
 </head>
 <body>
 
 <header>
   <a href="index.html"><img src="Ladder Records logo 2a.jpg" alt="Ladder Records Logo" class="logo"></a>
-  <div class="hero-cloud"></div>
-  <div class="cloud a"></div>
-  <div class="cloud b"></div>
-  <div class="cloud c"></div>
-  <div class="hero-text">A CREATIVE STUDIO, LABEL & ARTIST COLLECTIVE<br>WE CAN GET YOU TO THE NEXT RUNG OF THE LADDER</div>
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="booking.html">Booking</a>
-    <a href="gallery.html">Gallery</a>
-    <a href="contact.html">Contact</a>
-  </nav>
+  <br>
+  <a href="index.html" class="back-home">&#8592; Back to Home</a>
 </header>
 
-<main class="section">
-  <a href="index.html" class="back-home">← Back to Home</a>
+<main style="padding:2rem 5vw; max-width:1100px; margin:auto;">
 
-  <h1>Muscle Memory Musik Studio</h1>
-  <p>Founded in 2005, Muscle Memory Musik Studio is a creative hub for artists, producers, and youth programs. The studio has hosted collaborations, recordings, and artist development projects that have led to Ladder Records and its collective of artists.</p>
+  <button class="collapsible">Studio</button>
+  <div class="content">
+    <p>Muscle Memory Musik Studio is a professional recording space founded in 2005. The studio features a full range of electric & acoustic guitars, vintage and modern instruments, Fenders, Rowland keys, Marshall amps, and state-of-the-art audio equipment.</p>
+    <p>Video and images of the studio setup will appear here.</p>
+    <p>Pricing:</p>
+    <ul>
+      <li>Dry hire (hourly) £30</li>
+      <li>Hourly with engineer £60</li>
+      <li>Deposit 50% required upon booking</li>
+    </ul>
+  </div>
 
-  <!-- ===== STUDIO SECTION ===== -->
-  <section>
-    <h2 class="collapsible">Studio</h2>
-    <div class="content">
-      <h3>History</h3>
-      <p>The studio was built from the ground up, with producers and engineers <strong>Young Max</strong> and <strong>Del aka Sonic</strong> forming the initial core alongside <strong>Louis aka Reason</strong>.</p>
+  <button class="collapsible">Podcast Room</button>
+  <div class="content">
+    <p>The Podcast room offers full audio recording capability with flexible seating. Suitable for interviews, live recordings, and show recordings like Tea Talk and Tottenham or Spanglish.</p>
+    <p>Pricing same as studio hire.</p>
+  </div>
 
-      <h3>Equipment Overview</h3>
-      <ul class="equipment-list">
-        <li>Electric, acoustic, rare, handmade, vintage, and modern guitars</li>
-        <li>Fender and Rowland keys</li>
-        <li>Marshall amps</li>
-        <li>State-of-the-art audio interface and recording equipment</li>
-      </ul>
+  <button class="collapsible">Events</button>
+  <div class="content">
+    <p>Upcoming shows: G-Zone, The S32H, and more.</p>
+  </div>
 
-      <h3>Pricing</h3>
-      <div class="pricing-cards">
-        <div class="price-card">
-          <div class="price">£30<span>/hour</span></div>
-          Dry hire (with audio equipment/interface)
-        </div>
-        <div class="price-card">
-          <div class="price">£60<span>/hour</span></div>
-          Hourly Rate with Engineer
-        </div>
-        <div class="price-card">
-          <div class="booking-note">50% deposit required upon booking</div>
-        </div>
-      </div>
-    </div>
-  </section>
+  <button class="collapsible">Bookings</button>
+  <div class="content">
+    <p>Book the studio, band, artist, DJs, podcast room, or equipment hire. Sessions are also available for lessons.</p>
+  </div>
 
-  <!-- ===== PODCAST ROOM ===== -->
-  <section>
-    <h2 class="collapsible">Podcast Room</h2>
-    <div class="content">
-      <h3>Pricing</h3>
-      <div class="pricing-cards">
-        <div class="price-card">
-          <div class="price">£30<span>/hour</span></div>
-          Room hire (with audio equipment/interface)
-        </div>
-        <div class="price-card">
-          <div class="price">£60<span>/hour</span></div>
-          Room hire with Engineer
-        </div>
-        <div class="price-card">
-          <div class="booking-note">50% deposit required upon booking</div>
-        </div>
-      </div>
+  <button class="collapsible">Artist Development</button>
+  <div class="content">
+    <p>We work with Project Accountability and their umbrella organisation What's the Point? on youth engagement programs — writing, DJing, instruments, confidence, social skills, and networking impact.</p>
+  </div>
 
-      <h3>Projects</h3>
-      <p>Hosted programs include <strong>Tea Talk and Tottenham</strong> and <strong>Spanglish</strong>.</p>
-
-      <h3>Media</h3>
-      <p>Video and photo documentation of sessions can be included here.</p>
-    </div>
-  </section>
-
-  <!-- ===== ARTIST DEVELOPMENT ===== -->
-  <section>
-    <h2 class="collapsible">Artist Development</h2>
-    <div class="content">
-      <p>Supporting young artists through music, DJing, instrument workshops, confidence building, social skills, and networking.</p>
-      <p>Key programs include <strong>Project Accountability</strong> under <strong>What’s The Point</strong>, offering youth engagement musical programs.</p>
-    </div>
-  </section>
+  <button class="collapsible">Label</button>
+  <div class="content">
+    <p>Ladder Records is a collective supporting artists, releases, and collaborative projects.</p>
+  </div>
 
 </main>
 
-<footer>
-  &copy; 2026 Ladder Records
-</footer>
-
 <script>
-// ===== COLLAPSIBLE SECTIONS =====
-const coll = document.querySelectorAll(".collapsible");
-coll.forEach(btn => {
-  btn.style.cursor = 'pointer';
-  const content = btn.nextElementSibling;
-  content.style.display = 'none';
-
-  btn.addEventListener("click", () => {
-    if (content.style.display === "block") {
-      content.style.display = "none";
-    } else {
-      content.style.display = "block";
-    }
+// Collapsible functionality
+const collapsibles = document.querySelectorAll(".collapsible");
+collapsibles.forEach(btn => {
+  btn.addEventListener("click", function() {
+    this.classList.toggle("active");
+    const content = this.nextElementSibling;
+    content.style.display = (content.style.display === "block") ? "none" : "block";
   });
 });
 </script>
