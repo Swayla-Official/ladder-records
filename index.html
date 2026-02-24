@@ -4,233 +4,66 @@
 <meta charset="UTF-8">
 <title>Ladder Records</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<style>
-/* ===== RESET ===== */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: Helvetica, Arial, sans-serif;
-}
-
-body {
-  background: linear-gradient(180deg, #000000, #0b0b0b, #000000);
-  color: #f2f2f2;
-  overflow-x: hidden;
-}
-
-/* ===== HEADER / HERO ===== */
-header {
-  position: relative;
-  height: 80vh;
-  text-align: center;
-  overflow: hidden;
-  z-index: 10;
-}
-
-.logo {
-  max-width: 560px;
-  margin-top: 6rem;
-  position: relative;
-  z-index: 6;
-}
-
-/* SOLID CLOUD BEHIND LOGO */
-.hero-cloud {
-  position: absolute;
-  top: 48%;
-  left: 50%;
-  width: 640px;
-  height: 240px;
-  background: white;
-  border-radius: 50%;
-  filter: blur(45px);
-  transform: translate(-50%, -50%);
-  z-index: 2;
-}
-
-/* FLOATING CLOUDS */
-.cloud {
-  position: absolute;
-  width: 480px;
-  height: 180px;
-  background: rgba(255, 255, 255, 0.35);
-  border-radius: 50%;
-  filter: blur(60px);
-  animation: drift linear infinite;
-  z-index: 1;
-}
-
-.cloud.a { top: 8%; animation-duration: 120s; }
-.cloud.b { top: 22%; animation-duration: 90s; }
-.cloud.c { top: 36%; animation-duration: 70s; }
-
-@keyframes drift {
-  from { transform: translateX(-600px); }
-  to { transform: translateX(120vw); }
-}
-
-/* HERO TEXT */
-.hero-text {
-  position: absolute;
-  top: 65%; /* adjust vertical placement */
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 6;
-  text-align: center;
-  padding: 0 1rem;
-  width: 100%;
-}
-
-.hero-text h1 {
-  color: #ffffff;
-  font-size: 2.2rem;
-  font-weight: 700;
-  letter-spacing: 1px;
-  line-height: 1.3;
-  text-shadow:
-    2px 2px 6px rgba(0,0,0,0.8),
-    -2px -2px 6px rgba(0,0,0,0.5);
-}
-
-/* ===== ICON MENU ===== */
-.menu-icons {
-  display: flex;
-  justify-content: center;
-  gap: 2rem;
-  margin-top: 2rem;
-  flex-wrap: wrap;
-}
-
-.menu-icons a {
-  background: rgba(255,255,255,0.1);
-  border: 2px solid #fff;
-  border-radius: 6px;
-  padding: 1rem 1.5rem;
-  font-weight: bold;
-  color: #fff;
-  transition: background 0.3s, transform 0.3s;
-  text-decoration: none;
-}
-
-.menu-icons a:hover {
-  background: rgba(255,255,255,0.25);
-  transform: scale(1.05);
-}
-
-/* ===== GALLERY ===== */
-.gallery {
-  display: flex;
-  gap: 1rem;
-  overflow-x: auto;
-  margin: 4rem 0;
-  padding-bottom: 2rem;
-}
-
-.gallery img {
-  max-height: 200px;
-  flex-shrink: 0;
-  border-radius: 6px;
-  transition: transform 0.3s;
-  cursor: pointer;
-}
-
-.gallery img:hover {
-  transform: scale(1.1);
-}
-
-/* ===== MAIN CONTENT ===== */
-main {
-  padding: 2rem 8vw;
-}
-
-h2 {
-  margin-top: 3rem;
-  margin-bottom: 1rem;
-}
-
-p {
-  margin-bottom: 1rem;
-  line-height: 1.5;
-}
-
-a {
-  color: #fff;
-  text-decoration: underline;
-}
-</style>
+<link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-<!-- =========================
-     HERO / HEADER START
-========================= -->
 <header>
+  <a href="index.html"><img src="Ladder Records logo 2a.jpg" alt="Ladder Records Logo" class="logo"></a>
   <div class="hero-cloud"></div>
-
   <div class="cloud a"></div>
   <div class="cloud b"></div>
   <div class="cloud c"></div>
-
-  <img src="Ladder Records logo 2a.jpg" alt="Ladder Records Logo" class="logo">
-
-  <div class="hero-text">
-    <h1>
-      A CREATIVE STUDIO, LABEL & ARTIST COLLECTIVE<br>
-      WE CAN GET YOU TO THE NEXT RUNG OF THE LADDER
-    </h1>
-  </div>
+  <div class="hero-text">A CREATIVE STUDIO, LABEL & ARTIST COLLECTIVE<br>WE CAN GET YOU TO THE NEXT RUNG OF THE LADDER</div>
+  <nav>
+    <a href="studio.html">Studio</a>
+    <a href="booking.html">Booking</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="contact.html">Contact</a>
+  </nav>
 </header>
-<!-- =========================
-     HERO / HEADER END
-========================= -->
 
-<!-- ICON MENU -->
-<div class="menu-icons">
-  <a href="studio.html">Studio</a>
-  <a href="gallery.html">Gallery</a>
-  <a href="booking.html">Booking</a>
-  <a href="contact.html">Contact</a>
-</div>
-
-<!-- GALLERY -->
-<div class="gallery">
-  <img src="better-than-me-dishy-tangent.jpg" alt="Better Than Me - Dishy Tangent">
-  <img src="clear-dishy-tangent.jpg" alt="Clear - Dishy Tangent">
-  <img src="contigo.jpg" alt="Contigo">
-  <img src="getting-by-dishy-tangent.jpg" alt="Getting By - Dishy Tangent">
-  <img src="here-we-go-dishy-tangent.jpg" alt="Here We Go Again - Dishy Tangent">
-  <img src="i-got-u-dishy-tangent.png" alt="I Got You - Dishy Tangent">
-  <img src="jotbw-dishy-tangent.jpg" alt="JOTBW - Dishy Tangent">
-  <img src="mostwanted2.jpg" alt="Mostwanted2">
-  <img src="mostwanted2-rentfree.jpg" alt="Mostwanted2 Rent Free">
-  <img src="mostwanted2-wideawake.jpg" alt="Mostwanted2 Wide Awake">
-  <img src="no-one-knows-dishy-tangent.jpg" alt="No One Knows - Dishy Tangent">
-</div>
-
-<main>
-  <h2>Welcome to Ladder Records</h2>
-  <p>
-    Ladder Records is a creative collective, label, and recording hub
-    based around Muscle Memory Musik Studio. We work with artists, producers,
-    and collectives to bring projects from concept to release.
-  </p>
-
-  <h2>About</h2>
-  <p>
-    Founded with the ethos of “We can get you to the next rung of the ladder,”
-    Ladder Records supports the full creative journey — from songwriting, recording,
-    development, and live performance.
-  </p>
-
-  <h2>Contact</h2>
-  <p>Email: <a href="mailto:dishytangent@gmail.com">dishytangent@gmail.com</a>, 
-     <a href="mailto:ladderrecordsuk@gmail.com">ladderrecordsuk@gmail.com</a>, 
-     <a href="mailto:musclememorymusik@gmail.com">musclememorymusik@gmail.com</a>
-  </p>
+<main class="section">
+  <h1>Welcome to Ladder Records</h1>
+  <p>The creative hub for music, development, and collaboration. Explore our studio, artists, and events.</p>
 </main>
+
+<section class="section center">
+  <h2>Gallery</h2>
+  <div class="gallery-grid">
+    <div class="gallery-item"><img src="better-than-me-dishy-tangent.jpg" alt=""></div>
+    <div class="gallery-item"><img src="clear-dishy-tangent.jpg" alt=""></div>
+    <div class="gallery-item"><img src="contigo.jpg" alt=""></div>
+    <div class="gallery-item"><img src="getting-by-dishy-tangent.jpg" alt=""></div>
+    <div class="gallery-item"><img src="here-we-go-dishy-tangent.jpg" alt=""></div>
+    <div class="gallery-item"><img src="i-got-u-dishy-tangent.png" alt=""></div>
+  </div>
+</section>
+
+<footer>
+  &copy; 2026 Ladder Records
+</footer>
+
+<!-- LIGHTBOX SCRIPT -->
+<div class="lightbox" id="lightbox">
+  <img src="" alt="">
+</div>
+<script>
+const galleryItems = document.querySelectorAll('.gallery-item img');
+const lightbox = document.getElementById('lightbox');
+const lightboxImg = lightbox.querySelector('img');
+
+galleryItems.forEach(img => {
+  img.addEventListener('click', () => {
+    lightbox.style.display = 'flex';
+    lightboxImg.src = img.src;
+  });
+});
+
+lightbox.addEventListener('click', () => {
+  lightbox.style.display = 'none';
+});
+</script>
 
 </body>
 </html>
