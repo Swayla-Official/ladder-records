@@ -1,182 +1,125 @@
 <!DOCTYPE html>
 <html lang="en">
-  <!-- Back to Home -->
-<a href="index.html" class="back-home">← Back to Home</a>
 <head>
-  <meta charset="UTF-8">
-  <title>Studio — Ladder Records</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
-  <style>
-    /* Collapsible section styling */
-    details {
-      margin-bottom: 2rem;
-      border-left: 3px solid #fff;
-      padding-left: 1rem;
-    }
-
-    details summary {
-      cursor: pointer;
-      font-weight: bold;
-      font-size: 1.3rem;
-      color: #f2f2f2;
-      outline: none;
-      margin-bottom: 1rem;
-    }
-
-    details[open] summary::after {
-      content: "▲";
-      float: right;
-      margin-right: 1rem;
-    }
-
-    details summary::after {
-      content: "▼";
-      float: right;
-      margin-right: 1rem;
-    }
-
-    details p, details ul {
-      margin-top: 0.5rem;
-      margin-left: 1rem;
-      color: #ccc;
-    }
-  </style>
+<meta charset="UTF-8">
+<title>Studio — Ladder Records</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-  <!-- ===== HEADER / HERO ===== -->
-  <header>
-    <img src="Ladder Records logo 2a.jpg" alt="Ladder Records Logo" class="logo">
-    <div class="hero-cloud"></div>
-    <div class="cloud a"></div>
-    <div class="cloud b"></div>
-    <div class="cloud c"></div>
-  </header>
-
-  <!-- ===== HERO NAVIGATION ===== -->
-  <div class="menu-icons">
+<header>
+  <a href="index.html"><img src="Ladder Records logo 2a.jpg" alt="Ladder Records Logo" class="logo"></a>
+  <div class="hero-cloud"></div>
+  <div class="cloud a"></div>
+  <div class="cloud b"></div>
+  <div class="cloud c"></div>
+  <div class="hero-text">A CREATIVE STUDIO, LABEL & ARTIST COLLECTIVE<br>WE CAN GET YOU TO THE NEXT RUNG OF THE LADDER</div>
+  <nav>
     <a href="index.html">Home</a>
-    <a href="studio.html">Studio</a>
     <a href="booking.html">Booking</a>
     <a href="gallery.html">Gallery</a>
     <a href="contact.html">Contact</a>
-  </div>
+  </nav>
+</header>
 
-  <main>
+<main class="section">
+  <a href="index.html" class="back-home">← Back to Home</a>
 
-    <!-- ===== STUDIO SECTION ===== -->
-    <details open>
-      <summary>Studio</summary>
+  <h1>Muscle Memory Musik Studio</h1>
+  <p>Founded in 2005, Muscle Memory Musik Studio is a creative hub for artists, producers, and youth programs. The studio has hosted collaborations, recordings, and artist development projects that have led to Ladder Records and its collective of artists.</p>
 
-      <details>
-        <summary>History</summary>
-        <p>Muscle Memory Musik Studio founded in 2005. Built from the ground up with focus on creative freedom and artist development.</p>
-        <p>Early foundations: Producers and engineers Young Max and Del aka Sonic formed the initial trio with Louis aka Reason.</p>
-        <p>Dishy Tangent formed 2012 by Reason & Matt Shilk. Sing Out Loud Sundays founded 2014 by RM Moses with the studio as HQ. Swayla collaboration begins 2019.</p>
-      </details>
+  <!-- ===== STUDIO SECTION ===== -->
+  <section>
+    <h2 class="collapsible">Studio</h2>
+    <div class="content">
+      <h3>History</h3>
+      <p>The studio was built from the ground up, with producers and engineers <strong>Young Max</strong> and <strong>Del aka Sonic</strong> forming the initial core alongside <strong>Louis aka Reason</strong>.</p>
 
-      <details>
-        <summary>Prices</summary>
-        <ul>
-          <li>Dry hire hourly (with audio equipment/interface): £30</li>
-          <li>Hourly with engineer: £60</li>
-          <li>Podcast room: same rates</li>
-          <li>Deposit: 50% of total booking</li>
-        </ul>
-      </details>
+      <h3>Equipment Overview</h3>
+      <ul class="equipment-list">
+        <li>Electric, acoustic, rare, handmade, vintage, and modern guitars</li>
+        <li>Fender and Rowland keys</li>
+        <li>Marshall amps</li>
+        <li>State-of-the-art audio interface and recording equipment</li>
+      </ul>
 
-      <details>
-        <summary>Equipment / Description / Photos / Video</summary>
-        <p>We have a vast collection of electric & acoustic guitars, vintage and modern pieces, Fenders, Rowland keys, Marshall amps, and state-of-the-art sound equipment.</p>
-
-        <div class="works-grid">
-          <div class="work-item">
-            <img src="hartman-reason.jpg" alt="Hartman Reason Studio">
-          </div>
-          <div class="work-item">
-            <img src="getting-by-dishy-tangent.jpg" alt="Getting By - Dishy Tangent">
-          </div>
-          <div class="work-item">
-            <img src="here-we-go-dishy-tangent.jpg" alt="Here We Go Again - Dishy Tangent">
-          </div>
+      <h3>Pricing</h3>
+      <div class="pricing-cards">
+        <div class="price-card">
+          <div class="price">£30<span>/hour</span></div>
+          Dry hire (with audio equipment/interface)
         </div>
-      </details>
+        <div class="price-card">
+          <div class="price">£60<span>/hour</span></div>
+          Hourly Rate with Engineer
+        </div>
+        <div class="price-card">
+          <div class="booking-note">50% deposit required upon booking</div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    </details>
+  <!-- ===== PODCAST ROOM ===== -->
+  <section>
+    <h2 class="collapsible">Podcast Room</h2>
+    <div class="content">
+      <h3>Pricing</h3>
+      <div class="pricing-cards">
+        <div class="price-card">
+          <div class="price">£30<span>/hour</span></div>
+          Room hire (with audio equipment/interface)
+        </div>
+        <div class="price-card">
+          <div class="price">£60<span>/hour</span></div>
+          Room hire with Engineer
+        </div>
+        <div class="price-card">
+          <div class="booking-note">50% deposit required upon booking</div>
+        </div>
+      </div>
 
-    <!-- ===== PODCAST ROOM SECTION ===== -->
-    <details>
-      <summary>Podcast Room</summary>
+      <h3>Projects</h3>
+      <p>Hosted programs include <strong>Tea Talk and Tottenham</strong> and <strong>Spanglish</strong>.</p>
 
-      <details>
-        <summary>Prices</summary>
-        <ul>
-          <li>Dry hire hourly (with audio equipment/interface): £30</li>
-          <li>Hourly with engineer: £60</li>
-          <li>Deposit: 50% of total booking</li>
-        </ul>
-      </details>
+      <h3>Media</h3>
+      <p>Video and photo documentation of sessions can be included here.</p>
+    </div>
+  </section>
 
-      <details>
-        <summary>Projects / Video / Photos</summary>
-        <p>Podcast projects hosted include Tea Talk and Tottenham, Spanglish, and other artist-led sessions.</p>
-      </details>
+  <!-- ===== ARTIST DEVELOPMENT ===== -->
+  <section>
+    <h2 class="collapsible">Artist Development</h2>
+    <div class="content">
+      <p>Supporting young artists through music, DJing, instrument workshops, confidence building, social skills, and networking.</p>
+      <p>Key programs include <strong>Project Accountability</strong> under <strong>What’s The Point</strong>, offering youth engagement musical programs.</p>
+    </div>
+  </section>
 
-    </details>
+</main>
 
-    <!-- ===== EVENTS SECTION ===== -->
-    <details>
-      <summary>Events</summary>
-      <ul>
-        <li>Upcoming Shows</li>
-        <li>G-Zone</li>
-        <li>S32H</li>
-      </ul>
-    </details>
+<footer>
+  &copy; 2026 Ladder Records
+</footer>
 
-    <!-- ===== BOOKINGS SECTION ===== -->
-    <details>
-      <summary>Bookings</summary>
-      <ul>
-        <li>Studio hire</li>
-        <li>Band/Artist/DJs</li>
-        <li>Podcast room</li>
-        <li>Equipment hire</li>
-        <li>Lessons</li>
-      </ul>
-    </details>
+<script>
+// ===== COLLAPSIBLE SECTIONS =====
+const coll = document.querySelectorAll(".collapsible");
+coll.forEach(btn => {
+  btn.style.cursor = 'pointer';
+  const content = btn.nextElementSibling;
+  content.style.display = 'none';
 
-    <!-- ===== ARTIST DEVELOPMENT SECTION ===== -->
-    <details>
-      <summary>Artist Development</summary>
-      <p>Supporting artists with mentorship, sessions, and programs like Project Accountability and What’s The Point.</p>
-      <ul>
-        <li>Apply for consultation</li>
-        <li>Youth engagement programs: writing, DJing, instruments, confidence, networking</li>
-      </ul>
-    </details>
-
-    <!-- ===== LESSONS / THERAPY / YOUTH WORK ===== -->
-    <details>
-      <summary>Lessons / Therapy / Youth Work</summary>
-      <ul>
-        <li>Prices for sessions</li>
-        <li>Projects: What’s the Point, Project Accountability, Peacock Academy</li>
-      </ul>
-    </details>
-
-    <!-- ===== LABEL / COLLECTIVE ===== -->
-    <details>
-      <summary>Label / Collective</summary>
-      <p>Description of Ladder Records and artists.</p>
-      <ul>
-        <li>Artists / Collective Stats</li>
-      </ul>
-    </details>
-
-  </main>
+  btn.addEventListener("click", () => {
+    if (content.style.display === "block") {
+      content.style.display = "none";
+    } else {
+      content.style.display = "block";
+    }
+  });
+});
+</script>
 
 </body>
 </html>
