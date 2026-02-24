@@ -5,6 +5,41 @@
   <title>Studio — Ladder Records</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
+  <style>
+    /* Collapsible section styling */
+    details {
+      margin-bottom: 2rem;
+      border-left: 3px solid #fff;
+      padding-left: 1rem;
+    }
+
+    details summary {
+      cursor: pointer;
+      font-weight: bold;
+      font-size: 1.3rem;
+      color: #f2f2f2;
+      outline: none;
+      margin-bottom: 1rem;
+    }
+
+    details[open] summary::after {
+      content: "▲";
+      float: right;
+      margin-right: 1rem;
+    }
+
+    details summary::after {
+      content: "▼";
+      float: right;
+      margin-right: 1rem;
+    }
+
+    details p, details ul {
+      margin-top: 0.5rem;
+      margin-left: 1rem;
+      color: #ccc;
+    }
+  </style>
 </head>
 
 <body>
@@ -29,162 +64,115 @@
 
   <main>
 
-    <!-- ===== STUDIO INTRO ===== -->
-    <section>
-      <h1>Muscle Memory Musik Studio</h1>
-      <p>
-        Muscle Memory Musik is an independent recording studio founded in 2005.
-        Built and rebuilt over time, the studio has evolved through movement,
-        collaboration, and hands-on creative work.
-      </p>
-      <p>
-        More than a recording space, the studio functions as a development hub —
-        supporting artists, producers, and collectives at different stages of
-        their journey.
-      </p>
-    </section>
+    <!-- ===== STUDIO SECTION ===== -->
+    <details open>
+      <summary>Studio</summary>
 
-    <!-- ===== STUDIO TIMELINE ===== -->
-    <section>
-      <h2>Studio History</h2>
-      <div class="timeline">
+      <details>
+        <summary>History</summary>
+        <p>Muscle Memory Musik Studio founded in 2005. Built from the ground up with focus on creative freedom and artist development.</p>
+        <p>Early foundations: Producers and engineers Young Max and Del aka Sonic formed the initial trio with Louis aka Reason.</p>
+        <p>Dishy Tangent formed 2012 by Reason & Matt Shilk. Sing Out Loud Sundays founded 2014 by RM Moses with the studio as HQ. Swayla collaboration begins 2019.</p>
+      </details>
 
-        <div class="timeline-item">
-          <span>2005</span>
-          <p>
-            Muscle Memory Musik Studio is founded. The studio is built from the
-            ground up, prioritising creative freedom and long-term artist growth.
-          </p>
+      <details>
+        <summary>Prices</summary>
+        <ul>
+          <li>Dry hire hourly (with audio equipment/interface): £30</li>
+          <li>Hourly with engineer: £60</li>
+          <li>Podcast room: same rates</li>
+          <li>Deposit: 50% of total booking</li>
+        </ul>
+      </details>
+
+      <details>
+        <summary>Equipment / Description / Photos / Video</summary>
+        <p>We have a vast collection of electric & acoustic guitars, vintage and modern pieces, Fenders, Rowland keys, Marshall amps, and state-of-the-art sound equipment.</p>
+
+        <div class="works-grid">
+          <div class="work-item">
+            <img src="hartman-reason.jpg" alt="Hartman Reason Studio">
+          </div>
+          <div class="work-item">
+            <img src="getting-by-dishy-tangent.jpg" alt="Getting By - Dishy Tangent">
+          </div>
+          <div class="work-item">
+            <img src="here-we-go-dishy-tangent.jpg" alt="Here We Go Again - Dishy Tangent">
+          </div>
         </div>
+      </details>
 
-        <div class="timeline-item">
-          <span>Early Foundations</span>
-          <p>
-            Producers and engineers <strong>Young Max</strong> and <strong>Del aka Sonic</strong>
-            were pivotal in early collaborations, forming the initial trio of producers
-            and engineers alongside <strong>Louis aka Reason</strong>.
-          </p>
-        </div>
+    </details>
 
-        <div class="timeline-item">
-          <span>2012</span>
-          <p>
-            <strong>Dishy Tangent</strong> is formed by Reason and Matt Shilk.
-            A genre-busting project blending live instrumentation, collaboration,
-            and experimental production.
-          </p>
-        </div>
+    <!-- ===== PODCAST ROOM SECTION ===== -->
+    <details>
+      <summary>Podcast Room</summary>
 
-        <div class="timeline-item">
-          <span>2014</span>
-          <p>
-            <strong>Sing Out Loud Sundays</strong> is founded by RM Moses.
-            Muscle Memory Musik Studio becomes the HQ — hosting rehearsals,
-            filmed sessions, and artist development.
-          </p>
-        </div>
+      <details>
+        <summary>Prices</summary>
+        <ul>
+          <li>Dry hire hourly (with audio equipment/interface): £30</li>
+          <li>Hourly with engineer: £60</li>
+          <li>Deposit: 50% of total booking</li>
+        </ul>
+      </details>
 
-        <div class="timeline-item">
-          <span>2019</span>
-          <p>
-            A new wave of collaborations begins, including work with
-            <strong>Swayla</strong>, reflecting the studio’s continued evolution
-            into UKG and contemporary electronic sounds.
-          </p>
-        </div>
+      <details>
+        <summary>Projects / Video / Photos</summary>
+        <p>Podcast projects hosted include Tea Talk and Tottenham, Spanglish, and other artist-led sessions.</p>
+      </details>
 
-        <div class="timeline-item">
-          <span>Present</span>
-          <p>
-            From this ecosystem, <strong>Ladder Records</strong> emerges as a
-            collective — formalising years of collaboration, mentorship, and
-            shared creative values.
-          </p>
-        </div>
+    </details>
 
-      </div>
-    </section>
+    <!-- ===== EVENTS SECTION ===== -->
+    <details>
+      <summary>Events</summary>
+      <ul>
+        <li>Upcoming Shows</li>
+        <li>G-Zone</li>
+        <li>S32H</li>
+      </ul>
+    </details>
 
-    <!-- ===== DISHY TANGENT FEATURE ===== -->
-    <section>
-      <h2>Dishy Tangent</h2>
-      <p>
-        Dishy Tangent is a core project within the studio’s history.
-        Founded in 2012 by Reason and Matt Shilk, the project explored
-        genre-fluid songwriting and live-led production.
-      </p>
-      <p>
-        After Matt Shilk stepped away, Reason continued the project,
-        collaborating with musicians including Sustainard (2014),
-        Sonic & Dr Dish (2015), and Yung Blud (2018).
-      </p>
-      <p>
-        Recent releases include <a href="https://open.spotify.com/artist/4wHktrLkXSN81dnmaKbhSz" target="_blank">Clear (2021) and W.I.L.D. (2022)</a>,
-        marking a mature and confident phase of the project.
-      </p>
-    </section>
+    <!-- ===== BOOKINGS SECTION ===== -->
+    <details>
+      <summary>Bookings</summary>
+      <ul>
+        <li>Studio hire</li>
+        <li>Band/Artist/DJs</li>
+        <li>Podcast room</li>
+        <li>Equipment hire</li>
+        <li>Lessons</li>
+      </ul>
+    </details>
 
-    <!-- ===== SELECTED WORKS / ARTWORK GRID ===== -->
-    <section>
-      <h2>Selected Works</h2>
-      <p>
-        A curated selection of releases shaped by the Muscle Memory Musik
-        studio environment.
-      </p>
+    <!-- ===== ARTIST DEVELOPMENT SECTION ===== -->
+    <details>
+      <summary>Artist Development</summary>
+      <p>Supporting artists with mentorship, sessions, and programs like Project Accountability and What’s The Point.</p>
+      <ul>
+        <li>Apply for consultation</li>
+        <li>Youth engagement programs: writing, DJing, instruments, confidence, networking</li>
+      </ul>
+    </details>
 
-      <div class="works-grid">
+    <!-- ===== LESSONS / THERAPY / YOUTH WORK ===== -->
+    <details>
+      <summary>Lessons / Therapy / Youth Work</summary>
+      <ul>
+        <li>Prices for sessions</li>
+        <li>Projects: What’s the Point, Project Accountability, Peacock Academy</li>
+      </ul>
+    </details>
 
-        <div class="work-item">
-          <a href="https://open.spotify.com/artist/4wHktrLkXSN81dnmaKbhSz" target="_blank">
-            <img src="better-than-me-dishy-tangent.jpg" alt="Better Than Me - Dishy Tangent">
-          </a>
-          <div class="work-caption">Dishy Tangent · Better Than Me</div>
-        </div>
-
-        <div class="work-item">
-          <a href="https://open.spotify.com/artist/4wHktrLkXSN81dnmaKbhSz" target="_blank">
-            <img src="timeless-music-dishy-tangent.jpg" alt="Timeless Music - Dishy Tangent">
-          </a>
-          <div class="work-caption">Dishy Tangent · Timeless Music</div>
-        </div>
-
-        <div class="work-item">
-          <img src="mostwanted2-rentfree.jpg" alt="Mostwanted2 - Rent Free">
-          <div class="work-caption">Mostwanted2 · Rent Free · 2021</div>
-        </div>
-
-        <div class="work-item">
-          <img src="mostwanted2-wideawake.jpg" alt="Mostwanted2 - Wide Awake">
-          <div class="work-caption">Mostwanted2 · Wide Awake · 2021</div>
-        </div>
-
-        <div class="work-item">
-          <img src="mostwanted2.jpg" alt="Mostwanted2">
-          <div class="work-caption">Mostwanted2 · 2021</div>
-        </div>
-
-        <div class="work-item">
-          <img src="tia-neverland.jpg" alt="Tia Pearman - Neverland">
-          <div class="work-caption">Tia Pearman · Neverland · 2022</div>
-        </div>
-
-        <div class="work-item">
-          <img src="tia-memories.jpg" alt="Tia Pearman - Memories">
-          <div class="work-caption">Tia Pearman · Memories · 2022</div>
-        </div>
-
-        <div class="work-item">
-          <img src="serena2.jpg" alt="Serena Dench - Single">
-          <div class="work-caption">Serena Dench · 2017</div>
-        </div>
-
-        <div class="work-item">
-          <img src="thefi5th-dishy-tangent.jpg" alt="The Fi5th - Dishy Tangent">
-          <div class="work-caption">Dishy Tangent · The Fi5th</div>
-        </div>
-
-      </div>
-    </section>
+    <!-- ===== LABEL / COLLECTIVE ===== -->
+    <details>
+      <summary>Label / Collective</summary>
+      <p>Description of Ladder Records and artists.</p>
+      <ul>
+        <li>Artists / Collective Stats</li>
+      </ul>
+    </details>
 
   </main>
 
