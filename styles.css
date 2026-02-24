@@ -1,7 +1,6 @@
-/* LADDER RECORDS MASTER STYLESHEET */
+/* ===== LADDER RECORDS MASTER STYLESHEET ===== */
 
 /* RESET */
-
 * {
   margin: 0;
   padding: 0;
@@ -9,13 +8,12 @@
 }
 
 /* BASE */
-
 body {
-  background-color: #0a0a0a;
-  color: #f5f5f5;
+  background: linear-gradient(180deg, #000000, #0b0b0b, #000000);
+  color: #f2f2f2;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   line-height: 1.6;
-  letter-spacing: 0.3px;
+  overflow-x: hidden;
 }
 
 h1, h2, h3, h4 {
@@ -23,171 +21,150 @@ h1, h2, h3, h4 {
   margin-bottom: 1rem;
 }
 
-h1 {
-  font-size: 2.4rem;
-}
+h1 { font-size: 2.4rem; }
+h2 { font-size: 2rem; }
+h3 { font-size: 1.5rem; }
 
-h2 {
-  font-size: 2rem;
-}
+p { color: #cfcfcf; margin-bottom: 1rem; max-width: 750px; }
 
-h3 {
-  font-size: 1.5rem;
-}
-
-p {
-  color: #cfcfcf;
-  margin-bottom: 1rem;
-  max-width: 750px;
-}
-
-/* LAYOUT */
-
-.section {
-  padding: 5rem 10vw;
-  max-width: 1300px;
-  margin: auto;
-}
-
-.center {
-  text-align: center;
-}
-
-/* HEADER */
-
+/* ===== HEADER ===== */
 header {
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  background: rgba(10, 10, 10, 0.95);
-  padding: 1.2rem 8vw;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  position: relative;
+  text-align: center;
+  padding: 2rem 0;
+  overflow: visible;
 }
 
-header h1 a {
-  color: white;
-  text-decoration: none;
-  font-weight: 600;
+header .logo {
+  max-width: 400px;
+  margin: auto;
+  display: block;
+  position: relative;
+  z-index: 5;
+}
+
+.hero-cloud {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 480px;
+  height: 180px;
+  background: white;
+  border-radius: 50%;
+  filter: blur(45px);
+  transform: translate(-50%, -50%);
+  z-index: 2;
+}
+
+.cloud {
+  position: absolute;
+  width: 360px;
+  height: 140px;
+  background: rgba(255,255,255,0.3);
+  border-radius: 50%;
+  filter: blur(60px);
+  animation: drift linear infinite;
+  z-index: 1;
+}
+
+.cloud.a { top: 10%; animation-duration: 120s; }
+.cloud.b { top: 25%; animation-duration: 90s; }
+.cloud.c { top: 40%; animation-duration: 70s; }
+
+@keyframes drift {
+  from { transform: translateX(-600px); }
+  to { transform: translateX(120vw); }
+}
+
+/* HERO TEXT UNDER LOGO */
+.hero-text {
+  margin-top: 1rem;
+  font-size: 1.2rem;
+  font-weight: bold;
   letter-spacing: 1px;
+  text-shadow: 1px 1px 2px black;
 }
 
+/* NAV LINKS */
+nav {
+  margin-top: 2rem;
+}
 nav a {
-  color: #f5f5f5;
+  color: #fff;
   text-decoration: none;
-  margin-left: 2rem;
-  font-size: 0.95rem;
-  transition: opacity 0.3s ease;
+  margin: 0 1rem;
+  font-weight: 500;
+  transition: opacity 0.3s;
+}
+nav a:hover { opacity: 0.6; }
+
+/* BACK TO HOME */
+.back-home {
+  display: inline-block;
+  margin: 1rem;
+  padding: 0.5rem 1rem;
+  background: rgba(255,255,255,0.1);
+  color: #fff;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: bold;
+  transition: background 0.3s, color 0.3s;
+}
+.back-home:hover { background: #fff; color: #000; }
+
+/* ===== GALLERY COLLAGE ===== */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1rem;
+  margin-top: 3rem;
 }
 
-nav a:hover {
-  opacity: 0.6;
-}
-
-/* DIVIDER */
-
-.divider {
-  border: none;
-  border-top: 1px solid #1f1f1f;
-  margin: 5rem auto;
-  width: 80%;
-}
-
-/* EQUIPMENT LIST */
-
-.equipment-list {
-  list-style: none;
-  margin-top: 1.5rem;
-}
-
-.equipment-list li {
-  margin-bottom: 0.7rem;
-  color: #bdbdbd;
-}
-
-/* PRICING */
-
-.pricing-cards {
-  display: flex;
-  gap: 2rem;
-  flex-wrap: wrap;
-  margin-top: 2rem;
-}
-
-.price-card {
-  background: #141414;
-  padding: 2.5rem;
-  border-radius: 10px;
-  flex: 1;
-  min-width: 280px;
-  transition: transform 0.3s ease, background 0.3s ease;
-}
-
-.price-card:hover {
-  transform: translateY(-6px);
-  background: #1a1a1a;
-}
-
-.price {
-  font-size: 2.2rem;
-  font-weight: 600;
-  margin-bottom: 0.5rem;
-}
-
-.price span {
-  font-size: 1rem;
-  color: #888;
-}
-
-.booking-note {
-  margin-top: 1.5rem;
-  font-size: 0.9rem;
-  color: #9c9c9c;
-}
-
-/* PROJECT GRID */
-
-.project-grid {
-  display: flex;
-  gap: 2rem;
-  flex-wrap: wrap;
-  margin-top: 2rem;
-}
-
-.project-card {
-  background: #141414;
-  padding: 2rem;
-  border-radius: 10px;
-  flex: 1;
-  min-width: 280px;
+.gallery-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 6px;
+  cursor: pointer;
   transition: transform 0.3s ease;
 }
 
-.project-card:hover {
-  transform: translateY(-5px);
+.gallery-item img {
+  width: 100%;
+  display: block;
+  transition: transform 0.3s ease;
 }
 
-/* BUTTONS */
-
-.cta-button {
-  display: inline-block;
-  margin-top: 2rem;
-  padding: 1rem 2.2rem;
-  background: #ffffff;
-  color: #000000;
-  text-decoration: none;
-  font-weight: 600;
-  border-radius: 6px;
-  transition: all 0.3s ease;
+.gallery-item:hover img {
+  transform: scale(1.05);
 }
 
-.cta-button:hover {
-  background: #e5e5e5;
+/* LIGHTBOX */
+.lightbox {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.9);
+  justify-content: center;
+  align-items: center;
 }
+
+.lightbox img {
+  max-width: 90%;
+  max-height: 90%;
+}
+
+/* ===== SECTIONS ===== */
+.section {
+  padding: 4rem 8vw;
+  max-width: 1300px;
+  margin: auto;
+}
+.center { text-align: center; }
 
 /* FOOTER */
-
 footer {
   margin-top: 6rem;
   padding: 3rem;
@@ -198,45 +175,7 @@ footer {
 }
 
 /* RESPONSIVE */
-
 @media (max-width: 900px) {
-
-  nav a {
-    margin-left: 1rem;
-    font-size: 0.85rem;
-  }
-
-  .section {
-    padding: 4rem 6vw;
-  }
-
-  .pricing-cards,
-  .project-grid {
-    flex-direction: column;
-  }
-
-}
-/* BACK TO HOME LINK */
-.back-home {
-  display: inline-block;
-  margin: 1rem 0 2rem 2rem;
-  padding: 0.5rem 1rem;
-  background: rgba(255,255,255,0.1);
-  color: #fff;
-  text-decoration: none;
-  border-radius: 6px;
-  font-weight: bold;
-  transition: background 0.3s, color 0.3s;
-  z-index: 1000;
-}
-
-.back-home:hover {
-  background: #fff;
-  color: #000;
-}
-
-.back-home.fixed {
-  position: fixed;
-  top: 1rem;
-  left: 1rem;
+  nav a { margin: 0 0.5rem; }
+  .section { padding: 2rem 5vw; }
 }
