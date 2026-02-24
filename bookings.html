@@ -2,123 +2,203 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Studio — Ladder Records</title>
+<title>Booking — Ladder Records</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="style.css">
+
+<style>
+/* ===== RESET ===== */
+* { margin:0; padding:0; box-sizing:border-box; font-family:Helvetica, Arial, sans-serif; }
+
+/* ===== BODY ===== */
+body {
+  background: linear-gradient(180deg, #000000, #0b0b0b, #000000);
+  color:#f2f2f2;
+  padding:0 5vw;
+  line-height:1.6;
+}
+
+/* ===== LOGO ===== */
+.logo { max-width:220px; display:block; margin:2rem auto; }
+
+/* ===== BACK LINK ===== */
+.back-link { display:inline-block; margin:1rem 0; color:#fff; text-decoration:none; font-weight:bold; }
+.back-link:hover { text-decoration:underline; }
+
+/* ===== HEADINGS ===== */
+h1,h2,h3 { margin-bottom:1rem; }
+h1{ font-size:2rem; }
+h2{ font-size:1.5rem; }
+h3{ font-size:1.2rem; }
+
+/* ===== COLLAPSIBLES ===== */
+.collapsible {
+  background-color:#111;
+  color:#fff;
+  cursor:pointer;
+  padding:1rem;
+  width:100%;
+  border:none;
+  text-align:left;
+  font-size:1.1rem;
+  outline:none;
+  border-radius:5px;
+  margin-top:0.5rem;
+}
+
+.collapsible:after { content:'\002B'; float:right; }
+.collapsible.active:after { content:'\2212'; }
+
+.content {
+  padding:0 1rem;
+  display:none;
+  overflow:hidden;
+  background-color:#1a1a1a;
+  border-radius:5px;
+  margin-bottom:1rem;
+}
+
+/* ===== PRICING CARDS ===== */
+.pricing-cards {
+  display:flex;
+  flex-wrap:wrap;
+  gap:1rem;
+  margin-top:1rem;
+}
+
+.price-card {
+  background:#141414;
+  padding:1.5rem;
+  border-radius:8px;
+  flex:1;
+  min-width:250px;
+  transition: transform 0.3s ease;
+}
+
+.price-card:hover { transform:translateY(-5px); }
+
+.price { font-size:1.8rem; font-weight:600; margin-bottom:0.5rem; }
+.price span{ font-size:0.9rem; color:#888; }
+
+/* ===== BOOKING FORM ===== */
+form {
+  background:#111;
+  padding:1.5rem;
+  border-radius:8px;
+  margin-top:1rem;
+  max-width:600px;
+}
+
+form label { display:block; margin-bottom:0.3rem; font-weight:600; }
+form input, form select, form textarea {
+  width:100%;
+  padding:0.6rem;
+  margin-bottom:1rem;
+  border-radius:4px;
+  border:none;
+  background:#222;
+  color:#fff;
+}
+form button {
+  padding:0.8rem 1.8rem;
+  background:#fff;
+  color:#000;
+  border:none;
+  font-weight:600;
+  cursor:pointer;
+  border-radius:5px;
+  transition:0.3s;
+}
+form button:hover { background:#e5e5e5; }
+</style>
 </head>
+
 <body>
+<a href="index.html" class="back-link">&#8592; Back to Home</a>
+<img src="Ladder Records logo 2a.jpg" alt="Ladder Records Logo" class="logo">
 
-<header>
-  <a href="index.html"><img src="Ladder Records logo 2a.jpg" alt="Ladder Records Logo" class="logo"></a>
-  <div class="hero-cloud"></div>
-  <div class="cloud a"></div>
-  <div class="cloud b"></div>
-  <div class="cloud c"></div>
-  <div class="hero-text">A CREATIVE STUDIO, LABEL & ARTIST COLLECTIVE<br>WE CAN GET YOU TO THE NEXT RUNG OF THE LADDER</div>
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="booking.html">Booking</a>
-    <a href="gallery.html">Gallery</a>
-    <a href="contact.html">Contact</a>
-  </nav>
-</header>
+<h1>Booking</h1>
+<p>Select a session or package and submit your booking request.</p>
 
-<main class="section">
-  <a href="index.html" class="back-home">← Back to Home</a>
-
-  <h1>Muscle Memory Musik Studio</h1>
-  <p>Founded in 2005, Muscle Memory Musik Studio is a creative hub for artists, producers, and youth programs. The studio has hosted collaborations, recordings, and artist development projects that have led to Ladder Records and its collective of artists.</p>
-
-  <!-- ===== STUDIO SECTION ===== -->
-  <section>
-    <h2 class="collapsible">Studio</h2>
-    <div class="content">
-      <h3>History</h3>
-      <p>The studio was built from the ground up, with producers and engineers <strong>Young Max</strong> and <strong>Del aka Sonic</strong> forming the initial core alongside <strong>Louis aka Reason</strong>.</p>
-
-      <h3>Equipment Overview</h3>
-      <ul class="equipment-list">
-        <li>Electric, acoustic, rare, handmade, vintage, and modern guitars</li>
-        <li>Fender and Rowland keys</li>
-        <li>Marshall amps</li>
-        <li>State-of-the-art audio interface and recording equipment</li>
-      </ul>
-
-      <h3>Pricing</h3>
-      <div class="pricing-cards">
-        <div class="price-card">
-          <div class="price">£30<span>/hour</span></div>
-          Dry hire (with audio equipment/interface)
-        </div>
-        <div class="price-card">
-          <div class="price">£60<span>/hour</span></div>
-          Hourly Rate with Engineer
-        </div>
-        <div class="price-card">
-          <div class="booking-note">50% deposit required upon booking</div>
-        </div>
-      </div>
+<!-- COLLAPSIBLE SECTIONS -->
+<button class="collapsible">Studio Sessions</button>
+<div class="content">
+  <div class="pricing-cards">
+    <div class="price-card">
+      <div class="price">£30 <span>/hr</span></div>
+      <div>Dry hire (with audio equipment/interface)</div>
     </div>
-  </section>
-
-  <!-- ===== PODCAST ROOM ===== -->
-  <section>
-    <h2 class="collapsible">Podcast Room</h2>
-    <div class="content">
-      <h3>Pricing</h3>
-      <div class="pricing-cards">
-        <div class="price-card">
-          <div class="price">£30<span>/hour</span></div>
-          Room hire (with audio equipment/interface)
-        </div>
-        <div class="price-card">
-          <div class="price">£60<span>/hour</span></div>
-          Room hire with Engineer
-        </div>
-        <div class="price-card">
-          <div class="booking-note">50% deposit required upon booking</div>
-        </div>
-      </div>
-
-      <h3>Projects</h3>
-      <p>Hosted programs include <strong>Tea Talk and Tottenham</strong> and <strong>Spanglish</strong>.</p>
-
-      <h3>Media</h3>
-      <p>Video and photo documentation of sessions can be included here.</p>
+    <div class="price-card">
+      <div class="price">£60 <span>/hr</span></div>
+      <div>With Engineer</div>
     </div>
-  </section>
-
-  <!-- ===== ARTIST DEVELOPMENT ===== -->
-  <section>
-    <h2 class="collapsible">Artist Development</h2>
-    <div class="content">
-      <p>Supporting young artists through music, DJing, instrument workshops, confidence building, social skills, and networking.</p>
-      <p>Key programs include <strong>Project Accountability</strong> under <strong>What’s The Point</strong>, offering youth engagement musical programs.</p>
+    <div class="price-card">
+      <div class="price">50% Deposit</div>
+      <div>Required on booking</div>
     </div>
-  </section>
+  </div>
+</div>
 
-</main>
+<button class="collapsible">Podcast Room</button>
+<div class="content">
+  <div class="pricing-cards">
+    <div class="price-card">
+      <div class="price">£30 <span>/hr</span></div>
+      <div>Dry hire</div>
+    </div>
+    <div class="price-card">
+      <div class="price">£60 <span>/hr</span></div>
+      <div>With Engineer</div>
+    </div>
+    <div class="price-card">
+      <div class="price">50% Deposit</div>
+      <div>Required on booking</div>
+    </div>
+  </div>
+</div>
 
-<footer>
-  &copy; 2026 Ladder Records
-</footer>
+<button class="collapsible">Band / Artist / DJs</button>
+<div class="content">
+  <p>Please email <strong>dishytangent@gmail.com</strong> to book Dishy Tangent.<br>
+  For other artists in the Ladder Records collective, email <strong>ladderrecordsuk@gmail.com</strong>.</p>
+</div>
+
+<!-- BOOKING FORM -->
+<h2>Booking Request Form</h2>
+<form action="mailto:musclememorymusik@gmail.com" method="post" enctype="text/plain">
+  <label for="name">Name</label>
+  <input type="text" id="name" name="name" required>
+
+  <label for="email">Email</label>
+  <input type="email" id="email" name="email" required>
+
+  <label for="session">Select Session / Package</label>
+  <select id="session" name="session">
+    <option>Studio Dry Hire (£30/hr)</option>
+    <option>Studio With Engineer (£60/hr)</option>
+    <option>Podcast Room (£30/hr)</option>
+    <option>Podcast With Engineer (£60/hr)</option>
+  </select>
+
+  <label for="date">Preferred Date</label>
+  <input type="date" id="date" name="date" required>
+
+  <label for="notes">Additional Notes / Special Requests</label>
+  <textarea id="notes" name="notes" rows="4"></textarea>
+
+  <button type="submit">Submit Booking</button>
+</form>
 
 <script>
-// ===== COLLAPSIBLE SECTIONS =====
-const coll = document.querySelectorAll(".collapsible");
-coll.forEach(btn => {
-  btn.style.cursor = 'pointer';
-  const content = btn.nextElementSibling;
-  content.style.display = 'none';
-
-  btn.addEventListener("click", () => {
-    if (content.style.display === "block") {
-      content.style.display = "none";
-    } else {
-      content.style.display = "block";
-    }
+// Collapsible sections
+const coll = document.getElementsByClassName("collapsible");
+for (let i=0;i<coll.length;i++){
+  coll[i].addEventListener("click", function(){
+    this.classList.toggle("active");
+    const content = this.nextElementSibling;
+    if (content.style.display==="block"){ content.style.display="none"; }
+    else { content.style.display="block"; }
   });
-});
+}
 </script>
 
 </body>
