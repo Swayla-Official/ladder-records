@@ -4,173 +4,180 @@
 <meta charset="UTF-8">
 <title>Studio — Ladder Records</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="style.css">
+
 <style>
-/* ===== HEADER / LOGO ===== */
-header {
-  text-align: center;
-  padding: 2rem 0 1rem 0;
+/* ===== RESET ===== */
+* { margin:0; padding:0; box-sizing:border-box; font-family: Helvetica, Arial, sans-serif; }
+
+/* ===== BODY ===== */
+body {
   background: linear-gradient(180deg, #000000, #0b0b0b, #000000);
-  position: relative;
+  color: #f2f2f2;
+  line-height: 1.6;
+  text-align: left;
+  padding: 0 5vw;
 }
 
+/* ===== LOGO ===== */
 .logo {
   max-width: 220px;
-  display: block;
-  margin: 0 auto;
+  display:block;
+  margin: 2rem auto;
 }
 
-.back-home {
+/* ===== BACK LINK ===== */
+.back-link {
   display: inline-block;
-  margin-top: 0.5rem;
+  margin: 1rem 0;
   color: #fff;
   text-decoration: none;
-  font-weight: 500;
+  font-weight: bold;
 }
+.back-link:hover { text-decoration: underline; }
+
+/* ===== SECTIONS ===== */
+section {
+  margin-bottom: 4rem;
+}
+
+h1,h2,h3 { margin-bottom: 1rem; }
+
+h1 { font-size: 2rem; }
+h2 { font-size: 1.5rem; }
+h3 { font-size: 1.2rem; }
+
+/* ===== TIMELINE ===== */
+.timeline { border-left: 2px solid #555; padding-left:2rem; margin-top:1rem; }
+.timeline-item { margin-bottom:2rem; }
+.timeline-item span { display:block; color:#999; font-size:0.85rem; margin-bottom:0.5rem; }
 
 /* ===== COLLAPSIBLE SECTIONS ===== */
 .collapsible {
   background-color: #111;
   color: #fff;
   cursor: pointer;
-  padding: 1rem 1.5rem;
+  padding: 1rem;
   width: 100%;
   border: none;
   text-align: left;
+  font-size: 1.1rem;
   outline: none;
-  font-size: 1.2rem;
-  border-radius: 6px;
-  margin-bottom: 0.5rem;
-  transition: background 0.3s ease;
+  border-radius:5px;
+  margin-top: 0.5rem;
 }
 
-.collapsible:hover {
-  background-color: #222;
+.collapsible:after {
+  content: '\002B'; /* plus sign */
+  float: right;
+}
+
+.collapsible.active:after {
+  content: "\2212"; /* minus sign */
 }
 
 .content {
-  padding: 0 1.5rem 1.5rem 1.5rem;
+  padding: 0 1rem;
   display: none;
   overflow: hidden;
-  background-color: #141414;
-  border-radius: 0 0 6px 6px;
-  margin-bottom: 1.5rem;
-}
-
-/* ===== TEXT / PARAGRAPH ===== */
-p {
-  color: #ccc;
-  line-height: 1.5;
+  background-color: #1a1a1a;
+  border-radius:5px;
   margin-bottom: 1rem;
 }
 
-/* ===== IMAGE GRID ===== */
-.image-grid {
+/* ===== PROJECT GRID ===== */
+.works-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
   gap: 1rem;
-  margin-top: 1rem;
+  margin-top: 2rem;
 }
 
-.image-grid img {
+.work-item img {
   width: 100%;
-  border-radius: 6px;
+  border-radius: 5px;
   transition: transform 0.3s ease;
 }
 
-.image-grid img:hover {
+.work-item:hover img {
   transform: scale(1.05);
-}
-
-/* ===== BUTTON ===== */
-.cta-button {
-  display: inline-block;
-  margin-top: 1rem;
-  padding: 0.8rem 2rem;
-  background: #fff;
-  color: #000;
-  font-weight: 600;
-  border-radius: 6px;
-  text-decoration: none;
-  transition: all 0.3s ease;
-}
-
-.cta-button:hover {
-  background: #e5e5e5;
-}
-
-/* ===== RESPONSIVE ===== */
-@media (max-width: 900px) {
-  .collapsible {
-    font-size: 1rem;
-    padding: 0.8rem 1rem;
-  }
-  .content {
-    padding: 0 1rem 1rem 1rem;
-  }
 }
 </style>
 </head>
-<body>
 
-<header>
-  <a href="index.html"><img src="Ladder Records logo 2a.jpg" alt="Ladder Records Logo" class="logo"></a>
-  <br>
-  <a href="index.html" class="back-home">&#8592; Back to Home</a>
-</header>
+<body class="studio-page">
 
-<main style="padding:2rem 5vw; max-width:1100px; margin:auto;">
+<a href="index.html" class="back-link">&#8592; Back to Home</a>
 
-  <button class="collapsible">Studio</button>
-  <div class="content">
-    <p>Muscle Memory Musik Studio is a professional recording space founded in 2005. The studio features a full range of electric & acoustic guitars, vintage and modern instruments, Fenders, Rowland keys, Marshall amps, and state-of-the-art audio equipment.</p>
-    <p>Video and images of the studio setup will appear here.</p>
-    <p>Pricing:</p>
-    <ul>
-      <li>Dry hire (hourly) £30</li>
-      <li>Hourly with engineer £60</li>
-      <li>Deposit 50% required upon booking</li>
-    </ul>
+<img src="Ladder Records logo 2a.jpg" alt="Ladder Records Logo" class="logo">
+
+<h1>Muscle Memory Musik Studio</h1>
+<p>Founded in 2005, built from the ground up. The studio has fostered collaborations with a wide range of artists.</p>
+
+<h2>Studio History</h2>
+<div class="timeline">
+  <div class="timeline-item">
+    <span>2005</span>
+    <p>Studio founded. Creative freedom prioritized for artists.</p>
   </div>
-
-  <button class="collapsible">Podcast Room</button>
-  <div class="content">
-    <p>The Podcast room offers full audio recording capability with flexible seating. Suitable for interviews, live recordings, and show recordings like Tea Talk and Tottenham or Spanglish.</p>
-    <p>Pricing same as studio hire.</p>
+  <div class="timeline-item">
+    <span>Early Foundations</span>
+    <p>Producers and engineers Young Max and Del aka Sonic were pivotal in early collaborations, forming the initial trio alongside Louis aka Reason.</p>
   </div>
-
-  <button class="collapsible">Events</button>
-  <div class="content">
-    <p>Upcoming shows: G-Zone, The S32H, and more.</p>
+  <div class="timeline-item">
+    <span>2012</span>
+    <p>Dishy Tangent formed by Reason and Matt Shilk, genre-busting project with live instrumentation.</p>
   </div>
-
-  <button class="collapsible">Bookings</button>
-  <div class="content">
-    <p>Book the studio, band, artist, DJs, podcast room, or equipment hire. Sessions are also available for lessons.</p>
+  <div class="timeline-item">
+    <span>2014</span>
+    <p>Sing Out Loud Sundays founded by RM Moses. Studio becomes HQ for recordings and sessions.</p>
   </div>
+</div>
 
-  <button class="collapsible">Artist Development</button>
-  <div class="content">
-    <p>We work with Project Accountability and their umbrella organisation What's the Point? on youth engagement programs — writing, DJing, instruments, confidence, social skills, and networking impact.</p>
+<h2>Selected Works</h2>
+<div class="works-grid">
+  <div class="work-item">
+    <img src="timeless-music-dishy-tangent.jpg" alt="Dishy Tangent Timeless Music">
   </div>
-
-  <button class="collapsible">Label</button>
-  <div class="content">
-    <p>Ladder Records is a collective supporting artists, releases, and collaborative projects.</p>
+  <div class="work-item">
+    <img src="getting-by-dishy-tangent.jpg" alt="Getting By">
   </div>
+  <div class="work-item">
+    <img src="mostwanted2-rentfree.jpg" alt="Mostwanted2 Rent Free">
+  </div>
+  <div class="work-item">
+    <img src="tia-neverland.jpg" alt="Tia Pearman Neverland">
+  </div>
+  <div class="work-item">
+    <img src="serenadench.jpg" alt="Serena Dench">
+  </div>
+</div>
 
-</main>
+<h2>Studio / Podcast Rooms</h2>
+
+<button class="collapsible">Studio Room</button>
+<div class="content">
+  <p>Dry hire hourly: £30 (with audio equipment/interface)</p>
+  <p>With Engineer: £60/hour</p>
+  <p>Deposit 50% required on booking.</p>
+</div>
+
+<button class="collapsible">Podcast Room</button>
+<div class="content">
+  <p>Same rates as studio: £30/hr dry hire, £60/hr with engineer.</p>
+  <p>Deposit 50% on booking.</p>
+</div>
 
 <script>
-// Collapsible functionality
-const collapsibles = document.querySelectorAll(".collapsible");
-collapsibles.forEach(btn => {
-  btn.addEventListener("click", function() {
+// Collapsible sections
+const coll = document.getElementsByClassName("collapsible");
+for (let i=0;i<coll.length;i++){
+  coll[i].addEventListener("click", function(){
     this.classList.toggle("active");
     const content = this.nextElementSibling;
-    content.style.display = (content.style.display === "block") ? "none" : "block";
+    if (content.style.display==="block"){ content.style.display="none"; }
+    else { content.style.display="block"; }
   });
-});
+}
 </script>
 
 </body>
