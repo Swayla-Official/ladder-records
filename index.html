@@ -71,148 +71,166 @@ header {
   to { transform: translateX(120vw); }
 }
 
-/* TAGLINE */
-.tagline {
-  margin-top: 1.6rem;
-  font-size: 0.95rem;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  opacity: 0.85;
-  position: relative;
+/* HERO TEXT */
+.hero-text {
+  position: absolute;
+  top: 65%; /* adjust vertical placement */
+  left: 50%;
+  transform: translate(-50%, -50%);
   z-index: 6;
+  text-align: center;
+  padding: 0 1rem;
+  width: 100%;
 }
 
-/* NAVIGATION */
-nav {
-  margin-top: 3rem;
+.hero-text h1 {
+  color: #ffffff;
+  font-size: 2.2rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  line-height: 1.3;
+  text-shadow:
+    2px 2px 6px rgba(0,0,0,0.8),
+    -2px -2px 6px rgba(0,0,0,0.5);
+}
+
+/* ===== ICON MENU ===== */
+.menu-icons {
   display: flex;
   justify-content: center;
+  gap: 2rem;
+  margin-top: 2rem;
   flex-wrap: wrap;
-  gap: 1rem;
-  position: relative;
-  z-index: 6;
 }
 
-nav a {
-  background: linear-gradient(
-    180deg,
-    rgba(255,255,255,0.95),
-    rgba(255,255,255,0.75)
-  );
-  color: #000;
-  padding: 0.8rem 1.5rem;
-  border-radius: 8px;
-  font-size: 0.75rem;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+.menu-icons a {
+  background: rgba(255,255,255,0.1);
+  border: 2px solid #fff;
+  border-radius: 6px;
+  padding: 1rem 1.5rem;
+  font-weight: bold;
+  color: #fff;
+  transition: background 0.3s, transform 0.3s;
+  text-decoration: none;
 }
 
-/* ===== MAIN CONTENT ===== */
-main {
-  position: relative;
-  z-index: 1;
-  padding-top: 6rem; /* PUSHES CONTENT DOWN */
-}
-
-/* INTRO */
-.intro {
-  text-align: center;
-  max-width: 720px;
-  margin: 0 auto 5rem;
-  padding: 0 2rem;
-}
-
-.intro h2 {
-  font-weight: normal;
-  letter-spacing: 0.12em;
-  margin-bottom: 1.5rem;
-}
-
-.intro p {
-  opacity: 0.8;
-  line-height: 1.7;
+.menu-icons a:hover {
+  background: rgba(255,255,255,0.25);
+  transform: scale(1.05);
 }
 
 /* ===== GALLERY ===== */
 .gallery {
-  margin-top: 6rem; /* IMPORTANT: moves gallery lower */
-  padding-bottom: 4rem;
-}
-
-.gallery-track {
   display: flex;
-  justify-content: center;
-  gap: 2rem;
-  align-items: center;
+  gap: 1rem;
+  overflow-x: auto;
+  margin: 4rem 0;
+  padding-bottom: 2rem;
 }
 
 .gallery img {
-  width: 260px;
-  height: auto;
-  opacity: 0.5;
-  transition: all 0.3s ease;
+  max-height: 200px;
+  flex-shrink: 0;
+  border-radius: 6px;
+  transition: transform 0.3s;
   cursor: pointer;
 }
 
-.gallery img.active {
-  width: 360px;
-  opacity: 1;
+.gallery img:hover {
+  transform: scale(1.1);
 }
 
-.gallery-controls {
-  text-align: center;
-  margin-top: 2rem;
+/* ===== MAIN CONTENT ===== */
+main {
+  padding: 2rem 8vw;
 }
 
-.gallery-controls button {
-  background: none;
-  border: 1px solid rgba(255,255,255,0.4);
-  color: white;
-  padding: 0.5rem 1rem;
-  margin: 0 0.5rem;
-  cursor: pointer;
+h2 {
+  margin-top: 3rem;
+  margin-bottom: 1rem;
+}
+
+p {
+  margin-bottom: 1rem;
+  line-height: 1.5;
+}
+
+a {
+  color: #fff;
+  text-decoration: underline;
 }
 </style>
 </head>
 
 <body>
 
+<!-- =========================
+     HERO / HEADER START
+========================= -->
 <header>
+  <div class="hero-cloud"></div>
+
   <div class="cloud a"></div>
   <div class="cloud b"></div>
   <div class="cloud c"></div>
-  <div class="hero-cloud"></div>
 
-  <img src="ladder-logo.png" alt="Ladder Records" class="logo">
+  <img src="Ladder Records logo 2a.jpg" alt="Ladder Records Logo" class="logo">
 
-  <p class="tagline">
-    A creative studio, label & artist collective<br>
-    We can get you to the next rung of the ladder
-  </p>
-
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="music.html">Music</a>
-    <a href="studio.html">Studio</a>
-    <a href="events.html">Events</a>
-    <a href="bookings.html">Bookings</a>
-    <a href="about.html">About</a>
-    <a href="gallery.html">Gallery</a>
-    <a href="contact.html">Contact</a>
-  </nav>
+  <div class="hero-text">
+    <h1>
+      A CREATIVE STUDIO, LABEL & ARTIST COLLECTIVE<br>
+      WE CAN GET YOU TO THE NEXT RUNG OF THE LADDER
+    </h1>
+  </div>
 </header>
+<!-- =========================
+     HERO / HEADER END
+========================= -->
+
+<!-- ICON MENU -->
+<div class="menu-icons">
+  <a href="studio.html">Studio</a>
+  <a href="gallery.html">Gallery</a>
+  <a href="booking.html">Booking</a>
+  <a href="contact.html">Contact</a>
+</div>
+
+<!-- GALLERY -->
+<div class="gallery">
+  <img src="better-than-me-dishy-tangent.jpg" alt="Better Than Me - Dishy Tangent">
+  <img src="clear-dishy-tangent.jpg" alt="Clear - Dishy Tangent">
+  <img src="contigo.jpg" alt="Contigo">
+  <img src="getting-by-dishy-tangent.jpg" alt="Getting By - Dishy Tangent">
+  <img src="here-we-go-dishy-tangent.jpg" alt="Here We Go Again - Dishy Tangent">
+  <img src="i-got-u-dishy-tangent.png" alt="I Got You - Dishy Tangent">
+  <img src="jotbw-dishy-tangent.jpg" alt="JOTBW - Dishy Tangent">
+  <img src="mostwanted2.jpg" alt="Mostwanted2">
+  <img src="mostwanted2-rentfree.jpg" alt="Mostwanted2 Rent Free">
+  <img src="mostwanted2-wideawake.jpg" alt="Mostwanted2 Wide Awake">
+  <img src="no-one-knows-dishy-tangent.jpg" alt="No One Knows - Dishy Tangent">
+</div>
 
 <main>
+  <h2>Welcome to Ladder Records</h2>
+  <p>
+    Ladder Records is a creative collective, label, and recording hub
+    based around Muscle Memory Musik Studio. We work with artists, producers,
+    and collectives to bring projects from concept to release.
+  </p>
 
-  <section class="intro">
-    <h2>Welcome to Ladder Records</h2>
-    <p>
-      Ladder Records is a multidisciplinary music collective supporting artists
-      through writing, recording, rehearsal, production, performance and release.
-    </p>
-  </section>
+  <h2>About</h2>
+  <p>
+    Founded with the ethos of “We can get you to the next rung of the ladder,”
+    Ladder Records supports the full creative journey — from songwriting, recording,
+    development, and live performance.
+  </p>
 
-  <section class="gallery">
-    <div class="gallery-track">
-      <img
+  <h2>Contact</h2>
+  <p>Email: <a href="mailto:dishytangent@gmail.com">dishytangent@gmail.com</a>, 
+     <a href="mailto:ladderrecordsuk@gmail.com">ladderrecordsuk@gmail.com</a>, 
+     <a href="mailto:musclememorymusik@gmail.com">musclememorymusik@gmail.com</a>
+  </p>
+</main>
+
+</body>
+</html>
