@@ -5,65 +5,159 @@
 <title>Ladder Records</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="style.css">
+<style>
+/* ===== HERO / HEADER ===== */
+header {
+  position: relative;
+  height: 80vh;
+  text-align: center;
+  overflow: hidden;
+  background: linear-gradient(180deg, #000000, #0b0b0b, #000000);
+}
+
+.logo {
+  max-width: 320px; /* reasonable size */
+  margin: 3rem auto 1rem auto;
+  position: relative;
+  z-index: 6;
+}
+
+/* Solid cloud behind logo */
+.hero-cloud {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  width: 400px;
+  height: 150px;
+  background: white;
+  border-radius: 50%;
+  filter: blur(45px);
+  transform: translate(-50%, -50%);
+  z-index: 2;
+}
+
+/* Floating clouds */
+.cloud {
+  position: absolute;
+  width: 480px;
+  height: 180px;
+  background: rgba(255, 255, 255, 0.35);
+  border-radius: 50%;
+  filter: blur(60px);
+  animation: drift linear infinite;
+  z-index: 1;
+}
+
+.cloud.a { top: 8%; animation-duration: 120s; }
+.cloud.b { top: 22%; animation-duration: 90s; }
+.cloud.c { top: 36%; animation-duration: 70s; }
+
+@keyframes drift {
+  from { transform: translateX(-600px); }
+  to { transform: translateX(120vw); }
+}
+
+/* Hero text under logo */
+.hero-text {
+  position: relative;
+  z-index: 6;
+  margin-top: 1rem;
+  font-weight: 600;
+  font-size: 1.3rem;
+  color: #fff;
+  text-shadow: 2px 2px 4px #000;
+}
+
+/* Navigation */
+nav {
+  margin-top: 2rem;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+  margin: 0 1.2rem;
+  font-weight: 500;
+  transition: opacity 0.3s ease;
+}
+
+nav a:hover {
+  opacity: 0.6;
+}
+
+/* Hero section spacing */
+.hero-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 80vh;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .logo {
+    max-width: 220px;
+  }
+  .hero-text {
+    font-size: 1rem;
+    text-align: center;
+    padding: 0 1rem;
+  }
+  nav a {
+    margin: 0 0.7rem;
+    font-size: 0.9rem;
+  }
+}
+</style>
 </head>
+
 <body>
 
 <header>
-  <a href="index.html"><img src="Ladder Records logo 2a.jpg" alt="Ladder Records Logo" class="logo"></a>
-  <div class="hero-cloud"></div>
-  <div class="cloud a"></div>
-  <div class="cloud b"></div>
-  <div class="cloud c"></div>
-  <div class="hero-text">A CREATIVE STUDIO, LABEL & ARTIST COLLECTIVE<br>WE CAN GET YOU TO THE NEXT RUNG OF THE LADDER</div>
-  <nav>
-    <a href="studio.html">Studio</a>
-    <a href="booking.html">Booking</a>
-    <a href="gallery.html">Gallery</a>
-    <a href="contact.html">Contact</a>
-  </nav>
+  <div class="hero-section">
+    <div class="hero-cloud"></div>
+    <div class="cloud a"></div>
+    <div class="cloud b"></div>
+    <div class="cloud c"></div>
+
+    <a href="index.html"><img src="Ladder Records logo 2a.jpg" alt="Ladder Records Logo" class="logo"></a>
+    <div class="hero-text">
+      A CREATIVE STUDIO, LABEL & ARTIST COLLECTIVE<br>
+      WE CAN GET YOU TO THE NEXT RUNG OF THE LADDER
+    </div>
+
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="studio.html">Studio</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="booking.html">Booking</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </div>
 </header>
 
 <main class="section">
   <h1>Welcome to Ladder Records</h1>
-  <p>The creative hub for music, development, and collaboration. Explore our studio, artists, and events.</p>
+  <p>Independent music studio, label, and collective supporting artists, producers, and creators through all stages of their journey.</p>
+
+  <section>
+    <h2>Latest Projects</h2>
+    <p>Dishy Tangent, Mostwanted2, Tia Pearman, Serena Dench, and more. Discover our releases, studio sessions, and live performances.</p>
+    <a href="gallery.html" class="cta-button">View Gallery</a>
+  </section>
+
+  <section>
+    <h2>Book Studio Time</h2>
+    <p>Reserve sessions in our recording or podcast rooms, collaborate with producers, or book artists from our collective.</p>
+    <a href="booking.html" class="cta-button">Book Now</a>
+  </section>
+
 </main>
 
-<section class="section center">
-  <h2>Gallery</h2>
-  <div class="gallery-grid">
-    <div class="gallery-item"><img src="better-than-me-dishy-tangent.jpg" alt=""></div>
-    <div class="gallery-item"><img src="clear-dishy-tangent.jpg" alt=""></div>
-    <div class="gallery-item"><img src="contigo.jpg" alt=""></div>
-    <div class="gallery-item"><img src="getting-by-dishy-tangent.jpg" alt=""></div>
-    <div class="gallery-item"><img src="here-we-go-dishy-tangent.jpg" alt=""></div>
-    <div class="gallery-item"><img src="i-got-u-dishy-tangent.png" alt=""></div>
-  </div>
-</section>
-
 <footer>
-  &copy; 2026 Ladder Records
+  &copy; 2026 Ladder Records — All rights reserved
 </footer>
-
-<!-- LIGHTBOX SCRIPT -->
-<div class="lightbox" id="lightbox">
-  <img src="" alt="">
-</div>
-<script>
-const galleryItems = document.querySelectorAll('.gallery-item img');
-const lightbox = document.getElementById('lightbox');
-const lightboxImg = lightbox.querySelector('img');
-
-galleryItems.forEach(img => {
-  img.addEventListener('click', () => {
-    lightbox.style.display = 'flex';
-    lightboxImg.src = img.src;
-  });
-});
-
-lightbox.addEventListener('click', () => {
-  lightbox.style.display = 'none';
-});
-</script>
 
 </body>
 </html>
