@@ -216,3 +216,27 @@ footer {
   }
 
 }
+/* BACK TO HOME LINK */
+.back-home {
+  display: inline-block;
+  margin: 1rem 0 2rem 2rem;
+  padding: 0.5rem 1rem;
+  background: rgba(255,255,255,0.1);
+  color: #fff;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: bold;
+  transition: background 0.3s, color 0.3s;
+  z-index: 1000;
+}
+
+.back-home:hover {
+  background: #fff;
+  color: #000;
+}
+
+.back-home.fixed {
+  position: fixed;
+  top: 1rem;
+  left: 1rem;
+}
