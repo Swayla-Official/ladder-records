@@ -1,162 +1,153 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 <meta charset="UTF-8">
 <title>Ladder Records</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="style.css">
+
 <style>
-/* ===== HERO / HEADER ===== */
-header {
-  position: relative;
-  height: 80vh;
-  text-align: center;
-  overflow: hidden;
-  background: linear-gradient(180deg, #000000, #0b0b0b, #000000);
+
+/* RESET */
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Helvetica,Arial,sans-serif;
 }
 
-.logo {
-  max-width: 320px; /* reasonable size */
-  margin: 3rem auto 1rem auto;
-  position: relative;
-  z-index: 6;
+/* BODY */
+
+body{
+background:linear-gradient(180deg,#000,#0b0b0b,#000);
+color:white;
+text-align:center;
+overflow-x:hidden;
 }
 
-/* Solid cloud behind logo */
-.hero-cloud {
-  position: absolute;
-  top: 30%;
-  left: 50%;
-  width: 400px;
-  height: 150px;
-  background: white;
-  border-radius: 50%;
-  filter: blur(45px);
-  transform: translate(-50%, -50%);
-  z-index: 2;
+/* HERO */
+
+header{
+height:85vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+position:relative;
 }
 
-/* Floating clouds */
-.cloud {
-  position: absolute;
-  width: 480px;
-  height: 180px;
-  background: rgba(255, 255, 255, 0.35);
-  border-radius: 50%;
-  filter: blur(60px);
-  animation: drift linear infinite;
-  z-index: 1;
+/* LOGO */
+
+.logo{
+max-width:320px;
+width:80%;
+margin-bottom:30px;
+position:relative;
+z-index:5;
 }
 
-.cloud.a { top: 8%; animation-duration: 120s; }
-.cloud.b { top: 22%; animation-duration: 90s; }
-.cloud.c { top: 36%; animation-duration: 70s; }
+/* CLOUD */
 
-@keyframes drift {
-  from { transform: translateX(-600px); }
-  to { transform: translateX(120vw); }
+.hero-cloud{
+position:absolute;
+top:45%;
+left:50%;
+width:600px;
+height:240px;
+background:white;
+border-radius:50%;
+filter:blur(50px);
+transform:translate(-50%,-50%);
+z-index:1;
 }
 
-/* Hero text under logo */
-.hero-text {
-  position: relative;
-  z-index: 6;
-  margin-top: 1rem;
-  font-weight: 600;
-  font-size: 1.3rem;
-  color: #fff;
-  text-shadow: 2px 2px 4px #000;
+/* HERO TEXT */
+
+.hero-text{
+font-size:1.4rem;
+max-width:700px;
+font-weight:bold;
+line-height:1.6;
+
+text-shadow:
+-1px -1px 0 black,
+1px -1px 0 black,
+-1px 1px 0 black,
+1px 1px 0 black;
+
+z-index:5;
 }
 
-/* Navigation */
-nav {
-  margin-top: 2rem;
+/* NAVIGATION */
+
+nav{
+margin-top:40px;
 }
 
-nav a {
-  color: #fff;
-  text-decoration: none;
-  margin: 0 1.2rem;
-  font-weight: 500;
-  transition: opacity 0.3s ease;
+nav a{
+
+display:inline-block;
+margin:10px;
+
+padding:12px 22px;
+
+color:white;
+text-decoration:none;
+
+border:1px solid white;
+border-radius:6px;
+
+font-weight:600;
+
+transition:0.3s;
 }
 
-nav a:hover {
-  opacity: 0.6;
+nav a:hover{
+background:white;
+color:black;
 }
 
-/* Hero section spacing */
-.hero-section {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 80vh;
+/* FOOTER */
+
+footer{
+margin-top:80px;
+padding:30px;
+color:#777;
+font-size:0.9rem;
 }
 
-/* Responsive */
-@media (max-width: 900px) {
-  .logo {
-    max-width: 220px;
-  }
-  .hero-text {
-    font-size: 1rem;
-    text-align: center;
-    padding: 0 1rem;
-  }
-  nav a {
-    margin: 0 0.7rem;
-    font-size: 0.9rem;
-  }
-}
 </style>
 </head>
 
 <body>
 
 <header>
-  <div class="hero-section">
-    <div class="hero-cloud"></div>
-    <div class="cloud a"></div>
-    <div class="cloud b"></div>
-    <div class="cloud c"></div>
 
-    <a href="index.html"><img src="Ladder Records logo 2a.jpg" alt="Ladder Records Logo" class="logo"></a>
-    <div class="hero-text">
-      A CREATIVE STUDIO, LABEL & ARTIST COLLECTIVE<br>
-      WE CAN GET YOU TO THE NEXT RUNG OF THE LADDER
-    </div>
+<div class="hero-cloud"></div>
 
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="studio.html">Studio</a>
-      <a href="gallery.html">Gallery</a>
-      <a href="booking.html">Booking</a>
-      <a href="contact.html">Contact</a>
-    </nav>
-  </div>
+<img src="Ladder Records logo 2a.jpg" class="logo">
+
+<div class="hero-text">
+A CREATIVE STUDIO, LABEL & ARTIST COLLECTIVE<br>
+WE CAN GET YOU TO THE NEXT RUNG OF THE LADDER
+</div>
+
 </header>
 
-<main class="section">
-  <h1>Welcome to Ladder Records</h1>
-  <p>Independent music studio, label, and collective supporting artists, producers, and creators through all stages of their journey.</p>
+<nav>
 
-  <section>
-    <h2>Latest Projects</h2>
-    <p>Dishy Tangent, Mostwanted2, Tia Pearman, Serena Dench, and more. Discover our releases, studio sessions, and live performances.</p>
-    <a href="gallery.html" class="cta-button">View Gallery</a>
-  </section>
+<a href="index.html">Home</a>
+<a href="studio.html">Studio</a>
+<a href="gallery.html">Gallery</a>
+<a href="booking.html">Booking</a>
 
-  <section>
-    <h2>Book Studio Time</h2>
-    <p>Reserve sessions in our recording or podcast rooms, collaborate with producers, or book artists from our collective.</p>
-    <a href="booking.html" class="cta-button">Book Now</a>
-  </section>
-
-</main>
+</nav>
 
 <footer>
-  &copy; 2026 Ladder Records — All rights reserved
+
+© Ladder Records 2026
+
 </footer>
 
 </body>
