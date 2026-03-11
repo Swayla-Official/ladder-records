@@ -82,6 +82,16 @@ header {
   text-shadow: 2px 2px 4px #000000; /* outline effect for readability */
 }
 
+/* HERO DESCRIPTION PARAGRAPH */
+.hero-description {
+  max-width: 700px;
+  margin: 2rem auto 0 auto;
+  font-size: 1rem;
+  color: #dcdcdc;
+  text-align: center;
+  line-height: 1.8;
+}
+
 /* NAVIGATION */
 nav {
   position: absolute;
@@ -99,27 +109,6 @@ nav a {
 
 nav a:hover {
   opacity: 0.6;
-}
-
-/* GALLERY PREVIEW */
-.gallery-preview {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  gap: 1rem;
-  padding: 4rem 5%;
-  margin-top: 2rem;
-}
-
-.gallery-preview img {
-  width: 100%;
-  height: auto;
-  border-radius: 6px;
-  transition: transform 0.3s ease;
-  cursor: pointer;
-}
-
-.gallery-preview img:hover {
-  transform: scale(1.05);
 }
 
 /* BACK BUTTONS SECTION */
@@ -167,16 +156,16 @@ nav a:hover {
 </header>
 
 <main>
-
-  <!-- GALLERY PREVIEW SECTION -->
-  <section class="gallery-preview">
-    <img src="wellingbeerfest2.jpg" alt="Welling Beer Fest 2">
-    <img src="dishytangent3.jpg" alt="Dishy Tangent 3">
-    <img src="wellingbeerfest.jpg" alt="Welling Beer Fest">
-    <img src="woha2023.jpg" alt="WOHA 2023">
-    <img src="dishytangentbassment.jpg" alt="Dishy Tangent Bassment">
+  <!-- ===== HERO DESCRIPTION ===== -->
+  <section class="hero-description">
+    <p>
+      Ladder Records is an independent creative hub, blending the energy of a recording studio, label, and artist collective under one roof.
+      Since its inception, the space has fostered collaboration, innovation, and artist development across genres and disciplines.
+      From live music production to mentorship programs, Ladder Records empowers musicians, producers, and creatives to reach their next rung in the music industry.
+    </p>
   </section>
 
+  <!-- ===== BACK BUTTONS ===== -->
   <div class="back-buttons">
     <a href="studio.html">&larr; Studio</a>
     <a href="gallery.html">&larr; Gallery</a>
