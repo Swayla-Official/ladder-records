@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<title>Studio Booking</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+
+body{
+background:#0b0b0b;
+color:white;
+font-family:Helvetica,Arial,sans-serif;
+text-align:center;
+padding:40px;
+}
+
+.logo{
+max-width:220px;
+margin-bottom:30px;
+}
+
+a{
+color:white;
+text-decoration:none;
+border:1px solid white;
+padding:10px 20px;
+border-radius:5px;
+}
+
+a:hover{
+background:white;
+color:black;
+}
+
+/* BOOKING BOX */
+
+.booking-box{
+
+background:#141414;
+
+max-width:500px;
+
+margin:auto;
+
+padding:30px;
+
+border-radius:10px;
+
+margin-top:40px;
+}
+
+input,select{
+
+width:100%;
+
+padding:10px;
+
+margin-top:10px;
+
+margin-bottom:20px;
+
+border:none;
+
+border-radius:5px;
+}
+
+button{
+
+background:white;
+
+color:black;
+
+padding:12px 20px;
+
+border:none;
+
+border-radius:5px;
+
+font-weight:bold;
+
+cursor:pointer;
+}
+
+.price{
+
+font-size:1.6rem;
+
+margin-top:10px;
+
+}
+
+</style>
+
+<script>
+
+function calculate(){
+
+let hours=document.getElementById("hours").value;
+
+let rate=document.getElementById("session").value;
+
+let total=hours*rate;
+
+document.getElementById("total").innerHTML="£"+total;
+
+}
+
+</script>
+
+</head>
+
+<body>
+
+<a href="index.html">← Back Home</a>
+
+<br><br>
+
+<img src="Ladder Records logo 2a.jpg" class="logo">
+
+<h1>Studio Booking</h1>
+
+<div class="booking-box">
+
+<label>Session Type</label>
+
+<select id="session" onchange="calculate()">
+
+<option value="30">Studio Dry Hire (£30/hr)</option>
+
+<option value="60">Studio With Engineer (£60/hr)</option>
+
+<option value="30">Podcast Room (£30/hr)</option>
+
+<option value="60">Podcast With Engineer (£60/hr)</option>
+
+</select>
+
+<label>Hours</label>
+
+<input type="number" id="hours" value="1" onchange="calculate()">
+
+<h2>Total</h2>
+
+<div class="price" id="total">£30</div>
+
+<br>
+
+<form action="mailto:musclememorymusik@gmail.com" method="post" enctype="text/plain">
+
+<input type="text" name="name" placeholder="Your Name" required>
+
+<input type="email" name="email" placeholder="Email Address" required>
+
+<input type="text" name="date" placeholder="Preferred Date">
+
+<button type="submit">Send Booking Request</button>
+
+</form>
+
+</div>
+
+</body>
+</html>
