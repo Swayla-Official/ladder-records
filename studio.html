@@ -1,244 +1,282 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
 <meta charset="UTF-8">
-<title>Muscle Memory Musik Studio</title>
+<title>Studio — Ladder Records</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
-
-body{
-background:#0a0a0a;
-color:white;
-font-family:Helvetica, Arial, sans-serif;
-text-align:center;
-padding:40px 20px;
-line-height:1.6;
+/* ===== RESET ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
-.logo{
-max-width:200px;
-margin-bottom:20px;
+body {
+  background: linear-gradient(180deg, #000000 0%, #0a0a0a 40%, #050505 70%, #000000 100%);
+  color: #f2f2f2;
+  line-height: 1.6;
 }
 
-nav{
-margin-bottom:40px;
+a {
+  color: #ffffff;
+  text-decoration: none;
 }
 
-nav a{
-display:inline-block;
-margin:6px;
-padding:10px 18px;
-border:1px solid white;
-border-radius:6px;
-text-decoration:none;
-color:white;
-font-weight:bold;
+/* HEADER NAV */
+header {
+  background: rgba(10,10,10,0.95);
+  padding: 1rem 5%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
-nav a:hover{
-background:white;
-color:black;
+header a {
+  color: #fff;
+  margin-left: 2rem;
+  font-weight: 600;
 }
 
-.section{
-max-width:900px;
-margin:auto;
-margin-bottom:40px;
+header a:hover {
+  opacity: 0.7;
 }
 
-.timeline{
-max-width:700px;
-margin:auto;
-text-align:left;
-margin-top:30px;
+/* MAIN */
+main {
+  padding: 3rem 8vw;
+  max-width: 1200px;
+  margin: auto;
 }
 
-.timeline-item{
-border-left:2px solid white;
-padding-left:20px;
-margin-bottom:25px;
+/* SECTIONS */
+section {
+  margin-bottom: 4rem;
 }
 
-.year{
-font-weight:bold;
-font-size:18px;
-margin-bottom:5px;
+h1, h2, h3 {
+  font-weight: 500;
+  margin-bottom: 1rem;
 }
 
-.collapsible{
-background:#141414;
-color:white;
-cursor:pointer;
-padding:14px;
-width:100%;
-border:none;
-text-align:left;
-font-size:18px;
-margin-top:10px;
-border-radius:6px;
+h1 { font-size: 2.4rem; }
+h2 { font-size: 1.8rem; }
+h3 { font-size: 1.2rem; }
+
+p {
+  max-width: 720px;
+  color: #cccccc;
+  margin-bottom: 1.2rem;
+  font-size: 0.95rem;
 }
 
-.content{
-display:none;
-padding:20px;
-background:#1c1c1c;
-border-radius:6px;
+/* TIMELINE */
+.timeline {
+  border-left: 2px solid #333;
+  padding-left: 2rem;
+  margin-top: 1.5rem;
 }
 
-.gallery{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-gap:15px;
-margin-top:20px;
+.timeline-item {
+  margin-bottom: 2.5rem;
 }
 
-.gallery img{
-width:100%;
-border-radius:6px;
+.timeline-item span {
+  display: block;
+  color: #999;
+  font-size: 0.85rem;
+  margin-bottom: 0.4rem;
 }
 
+/* WORKS GRID */
+.works-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.work-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 6px;
+}
+
+.work-item img {
+  width: 100%;
+  display: block;
+  transition: transform 0.35s ease;
+}
+
+.work-item:hover img {
+  transform: scale(1.06);
+}
+
+.work-caption {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 0.6rem;
+  background: rgba(0, 0, 0, 0.65);
+  font-size: 0.85rem;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.work-item:hover .work-caption {
+  opacity: 1;
+}
 </style>
-
-<script>
-
-function toggle(el){
-var content = el.nextElementSibling;
-if(content.style.display === "block"){
-content.style.display="none";
-}else{
-content.style.display="block";
-}
-}
-
-</script>
-
 </head>
 
 <body>
 
-<img src="Ladder Records logo 2a.jpg" class="logo">
+<header>
+  <a href="index.html">&larr; Home</a>
+  <nav>
+    <a href="studio.html">Studio</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="booking.html">Booking</a>
+  </nav>
+</header>
 
-<nav>
+<main>
 
-<a href="index.html">Home</a>
-<a href="studio.html">Studio</a>
-<a href="gallery.html">Gallery</a>
-<a href="booking.html">Booking</a>
+<!-- STUDIO INTRO -->
+<section>
+  <h1>Muscle Memory Musik Studio</h1>
+  <p>
+    Muscle Memory Musik is an independent recording studio founded in 2005.
+    Built and rebuilt over time, the studio has evolved through collaboration
+    and hands-on creative work.
+  </p>
+  <p>
+    More than a recording space, the studio functions as a development hub —
+    supporting artists, producers, and collectives at different stages of
+    their journey.
+  </p>
+</section>
 
-</nav>
+<!-- STUDIO TIMELINE -->
+<section>
+  <h2>Studio History</h2>
+  <div class="timeline">
 
-<h1>Muscle Memory Musik Studio</h1>
+    <div class="timeline-item">
+      <span>2005</span>
+      <p>
+        Muscle Memory Musik Studio is founded. Built from the ground up,
+        prioritising creative freedom and artist growth.
+      </p>
+    </div>
 
-<div class="section">
+    <div class="timeline-item">
+      <span>Early Foundations</span>
+      <p>
+        Producers and engineers <strong>Young Max</strong> and <strong>Del aka Sonic</strong>
+        were pivotal in early collaborations, forming the initial trio of producers and engineers
+        alongside <strong>Louis aka Reason</strong>.
+      </p>
+    </div>
 
-<p>
-Muscle Memory Musik Studio is the creative headquarters of Ladder Records,
-supporting recording, songwriting, podcasting and artist development.
-</p>
+    <div class="timeline-item">
+      <span>2012</span>
+      <p>
+        <strong>Dishy Tangent</strong> is formed by Reason and Matt Shilk.
+      </p>
+    </div>
 
-</div>
+    <div class="timeline-item">
+      <span>2014</span>
+      <p>
+        <strong>Sing Out Loud Sundays</strong> is founded by RM Moses.
+        Muscle Memory Musik Studio becomes the HQ for rehearsals, filmed sessions,
+        and artist development.
+      </p>
+    </div>
 
-<h2>Studio Timeline</h2>
+    <div class="timeline-item">
+      <span>2019</span>
+      <p>
+        Collaborations expand including <strong>Swayla</strong> and contemporary electronic music.
+      </p>
+    </div>
 
-<div class="timeline">
+    <div class="timeline-item">
+      <span>2025–2026</span>
+      <p>
+        Muscle Memory Musik Studio becomes the official home of the UK’s
+        <strong>GZONE Rap Battle</strong>. Curator <strong>GingaJay</strong> brings
+        the platform to the studio, hosting lyricists and performers.
+      </p>
+    </div>
 
-<div class="timeline-item">
-<div class="year">2010</div>
-Early recording projects including Panning for Gold.
-</div>
+    <div class="timeline-item">
+      <span>Present</span>
+      <p>
+        <strong>Ladder Records</strong> emerges as a collective — formalising
+        years of collaboration and shared creative values.
+      </p>
+    </div>
 
-<div class="timeline-item">
-<div class="year">2013</div>
-Recording work with Cockney Rejects.
-</div>
+  </div>
+</section>
 
-<div class="timeline-item">
-<div class="year">2017</div>
-Singer songwriter Serena Dench records at the studio.
-</div>
+<!-- SELECTED WORKS -->
+<section>
+  <h2>Selected Works</h2>
+  <p>A curated selection of releases shaped by the Muscle Memory Musik environment.</p>
 
-<div class="timeline-item">
-<div class="year">2021</div>
-Projects linked to Mostwanted2.
-</div>
+  <div class="works-grid">
 
-<div class="timeline-item">
-<div class="year">2022</div>
-Sessions with Tia Pearman and Courtney Courtney.
-</div>
+    <div class="work-item">
+      <img src="better-than-me-dishy-tangent.jpg" alt="Better Than Me - Dishy Tangent">
+      <div class="work-caption">Dishy Tangent · Better Than Me</div>
+    </div>
 
-<div class="timeline-item">
-<div class="year">2024</div>
-Sing Out Loud Sundays founded by RM Moses uses the studio as filming HQ.
-</div>
+    <div class="work-item">
+      <img src="clear-dishy-tangent.jpg" alt="Clear - Dishy Tangent">
+      <div class="work-caption">Dishy Tangent · Clear</div>
+    </div>
 
-<div class="timeline-item">
-<div class="year">2025-2026</div>
+    <div class="work-item">
+      <img src="getting-by-dishy-tangent.jpg" alt="Getting By - Dishy Tangent">
+      <div class="work-caption">Dishy Tangent · Getting By</div>
+    </div>
 
-Muscle Memory becomes the official home of  
-GZONE Rap Battle.
+    <div class="work-item">
+      <img src="here-we-go-dishy-tangent.jpg" alt="Here We Go - Dishy Tangent">
+      <div class="work-caption">Dishy Tangent · Here We Go Again</div>
+    </div>
 
-Curated by GingaJay, the platform showcases UK lyricists clashing in a new independent entertainment format.
+    <div class="work-item">
+      <img src="no-one-knows-dishy-tangent.jpg" alt="No One Knows - Dishy Tangent">
+      <div class="work-caption">Dishy Tangent · No One Knows</div>
+    </div>
 
-</div>
+    <div class="work-item">
+      <img src="mostwanted2.jpg" alt="Mostwanted2">
+      <div class="work-caption">Mostwanted2 · 2021</div>
+    </div>
 
-</div>
+    <div class="work-item">
+      <img src="serenadench.jpg" alt="Serena Dench">
+      <div class="work-caption">Serena Dench · 2017</div>
+    </div>
 
-<button class="collapsible" onclick="toggle(this)">Producers & Engineers</button>
+    <div class="work-item">
+      <img src="tiapearman.jpg" alt="Tia Pearman">
+      <div class="work-caption">Tia Pearman · 2022</div>
+    </div>
 
-<div class="content">
+  </div>
+</section>
 
-<p>
-
-Young Max and Del aka Sonic were pivotal in early collaborations and formed the initial trio of producers and engineers of Muscle Memory Studio alongside Louis aka Reason.
-
-</p>
-
-</div>
-
-<button class="collapsible" onclick="toggle(this)">Equipment</button>
-
-<div class="content">
-
-<ul>
-
-<li>Vintage and handmade guitars</li>
-<li>Fender electric guitars</li>
-<li>Roland keyboards</li>
-<li>Marshall amplifiers</li>
-<li>Professional recording interface</li>
-
-</ul>
-
-</div>
-
-<button class="collapsible" onclick="toggle(this)">Studio Prices</button>
-
-<div class="content">
-
-<p>
-
-Dry Hire — £30 per hour  
-With Engineer — £60 per hour  
-Podcast Room — same rate  
-
-50% deposit required to confirm booking.
-
-</p>
-
-</div>
-
-<h2>Studio Gallery</h2>
-
-<div class="gallery">
-
-<img src="studio1.jpg">
-<img src="studio2.jpg">
-<img src="studio3.jpg">
-
-</div>
-
+</main>
 </body>
 </html>
