@@ -1,154 +1,189 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
 <meta charset="UTF-8">
 <title>Ladder Records</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
-
-/* RESET */
-
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Helvetica,Arial,sans-serif;
+/* ===== RESET ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Helvetica, Arial, sans-serif;
 }
 
-/* BODY */
-
-body{
-background:linear-gradient(180deg,#000,#0b0b0b,#000);
-color:white;
-text-align:center;
-overflow-x:hidden;
+body {
+  background: linear-gradient(180deg, #000000, #0b0b0b, #000000);
+  color: #f2f2f2;
+  overflow-x: hidden;
+  line-height: 1.6;
 }
 
-/* HERO */
-
-header{
-height:85vh;
-display:flex;
-flex-direction:column;
-justify-content:center;
-align-items:center;
-position:relative;
+/* ===== HEADER / HERO ===== */
+header {
+  position: relative;
+  height: 80vh;
+  text-align: center;
+  overflow: hidden;
+  z-index: 10;
 }
 
-/* LOGO */
-
-.logo{
-max-width:320px;
-width:80%;
-margin-bottom:30px;
-position:relative;
-z-index:5;
+.logo {
+  max-width: 400px;
+  margin: 6rem auto 1rem auto;
+  position: relative;
+  z-index: 6;
+  display: block;
 }
 
-/* CLOUD */
-
-.hero-cloud{
-position:absolute;
-top:45%;
-left:50%;
-width:600px;
-height:240px;
-background:white;
-border-radius:50%;
-filter:blur(50px);
-transform:translate(-50%,-50%);
-z-index:1;
+/* SOLID CLOUD BEHIND LOGO */
+.hero-cloud {
+  position: absolute;
+  top: 48%;
+  left: 50%;
+  width: 640px;
+  height: 240px;
+  background: white;
+  border-radius: 50%;
+  filter: blur(45px);
+  transform: translate(-50%, -50%);
+  z-index: 2;
 }
 
-/* HERO TEXT */
+/* FLOATING CLOUDS */
+.cloud {
+  position: absolute;
+  width: 480px;
+  height: 180px;
+  background: rgba(255,255,255,0.35);
+  border-radius: 50%;
+  filter: blur(60px);
+  animation: drift linear infinite;
+  z-index: 1;
+}
 
-.hero-text{
-font-size:1.4rem;
-max-width:700px;
-font-weight:bold;
-line-height:1.6;
+.cloud.a { top: 8%; animation-duration: 120s; }
+.cloud.b { top: 22%; animation-duration: 90s; }
+.cloud.c { top: 36%; animation-duration: 70s; }
 
-text-shadow:
--1px -1px 0 black,
-1px -1px 0 black,
--1px 1px 0 black,
-1px 1px 0 black;
+@keyframes drift {
+  from { transform: translateX(-600px); }
+  to { transform: translateX(120vw); }
+}
 
-z-index:5;
+/* HERO TEXT UNDER LOGO */
+.hero-text {
+  margin-top: 1rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #ffffff;
+  text-shadow: 2px 2px 4px #000000; /* outline effect for readability */
 }
 
 /* NAVIGATION */
-
-nav{
-margin-top:40px;
+nav {
+  position: absolute;
+  top: 1.5rem;
+  right: 5%;
+  z-index: 10;
 }
 
-nav a{
-
-display:inline-block;
-margin:10px;
-
-padding:12px 22px;
-
-color:white;
-text-decoration:none;
-
-border:1px solid white;
-border-radius:6px;
-
-font-weight:600;
-
-transition:0.3s;
+nav a {
+  color: #fff;
+  text-decoration: none;
+  margin-left: 2rem;
+  font-weight: 600;
 }
 
-nav a:hover{
-background:white;
-color:black;
+nav a:hover {
+  opacity: 0.6;
 }
 
-/* FOOTER */
-
-footer{
-margin-top:80px;
-padding:30px;
-color:#777;
-font-size:0.9rem;
+/* GALLERY PREVIEW */
+.gallery-preview {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1rem;
+  padding: 4rem 5%;
+  margin-top: 2rem;
 }
 
+.gallery-preview img {
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.gallery-preview img:hover {
+  transform: scale(1.05);
+}
+
+/* BACK BUTTONS SECTION */
+.back-buttons {
+  margin: 3rem 5%;
+}
+
+.back-buttons a {
+  display: inline-block;
+  margin-right: 1rem;
+  padding: 0.6rem 1.2rem;
+  background: #222;
+  color: #fff;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.back-buttons a:hover {
+  background: #333;
+}
 </style>
-</head>
 
+</head>
 <body>
 
 <header>
-
-<div class="hero-cloud"></div>
-
-<img src="Ladder Records logo 2a.jpg" class="logo">
-
-<div class="hero-text">
-A CREATIVE STUDIO, LABEL & ARTIST COLLECTIVE<br>
-WE CAN GET YOU TO THE NEXT RUNG OF THE LADDER
-</div>
-
+  <div class="hero-cloud"></div>
+  <img src="Ladder Records logo 2a.jpg" alt="Ladder Records Logo" class="logo">
+  <div class="hero-text">
+    A CREATIVE STUDIO, LABEL & ARTIST COLLECTIVE<br>
+    WE CAN GET YOU TO THE NEXT RUNG OF THE LADDER
+  </div>
+  <!-- Floating clouds -->
+  <div class="cloud a"></div>
+  <div class="cloud b"></div>
+  <div class="cloud c"></div>
+  <!-- Navigation -->
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="studio.html">Studio</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="booking.html">Booking</a>
+  </nav>
 </header>
 
-<nav>
+<main>
 
-<a href="index.html">Home</a>
-<a href="studio.html">Studio</a>
-<a href="gallery.html">Gallery</a>
-<a href="booking.html">Booking</a>
+  <!-- GALLERY PREVIEW SECTION -->
+  <section class="gallery-preview">
+    <img src="wellingbeerfest2.jpg" alt="Welling Beer Fest 2">
+    <img src="dishytangent3.jpg" alt="Dishy Tangent 3">
+    <img src="wellingbeerfest.jpg" alt="Welling Beer Fest">
+    <img src="woha2023.jpg" alt="WOHA 2023">
+    <img src="dishytangentbassment.jpg" alt="Dishy Tangent Bassment">
+  </section>
 
-</nav>
+  <div class="back-buttons">
+    <a href="studio.html">&larr; Studio</a>
+    <a href="gallery.html">&larr; Gallery</a>
+    <a href="booking.html">&larr; Book Studio</a>
+  </div>
 
-<footer>
-
-© Ladder Records 2026
-
-</footer>
+</main>
 
 </body>
 </html>
