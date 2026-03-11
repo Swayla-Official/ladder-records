@@ -2,183 +2,281 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Studio — Ladder Records</title>
+<title>Muscle Memory Musik Studio</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
-/* ===== RESET ===== */
-* { margin:0; padding:0; box-sizing:border-box; font-family: Helvetica, Arial, sans-serif; }
 
-/* ===== BODY ===== */
-body {
-  background: linear-gradient(180deg, #000000, #0b0b0b, #000000);
-  color: #f2f2f2;
-  line-height: 1.6;
-  text-align: left;
-  padding: 0 5vw;
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Helvetica, Arial, sans-serif;
 }
 
-/* ===== LOGO ===== */
-.logo {
-  max-width: 220px;
-  display:block;
-  margin: 2rem auto;
+body{
+background:#0a0a0a;
+color:white;
+padding:40px 20px;
+text-align:center;
+line-height:1.6;
 }
 
-/* ===== BACK LINK ===== */
-.back-link {
-  display: inline-block;
-  margin: 1rem 0;
-  color: #fff;
-  text-decoration: none;
-  font-weight: bold;
-}
-.back-link:hover { text-decoration: underline; }
-
-/* ===== SECTIONS ===== */
-section {
-  margin-bottom: 4rem;
+.logo{
+max-width:220px;
+margin-bottom:25px;
 }
 
-h1,h2,h3 { margin-bottom: 1rem; }
+/* NAVIGATION */
 
-h1 { font-size: 2rem; }
-h2 { font-size: 1.5rem; }
-h3 { font-size: 1.2rem; }
-
-/* ===== TIMELINE ===== */
-.timeline { border-left: 2px solid #555; padding-left:2rem; margin-top:1rem; }
-.timeline-item { margin-bottom:2rem; }
-.timeline-item span { display:block; color:#999; font-size:0.85rem; margin-bottom:0.5rem; }
-
-/* ===== COLLAPSIBLE SECTIONS ===== */
-.collapsible {
-  background-color: #111;
-  color: #fff;
-  cursor: pointer;
-  padding: 1rem;
-  width: 100%;
-  border: none;
-  text-align: left;
-  font-size: 1.1rem;
-  outline: none;
-  border-radius:5px;
-  margin-top: 0.5rem;
+nav{
+margin-bottom:40px;
 }
 
-.collapsible:after {
-  content: '\002B'; /* plus sign */
-  float: right;
+nav a{
+display:inline-block;
+margin:8px;
+padding:10px 20px;
+border:1px solid white;
+border-radius:6px;
+text-decoration:none;
+color:white;
+font-weight:600;
+transition:0.3s;
 }
 
-.collapsible.active:after {
-  content: "\2212"; /* minus sign */
+nav a:hover{
+background:white;
+color:black;
 }
 
-.content {
-  padding: 0 1rem;
-  display: none;
-  overflow: hidden;
-  background-color: #1a1a1a;
-  border-radius:5px;
-  margin-bottom: 1rem;
+/* SECTION */
+
+.section{
+max-width:900px;
+margin:auto;
+margin-bottom:40px;
 }
 
-/* ===== PROJECT GRID ===== */
-.works-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-  gap: 1rem;
-  margin-top: 2rem;
+/* TIMELINE */
+
+.timeline{
+max-width:800px;
+margin:auto;
+text-align:left;
+margin-top:40px;
 }
 
-.work-item img {
-  width: 100%;
-  border-radius: 5px;
-  transition: transform 0.3s ease;
+.timeline-item{
+border-left:2px solid white;
+padding-left:20px;
+margin-bottom:28px;
 }
 
-.work-item:hover img {
-  transform: scale(1.05);
+.timeline-year{
+font-weight:bold;
+font-size:1.2rem;
+margin-bottom:5px;
 }
+
+/* COLLAPSIBLE */
+
+.collapsible{
+background:#141414;
+padding:14px;
+border:none;
+width:100%;
+text-align:left;
+cursor:pointer;
+color:white;
+font-size:1.1rem;
+border-radius:6px;
+margin-top:15px;
+}
+
+.content{
+display:none;
+background:#1d1d1d;
+padding:20px;
+border-radius:6px;
+margin-top:6px;
+}
+
+/* LIST */
+
+ul{
+text-align:left;
+max-width:600px;
+margin:20px auto;
+}
+
+/* PRICE */
+
+.price-box{
+background:#141414;
+padding:20px;
+border-radius:8px;
+margin-top:10px;
+}
+
+/* GALLERY */
+
+.gallery{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:14px;
+margin-top:30px;
+}
+
+.gallery img{
+width:100%;
+border-radius:6px;
+transition:0.3s;
+}
+
+.gallery img:hover{
+transform:scale(1.05);
+}
+
 </style>
-</head>
-
-<body class="studio-page">
-
-<a href="index.html" class="back-link">&#8592; Back to Home</a>
-
-<img src="Ladder Records logo 2a.jpg" alt="Ladder Records Logo" class="logo">
-
-<h1>Muscle Memory Musik Studio</h1>
-<p>Founded in 2005, built from the ground up. The studio has fostered collaborations with a wide range of artists.</p>
-
-<h2>Studio History</h2>
-<div class="timeline">
-  <div class="timeline-item">
-    <span>2005</span>
-    <p>Studio founded. Creative freedom prioritized for artists.</p>
-  </div>
-  <div class="timeline-item">
-    <span>Early Foundations</span>
-    <p>Producers and engineers Young Max and Del aka Sonic were pivotal in early collaborations, forming the initial trio alongside Louis aka Reason.</p>
-  </div>
-  <div class="timeline-item">
-    <span>2012</span>
-    <p>Dishy Tangent formed by Reason and Matt Shilk, genre-busting project with live instrumentation.</p>
-  </div>
-  <div class="timeline-item">
-    <span>2014</span>
-    <p>Sing Out Loud Sundays founded by RM Moses. Studio becomes HQ for recordings and sessions.</p>
-  </div>
-</div>
-
-<h2>Selected Works</h2>
-<div class="works-grid">
-  <div class="work-item">
-    <img src="timeless-music-dishy-tangent.jpg" alt="Dishy Tangent Timeless Music">
-  </div>
-  <div class="work-item">
-    <img src="getting-by-dishy-tangent.jpg" alt="Getting By">
-  </div>
-  <div class="work-item">
-    <img src="mostwanted2-rentfree.jpg" alt="Mostwanted2 Rent Free">
-  </div>
-  <div class="work-item">
-    <img src="tia-neverland.jpg" alt="Tia Pearman Neverland">
-  </div>
-  <div class="work-item">
-    <img src="serenadench.jpg" alt="Serena Dench">
-  </div>
-</div>
-
-<h2>Studio / Podcast Rooms</h2>
-
-<button class="collapsible">Studio Room</button>
-<div class="content">
-  <p>Dry hire hourly: £30 (with audio equipment/interface)</p>
-  <p>With Engineer: £60/hour</p>
-  <p>Deposit 50% required on booking.</p>
-</div>
-
-<button class="collapsible">Podcast Room</button>
-<div class="content">
-  <p>Same rates as studio: £30/hr dry hire, £60/hr with engineer.</p>
-  <p>Deposit 50% on booking.</p>
-</div>
 
 <script>
-// Collapsible sections
-const coll = document.getElementsByClassName("collapsible");
-for (let i=0;i<coll.length;i++){
-  coll[i].addEventListener("click", function(){
-    this.classList.toggle("active");
-    const content = this.nextElementSibling;
-    if (content.style.display==="block"){ content.style.display="none"; }
-    else { content.style.display="block"; }
-  });
+
+function toggle(el){
+let content=el.nextElementSibling;
+
+if(content.style.display==="block"){
+content.style.display="none";
+}else{
+content.style.display="block";
 }
+}
+
 </script>
+
+</head>
+
+<body>
+
+<img src="Ladder Records logo 2a.jpg" class="logo">
+
+<nav>
+<a href="index.html">Home</a>
+<a href="studio.html">Studio</a>
+<a href="gallery.html">Gallery</a>
+<a href="booking.html">Booking</a>
+</nav>
+
+<h1>Muscle Memory Musik Studio</h1>
+
+<div class="section">
+<p>
+Muscle Memory Musik Studio is the creative headquarters of Ladder Records.
+Over time it has developed into a collaborative hub for recording,
+filming, podcasting, songwriting and artist development.
+</p>
+</div>
+
+<h2>Studio Timeline</h2>
+
+<div class="timeline">
+
+<div class="timeline-item">
+<div class="timeline-year">2010</div>
+Early collaborative recordings including <b>Panning for Gold</b>.
+</div>
+
+<div class="timeline-item">
+<div class="timeline-year">2013</div>
+Recording work with <b>Cockney Rejects</b>.
+</div>
+
+<div class="timeline-item">
+<div class="timeline-year">2017</div>
+Singer-songwriter <b>Serena Dench</b> records at the studio.
+</div>
+
+<div class="timeline-item">
+<div class="timeline-year">2021</div>
+Projects connected to <b>Mostwanted2</b>.
+</div>
+
+<div class="timeline-item">
+<div class="timeline-year">2022</div>
+Sessions with <b>Tia Pearman</b> and <b>Courtney Courtney</b>.
+</div>
+
+<div class="timeline-item">
+<div class="timeline-year">2024</div>
+<b>Sing Out Loud Sundays</b> uses the studio as HQ.
+</div>
+
+<div class="timeline-item">
+<div class="timeline-year">2025–2026</div>
+
+Muscle Memory becomes the official home of  
+<b>GZONE — Rap Battle</b>.
+
+Curated by <b>GingaJay</b>, the platform showcases
+lyricists clashing in a new entertainment format.
+
+</div>
+
+</div>
+
+<button class="collapsible" onclick="toggle(this)">Producers & Engineers</button>
+
+<div class="content">
+
+<p>
+Young Max and Del aka Sonic formed the core production
+team alongside Louis aka Reason.
+</p>
+
+</div>
+
+<button class="collapsible" onclick="toggle(this)">Studio Equipment</button>
+
+<div class="content">
+
+<ul>
+<li>Rare handmade guitars</li>
+<li>Fender electric guitars</li>
+<li>Roland keyboards</li>
+<li>Marshall amplifiers</li>
+<li>Professional recording interface</li>
+<li>Studio monitoring system</li>
+</ul>
+
+</div>
+
+<button class="collapsible" onclick="toggle(this)">Studio Prices</button>
+
+<div class="content">
+
+<div class="price-box">
+
+Dry Hire — £30 per hour<br><br>
+
+With Engineer — £60 per hour<br><br>
+
+Podcast Room — same rates apply<br><br>
+
+50% deposit required
+
+</div>
+
+</div>
+
+<h2>Studio Gallery</h2>
+
+<div class="gallery">
+
+<img src="studio1.jpg">
+<img src="studio2.jpg">
+<img src="studio3.jpg">
+
+</div>
 
 </body>
 </html>
