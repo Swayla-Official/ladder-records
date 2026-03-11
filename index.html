@@ -29,8 +29,34 @@ header {
   z-index: 10;
 }
 
+/* NAVIGATION */
+nav {
+  position: absolute;
+  top: 1.2rem;
+  right: 5vw;
+  display: flex;
+  gap: 1rem;
+  z-index: 20;
+}
+
+nav a {
+  text-decoration: none;
+  color: #fff;
+  background: rgba(255,255,255,0.05);
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+nav a:hover {
+  background: rgba(255,255,255,0.2);
+  color: #000;
+}
+
+/* HERO LOGO */
 .hero-logo {
-  max-width: 360px;
+  max-width: 320px;
   margin-top: 4rem;
   position: relative;
   z-index: 6;
@@ -73,42 +99,49 @@ header {
 
 /* HERO TEXT */
 .hero-text {
-  font-size: 1.3rem;
-  font-weight: 600;
+  font-size: 1.4rem;
+  font-weight: 700;
   text-transform: uppercase;
   margin-top: 1rem;
   color: #000;
-  text-shadow: 1px 1px 3px #000000;
+  text-shadow: 2px 2px 6px rgba(0,0,0,0.7);
 }
 
 /* LADDER DESCRIPTION */
 .ladder-description {
-  font-size: 1rem;
-  color: #ccc;
+  font-size: 1.15rem;
+  font-family: "Georgia", serif;
+  font-style: italic;
+  color: #eaeaea;
   max-width: 700px;
-  margin: 2rem auto 0;
-  line-height: 1.5;
+  margin: -1rem auto 2rem; /* reduced top margin to close gap */
+  line-height: 1.6;
   text-align: center;
+  text-shadow: 1px 1px 4px rgba(0,0,0,0.5);
 }
 
 /* DISHY TANGENT SECTION */
 .dishy-section {
-  padding: 4rem 5vw;
+  padding: 3rem 5vw;
   text-align: center;
 }
 
 .dishy-section h2 {
   font-size: 2rem;
   margin-bottom: 1rem;
+  letter-spacing: 1px;
 }
 
 .dishy-section p {
-  font-size: 1rem;
-  color: #ccc;
-  max-width: 700px;
+  font-size: 1.05rem;
+  font-family: "Georgia", serif;
+  color: #e0e0e0;
+  max-width: 720px;
   margin: 0 auto 2rem;
+  line-height: 1.6;
 }
 
+/* DISHY GALLERY */
 .dishy-gallery {
   display: flex;
   justify-content: center;
@@ -138,8 +171,24 @@ header {
 <body>
 
 <header>
+  <!-- FLOATING CLOUDS -->
+  <div class="cloud a"></div>
+  <div class="cloud b"></div>
+  <div class="cloud c"></div>
   <div class="hero-cloud"></div>
+
+  <!-- NAVIGATION -->
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="studio.html">Studio</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="booking.html">Booking</a>
+  </nav>
+
+  <!-- HERO LOGO -->
   <img src="Ladder Records logo 2a.jpg" alt="Ladder Records Logo" class="hero-logo">
+
+  <!-- HERO TAGLINE -->
   <p class="hero-text">
     A CREATIVE STUDIO, LABEL & ARTIST COLLECTIVE<br>
     WE CAN GET YOU TO THE NEXT RUNG OF THE LADDER
