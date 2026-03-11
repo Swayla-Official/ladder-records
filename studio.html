@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 <meta charset="UTF-8">
 <title>Muscle Memory Musik Studio</title>
@@ -7,27 +8,19 @@
 
 <style>
 
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Helvetica, Arial, sans-serif;
-}
-
 body{
 background:#0a0a0a;
 color:white;
-padding:40px 20px;
+font-family:Helvetica, Arial, sans-serif;
 text-align:center;
+padding:40px 20px;
 line-height:1.6;
 }
 
 .logo{
-max-width:220px;
-margin-bottom:25px;
+max-width:200px;
+margin-bottom:20px;
 }
-
-/* NAVIGATION */
 
 nav{
 margin-bottom:40px;
@@ -35,14 +28,13 @@ margin-bottom:40px;
 
 nav a{
 display:inline-block;
-margin:8px;
-padding:10px 20px;
+margin:6px;
+padding:10px 18px;
 border:1px solid white;
 border-radius:6px;
 text-decoration:none;
 color:white;
-font-weight:600;
-transition:0.3s;
+font-weight:bold;
 }
 
 nav a:hover{
@@ -50,92 +42,61 @@ background:white;
 color:black;
 }
 
-/* SECTION */
-
 .section{
 max-width:900px;
 margin:auto;
 margin-bottom:40px;
 }
 
-/* TIMELINE */
-
 .timeline{
-max-width:800px;
+max-width:700px;
 margin:auto;
 text-align:left;
-margin-top:40px;
+margin-top:30px;
 }
 
 .timeline-item{
 border-left:2px solid white;
 padding-left:20px;
-margin-bottom:28px;
+margin-bottom:25px;
 }
 
-.timeline-year{
+.year{
 font-weight:bold;
-font-size:1.2rem;
+font-size:18px;
 margin-bottom:5px;
 }
 
-/* COLLAPSIBLE */
-
 .collapsible{
 background:#141414;
-padding:14px;
-border:none;
-width:100%;
-text-align:left;
-cursor:pointer;
 color:white;
-font-size:1.1rem;
+cursor:pointer;
+padding:14px;
+width:100%;
+border:none;
+text-align:left;
+font-size:18px;
+margin-top:10px;
 border-radius:6px;
-margin-top:15px;
 }
 
 .content{
 display:none;
-background:#1d1d1d;
 padding:20px;
+background:#1c1c1c;
 border-radius:6px;
-margin-top:6px;
 }
-
-/* LIST */
-
-ul{
-text-align:left;
-max-width:600px;
-margin:20px auto;
-}
-
-/* PRICE */
-
-.price-box{
-background:#141414;
-padding:20px;
-border-radius:8px;
-margin-top:10px;
-}
-
-/* GALLERY */
 
 .gallery{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-gap:14px;
-margin-top:30px;
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+gap:15px;
+margin-top:20px;
 }
 
 .gallery img{
 width:100%;
 border-radius:6px;
-transition:0.3s;
-}
-
-.gallery img:hover{
-transform:scale(1.05);
 }
 
 </style>
@@ -143,9 +104,8 @@ transform:scale(1.05);
 <script>
 
 function toggle(el){
-let content=el.nextElementSibling;
-
-if(content.style.display==="block"){
+var content = el.nextElementSibling;
+if(content.style.display === "block"){
 content.style.display="none";
 }else{
 content.style.display="block";
@@ -161,20 +121,23 @@ content.style.display="block";
 <img src="Ladder Records logo 2a.jpg" class="logo">
 
 <nav>
+
 <a href="index.html">Home</a>
 <a href="studio.html">Studio</a>
 <a href="gallery.html">Gallery</a>
 <a href="booking.html">Booking</a>
+
 </nav>
 
 <h1>Muscle Memory Musik Studio</h1>
 
 <div class="section">
+
 <p>
-Muscle Memory Musik Studio is the creative headquarters of Ladder Records.
-Over time it has developed into a collaborative hub for recording,
-filming, podcasting, songwriting and artist development.
+Muscle Memory Musik Studio is the creative headquarters of Ladder Records,
+supporting recording, songwriting, podcasting and artist development.
 </p>
+
 </div>
 
 <h2>Studio Timeline</h2>
@@ -182,43 +145,42 @@ filming, podcasting, songwriting and artist development.
 <div class="timeline">
 
 <div class="timeline-item">
-<div class="timeline-year">2010</div>
-Early collaborative recordings including <b>Panning for Gold</b>.
+<div class="year">2010</div>
+Early recording projects including Panning for Gold.
 </div>
 
 <div class="timeline-item">
-<div class="timeline-year">2013</div>
-Recording work with <b>Cockney Rejects</b>.
+<div class="year">2013</div>
+Recording work with Cockney Rejects.
 </div>
 
 <div class="timeline-item">
-<div class="timeline-year">2017</div>
-Singer-songwriter <b>Serena Dench</b> records at the studio.
+<div class="year">2017</div>
+Singer songwriter Serena Dench records at the studio.
 </div>
 
 <div class="timeline-item">
-<div class="timeline-year">2021</div>
-Projects connected to <b>Mostwanted2</b>.
+<div class="year">2021</div>
+Projects linked to Mostwanted2.
 </div>
 
 <div class="timeline-item">
-<div class="timeline-year">2022</div>
-Sessions with <b>Tia Pearman</b> and <b>Courtney Courtney</b>.
+<div class="year">2022</div>
+Sessions with Tia Pearman and Courtney Courtney.
 </div>
 
 <div class="timeline-item">
-<div class="timeline-year">2024</div>
-<b>Sing Out Loud Sundays</b> uses the studio as HQ.
+<div class="year">2024</div>
+Sing Out Loud Sundays founded by RM Moses uses the studio as filming HQ.
 </div>
 
 <div class="timeline-item">
-<div class="timeline-year">2025–2026</div>
+<div class="year">2025-2026</div>
 
 Muscle Memory becomes the official home of  
-<b>GZONE — Rap Battle</b>.
+GZONE Rap Battle.
 
-Curated by <b>GingaJay</b>, the platform showcases
-lyricists clashing in a new entertainment format.
+Curated by GingaJay, the platform showcases UK lyricists clashing in a new independent entertainment format.
 
 </div>
 
@@ -229,23 +191,25 @@ lyricists clashing in a new entertainment format.
 <div class="content">
 
 <p>
-Young Max and Del aka Sonic formed the core production
-team alongside Louis aka Reason.
+
+Young Max and Del aka Sonic were pivotal in early collaborations and formed the initial trio of producers and engineers of Muscle Memory Studio alongside Louis aka Reason.
+
 </p>
 
 </div>
 
-<button class="collapsible" onclick="toggle(this)">Studio Equipment</button>
+<button class="collapsible" onclick="toggle(this)">Equipment</button>
 
 <div class="content">
 
 <ul>
-<li>Rare handmade guitars</li>
+
+<li>Vintage and handmade guitars</li>
 <li>Fender electric guitars</li>
 <li>Roland keyboards</li>
 <li>Marshall amplifiers</li>
 <li>Professional recording interface</li>
-<li>Studio monitoring system</li>
+
 </ul>
 
 </div>
@@ -254,17 +218,15 @@ team alongside Louis aka Reason.
 
 <div class="content">
 
-<div class="price-box">
+<p>
 
-Dry Hire — £30 per hour<br><br>
+Dry Hire — £30 per hour  
+With Engineer — £60 per hour  
+Podcast Room — same rate  
 
-With Engineer — £60 per hour<br><br>
+50% deposit required to confirm booking.
 
-Podcast Room — same rates apply<br><br>
-
-50% deposit required
-
-</div>
+</p>
 
 </div>
 
