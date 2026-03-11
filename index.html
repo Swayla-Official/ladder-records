@@ -5,8 +5,9 @@
 <title>Ladder Records</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<!-- ===== BASIC PAGE STYLES ===== -->
 <style>
-/* ===== RESET ===== */
+/* RESET */
 * {
   margin: 0;
   padding: 0;
@@ -14,6 +15,7 @@
   font-family: Helvetica, Arial, sans-serif;
 }
 
+/* BODY */
 body {
   background: linear-gradient(180deg, #000000, #0b0b0b, #000000);
   color: #f2f2f2;
@@ -21,158 +23,181 @@ body {
   line-height: 1.6;
 }
 
-/* ===== HEADER / HERO ===== */
+/* HEADER / NAVIGATION */
 header {
-  position: relative;
-  height: 80vh;
-  text-align: center;
-  overflow: hidden;
-  z-index: 10;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: rgba(10, 10, 10, 0.95);
+  padding: 1rem 5vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.logo {
-  max-width: 400px;
-  margin: 6rem auto 1rem auto;
-  position: relative;
-  z-index: 6;
-  display: block;
-}
-
-/* SOLID CLOUD BEHIND LOGO */
-.hero-cloud {
-  position: absolute;
-  top: 48%;
-  left: 50%;
-  width: 640px;
-  height: 240px;
-  background: white;
-  border-radius: 50%;
-  filter: blur(45px);
-  transform: translate(-50%, -50%);
-  z-index: 2;
-}
-
-/* FLOATING CLOUDS */
-.cloud {
-  position: absolute;
-  width: 480px;
-  height: 180px;
-  background: rgba(255,255,255,0.35);
-  border-radius: 50%;
-  filter: blur(60px);
-  animation: drift linear infinite;
-  z-index: 1;
-}
-
-.cloud.a { top: 8%; animation-duration: 120s; }
-.cloud.b { top: 22%; animation-duration: 90s; }
-.cloud.c { top: 36%; animation-duration: 70s; }
-
-@keyframes drift {
-  from { transform: translateX(-600px); }
-  to { transform: translateX(120vw); }
-}
-
-/* HERO TEXT UNDER LOGO */
-.hero-text {
-  margin-top: 1rem;
-  font-size: 1.5rem;
+header h1 a {
+  color: #fff;
+  text-decoration: none;
   font-weight: 600;
-  color: #ffffff;
-  text-shadow: 2px 2px 4px #000000; /* outline effect for readability */
-}
-
-/* HERO DESCRIPTION PARAGRAPH */
-.hero-description {
-  max-width: 700px;
-  margin: 2rem auto 0 auto;
-  font-size: 1rem;
-  color: #dcdcdc;
-  text-align: center;
-  line-height: 1.8;
-}
-
-/* NAVIGATION */
-nav {
-  position: absolute;
-  top: 1.5rem;
-  right: 5%;
-  z-index: 10;
+  font-size: 1.6rem;
 }
 
 nav a {
   color: #fff;
   text-decoration: none;
   margin-left: 2rem;
-  font-weight: 600;
+  font-size: 1rem;
+  transition: opacity 0.3s ease;
 }
 
 nav a:hover {
   opacity: 0.6;
 }
 
-/* BACK BUTTONS SECTION */
-.back-buttons {
-  margin: 3rem 5%;
+/* HERO / LOGO */
+.hero-section {
+  text-align: center;
+  padding: 4rem 2vw;
 }
 
-.back-buttons a {
-  display: inline-block;
-  margin-right: 1rem;
-  padding: 0.6rem 1.2rem;
-  background: #222;
-  color: #fff;
+.hero-logo {
+  max-width: 400px;
+  margin: 0 auto;
+  display: block;
+}
+
+/* HERO TEXT UNDER LOGO */
+.hero-text {
+  margin-top: 2rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+  text-align: center;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
+}
+
+/* DISHY TANGENT SECTION */
+.dishy-gallery-section {
+  padding: 4rem 5vw;
+  text-align: center;
+}
+
+.dishy-gallery-section h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.dishy-gallery-section p {
+  font-size: 1rem;
+  max-width: 700px;
+  margin: 0 auto 2rem;
+  color: #ccc;
+}
+
+.dishy-gallery {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+}
+
+.dishy-gallery a {
+  flex: 1 1 calc(20% - 1rem); /* 5 images across */
+  display: block;
+  overflow: hidden;
   border-radius: 6px;
-  text-decoration: none;
-  transition: all 0.3s ease;
+  transition: transform 0.3s ease;
 }
 
-.back-buttons a:hover {
-  background: #333;
+.dishy-gallery a img {
+  width: 100%;
+  display: block;
+  transition: transform 0.35s ease;
+}
+
+.dishy-gallery a:hover img {
+  transform: scale(1.08);
+}
+
+/* FOOTER */
+footer {
+  text-align: center;
+  padding: 2rem;
+  font-size: 0.85rem;
+  color: #777;
+  background: #111;
+  margin-top: 4rem;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .dishy-gallery a {
+    flex: 1 1 calc(50% - 1rem);
+    margin-bottom: 1rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .dishy-gallery a {
+    flex: 1 1 100%;
+  }
 }
 </style>
-
 </head>
+
 <body>
 
 <header>
-  <div class="hero-cloud"></div>
-  <img src="Ladder Records logo 2a.jpg" alt="Ladder Records Logo" class="logo">
-  <div class="hero-text">
-    A CREATIVE STUDIO, LABEL & ARTIST COLLECTIVE<br>
-    WE CAN GET YOU TO THE NEXT RUNG OF THE LADDER
-  </div>
-  <!-- Floating clouds -->
-  <div class="cloud a"></div>
-  <div class="cloud b"></div>
-  <div class="cloud c"></div>
-  <!-- Navigation -->
+  <h1><a href="index.html">Ladder Records</a></h1>
   <nav>
-    <a href="index.html">Home</a>
     <a href="studio.html">Studio</a>
     <a href="gallery.html">Gallery</a>
     <a href="booking.html">Booking</a>
+    <a href="contact.html">Contact</a>
   </nav>
 </header>
 
-<main>
-  <!-- ===== HERO DESCRIPTION ===== -->
-  <section class="hero-description">
-    <p>
-      Ladder Records is an independent creative hub, blending the energy of a recording studio, label, and artist collective under one roof.
-      Since its inception, the space has fostered collaboration, innovation, and artist development across genres and disciplines.
-      From live music production to mentorship programs, Ladder Records empowers musicians, producers, and creatives to reach their next rung in the music industry.
-    </p>
-  </section>
+<!-- HERO SECTION -->
+<section class="hero-section">
+  <img src="Ladder Records logo 2a.jpg" alt="Ladder Records Logo" class="hero-logo">
+  <p class="hero-text">
+    A CREATIVE STUDIO, LABEL & ARTIST COLLECTIVE<br>
+    WE CAN GET YOU TO THE NEXT RUNG OF THE LADDER
+  </p>
+</section>
 
-  <!-- ===== BACK BUTTONS ===== -->
-  <div class="back-buttons">
-    <a href="studio.html">&larr; Studio</a>
-    <a href="gallery.html">&larr; Gallery</a>
-    <a href="booking.html">&larr; Book Studio</a>
+<!-- =========================
+     DISHY TANGENT SECTION
+     ========================= -->
+<section class="dishy-gallery-section">
+  <h2>DISY TANGENT</h2>
+  <p>
+    Ladder Records is home to Dishy Tangent. Live, acoustic, feel-good musicians; Reason, Sonic and Waynard bring their unique sounds together to create the mellow sounds of Dishy Tangent.
+    Explore their discography by pressing any of the images below...
+  </p>
+
+  <div class="dishy-gallery">
+    <a href="https://open.spotify.com/artist/4wHktrLkXSN81dnmaKbhSz" target="_blank">
+      <img src="better-than-me-dishy-tangent.jpg" alt="Better Than Me - Dishy Tangent">
+    </a>
+    <a href="https://open.spotify.com/artist/4wHktrLkXSN81dnmaKbhSz" target="_blank">
+      <img src="clear-dishy-tangent.jpg" alt="Clear - Dishy Tangent">
+    </a>
+    <a href="https://open.spotify.com/artist/4wHktrLkXSN81dnmaKbhSz" target="_blank">
+      <img src="getting-by-dishy-tangent.jpg" alt="Getting By - Dishy Tangent">
+    </a>
+    <a href="https://open.spotify.com/artist/4wHktrLkXSN81dnmaKbhSz" target="_blank">
+      <img src="here-we-go-dishy-tangent.jpg" alt="Here We Go Again - Dishy Tangent">
+    </a>
+    <a href="https://open.spotify.com/artist/4wHktrLkXSN81dnmaKbhSz" target="_blank">
+      <img src="no-one-knows-dishy-tangent.jpg" alt="No One Knows - Dishy Tangent">
+    </a>
   </div>
+</section>
 
-</main>
+<footer>
+  &copy; 2026 Ladder Records — All Rights Reserved
+</footer>
 
 </body>
 </html>
