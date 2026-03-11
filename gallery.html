@@ -2,73 +2,116 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Gallery — Ladder Records</title>
+<title>Ladder Records Gallery</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
-body { background:#0a0a0a; color:#f2f2f2; font-family:Helvetica, Arial, sans-serif; text-align:center; }
-.logo { max-width:220px; margin:2rem auto; display:block; }
-.back-link { display:inline-block; margin:1rem 0; color:#fff; text-decoration:none; font-weight:bold; }
-.back-link:hover { text-decoration:underline; }
+
+body{
+background:#0a0a0a;
+color:white;
+text-align:center;
+font-family:Helvetica, Arial, sans-serif;
+padding:40px 20px;
+}
+
+.logo{
+max-width:220px;
+margin-bottom:25px;
+}
+
+nav{
+margin-bottom:40px;
+}
+
+nav a{
+display:inline-block;
+margin:8px;
+padding:10px 20px;
+border:1px solid white;
+border-radius:6px;
+text-decoration:none;
+color:white;
+font-weight:600;
+}
+
+nav a:hover{
+background:white;
+color:black;
+}
 
 /* COLLAGE GRID */
-.gallery-grid {
-  display:grid;
-  grid-template-columns: repeat(auto-fit,minmax(160px,1fr));
-  gap:1rem;
-  margin:2rem 0;
+
+.gallery-grid{
+columns:4 250px;
+column-gap:12px;
+max-width:1200px;
+margin:auto;
 }
 
-.gallery-grid img {
-  width:100%;
-  border-radius:6px;
-  transition: transform 0.3s ease;
-  cursor:pointer;
+.gallery-grid a{
+display:block;
+margin-bottom:12px;
 }
 
-.gallery-grid img:hover { transform: scale(1.05); }
-
-/* LIGHTBOX */
-#lightbox {
-  display:none;
-  position:fixed;
-  top:0; left:0;
-  width:100%; height:100%;
-  background: rgba(0,0,0,0.85);
-  justify-content:center; align-items:center;
-  z-index:999;
+.gallery-grid img{
+width:100%;
+border-radius:6px;
+transition:0.3s;
 }
 
-#lightbox img {
-  max-width:90%; max-height:90%;
-  border-radius:5px;
+.gallery-grid img:hover{
+transform:scale(1.05);
 }
 
-#lightbox:target { display:flex; }
 </style>
+
 </head>
 
 <body>
-<a href="index.html" class="back-link">&#8592; Back to Home</a>
-<img src="Ladder Records logo 2a.jpg" alt="Logo" class="logo">
 
-<h1>Gallery</h1>
+<img src="Ladder Records logo 2a.jpg" class="logo">
+
+<nav>
+<a href="index.html">Home</a>
+<a href="studio.html">Studio</a>
+<a href="gallery.html">Gallery</a>
+<a href="booking.html">Booking</a>
+</nav>
+
+<h1>Ladder Records Archive</h1>
+
 <div class="gallery-grid">
-  <a href="#lb1"><img src="better-than-me-dishy-tangent.jpg" alt="Better Than Me"></a>
-  <a href="#lb2"><img src="clear-dishy-tangent.jpg" alt="Clear"></a>
-  <a href="#lb3"><img src="contigo.jpg" alt="Contigo"></a>
-  <a href="#lb4"><img src="getting-by-dishy-tangent.jpg" alt="Getting By"></a>
-  <a href="#lb5"><img src="here-we-go-dishy-tangent.jpg" alt="Here We Go"></a>
-  <a href="#lb6"><img src="i-got-u-dishy-tangent.png" alt="I Got You"></a>
-</div>
 
-<!-- LIGHTBOX -->
-<div id="lb1"><a href="#"><img src="better-than-me-dishy-tangent.jpg"></a></div>
-<div id="lb2"><a href="#"><img src="clear-dishy-tangent.jpg"></a></div>
-<div id="lb3"><a href="#"><img src="contigo.jpg"></a></div>
-<div id="lb4"><a href="#"><img src="getting-by-dishy-tangent.jpg"></a></div>
-<div id="lb5"><a href="#"><img src="here-we-go-dishy-tangent.jpg"></a></div>
-<div id="lb6"><a href="#"><img src="i-got-u-dishy-tangent.png"></a></div>
+<a href="https://open.spotify.com/artist/4wHktrLkXSN81dnmaKbhSz">
+<img src="clear-dishy-tangent.jpg">
+</a>
+
+<a href="https://open.spotify.com/artist/4wHktrLkXSN81dnmaKbhSz">
+<img src="better-than-me-dishy-tangent.jpg">
+</a>
+
+<a href="https://open.spotify.com/artist/4wHktrLkXSN81dnmaKbhSz">
+<img src="wild-dishy-tangent.jpg">
+</a>
+
+<a href="https://open.spotify.com/artist/4wHktrLkXSN81dnmaKbhSz">
+<img src="timeless-music-dishy-tangent.jpg">
+</a>
+
+<img src="mostwanted2.jpg">
+<img src="mostwanted2-wideawake.jpg">
+<img src="mostwanted2-rentfree.jpg">
+
+<img src="serenadench.jpg">
+<img src="serena2.jpg">
+
+<img src="tia-memories.jpg">
+<img src="tia-neverland.jpg">
+
+<img src="smoothvee.jpg">
+
+</div>
 
 </body>
 </html>
